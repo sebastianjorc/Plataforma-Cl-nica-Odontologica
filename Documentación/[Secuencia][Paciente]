@@ -1,4 +1,4 @@
-@startuml
+/'@startuml
 	title Diagrama de Secuencia: __Paciente nuevo__
 	
 	actor "Usuario Nuevo" as newUser #red
@@ -9,10 +9,16 @@
 	Activate Registrar #lightgreen
 	Registrar -> Usuarios: Guardar
 	Deactivate Registrar
-@enduml
+@enduml'/
 
 @startuml
-	title Diagrama de Secuencia: Paciente __TOMA DE HORA__
+	title Diagrama de Secuencia: Paciente __TOMA DE HORA__\n
+	
+	legend 
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
+	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
+	endlegend
 	
 	actor "Usuario Registrado" as user #lightgreen
 	box "Login" #lightblue
@@ -23,7 +29,7 @@
 	box "Interfaz"
 	participant "Interfaz Paciente"
 	participant "Toma de hora"
-	database Calendarizaci�n  #yellow
+	database Calendarización  #yellow
 	Participant Boleta
 	endbox
 	
@@ -40,9 +46,9 @@
 	"Interfaz Paciente" -> "Toma de hora" :Selecciona
 	
 	activate "Toma de hora" #lightgreen
-	"Toma de hora" -> Calendarizaci�n :Guarda
-	activate Calendarizaci�n #yellow
-	deactivate Calendarizaci�n
+	"Toma de hora" -> Calendarización :Guarda
+	activate Calendarización #yellow
+	deactivate Calendarización
 	activate Boleta #white
 	"Toma de hora" -> Boleta :Crea
 	deactivate "Toma de hora"
@@ -62,6 +68,12 @@
 @startuml
 	title Diagrama de Secuencia: Paciente __Calendario__
 	
+	legend 
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
+	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
+	endlegend
+	
 	actor "Usuario Registrado" as user #lightgreen
 	box "Login" #lightblue
 	participant Login
@@ -71,7 +83,7 @@
 	box "Interfaz"
 	participant "Interfaz Paciente"
 	participant Calendario
-	database Calendarizaci�n  #yellow
+	database Calendarización  #yellow
 	participant "Consulta medica"
 	endbox
 	
@@ -87,10 +99,10 @@
 	activate "Interfaz Paciente" #lightgreen
 	"Interfaz Paciente" -> Calendario :Selecciona
 	activate Calendario #lightgreen
-	Calendario -> Calendarizaci�n :Pedir 
-	activate Calendarizaci�n #yellow
-	Calendarizaci�n --> Calendario :Entregar
-	deactivate Calendarizaci�n
+	Calendario -> Calendarización :Pedir 
+	activate Calendarización #yellow
+	Calendarización --> Calendario :Entregar
+	deactivate Calendarización
 	Calendario -> "Consulta medica" :Ver
 	activate "Consulta medica" #White
 	"Consulta medica" --> Calendario :Volver
@@ -109,6 +121,12 @@
 
 @startuml
 	title Diagrama de Secuencia: Paciente __DIAGNOSTICO__
+	
+	legend 
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
+	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
+	endlegend
 	
 	actor "Usuario Registrado" as user #lightgreen
 	box "Login" #lightblue
@@ -158,7 +176,12 @@
 @startuml
 
 	title Diagrama de Secuencia: Paciente __GENERAL__
-	
+		
+	legend 
+	<size:26><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:26><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
+	<size:26><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
+	endlegend
 	
 	actor "Usuario Nuevo" as newUser #red
 	actor "Usuario Registrado" as user #lightgreen
@@ -173,7 +196,7 @@
 	box "Interfaz"
 	participant "Interfaz Paciente"
 	participant "Toma de hora"
-	database Calendarizaci�n  #yellow
+	database Calendarización  #yellow
 	Participant Boleta
 	
 	participant "Ficha medica"
@@ -205,9 +228,9 @@
 	"Interfaz Paciente" -> "Toma de hora" :Selecciona
 	
 	activate "Toma de hora" #lightgreen
-	"Toma de hora" -> Calendarizaci�n :Guarda
-	activate Calendarizaci�n #yellow
-	deactivate Calendarizaci�n
+	"Toma de hora" -> Calendarización :Guarda
+	activate Calendarización #yellow
+	deactivate Calendarización
 	activate Boleta #white
 	"Toma de hora" -> Boleta :Crea
 	deactivate "Toma de hora"
@@ -230,10 +253,10 @@
 	
 	"Interfaz Paciente" -> Calendario :Selecciona
 	activate Calendario #lightgreen
-	Calendario -> Calendarizaci�n :Pedir 
-	activate Calendarizaci�n #yellow
-	Calendarizaci�n --> Calendario :Entregar
-	deactivate Calendarizaci�n
+	Calendario -> Calendarización :Pedir 
+	activate Calendarización #yellow
+	Calendarización --> Calendario :Entregar
+	deactivate Calendarización
 	Calendario -> "Consulta medica" :Ver
 	activate "Consulta medica" #White
 	"Consulta medica" --> Calendario :Volver
@@ -250,10 +273,7 @@
 
 @enduml
 
-
-
-
-
-
-
-
+Problematicas.
+1. ¿El calendario y la lista de evaluaciones se mostrarán de forma dinámica en la interfaz, o será mediante pestañas?
+2. ¿La entrega de información vía plataforma (Fechas, evaluaciones, boleta), se dará como archivo descargable/generado ó solo se mostrará en pantalla?
+3. Respecto a la creación de usuarios 'Pacientes', ¿quién podrá crearlo? Digo, si alguien quisiera atenderse por primera vez, podría o no registrarse inmediatamente en la plataforma, o debería primero ir a la secretaria para que le abriera una cuenta?
