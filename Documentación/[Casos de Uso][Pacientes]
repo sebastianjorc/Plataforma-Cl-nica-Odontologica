@@ -1,12 +1,13 @@
 @startuml
 title Casos de Uso: Paciente
 
-actor :Usuario Nuevo:
-actor :Usuario Regristrado:
+actor "Usuario Regristrado" as user
+actor "Usuario Nuevo" as newUser
 
-:Usuario Nuevo: --> (Registrar)
+(Registrar) <- newUser 
+user <- (Registrar)
 
-:Usuario Regristrado: --> (Login)
+user --> (Login)
 (Login) -> (Interfaz Paciente)
 
 (Interfaz Paciente) --> (Toma de Hora)
@@ -14,5 +15,9 @@ actor :Usuario Regristrado:
 
 (Interfaz Paciente) --> (Lista de Diagnosticos)
 (Lista de Diagnosticos) --> (Entregar Diagnostico)
+
+
+(Interfaz Paciente) --> (Calendario)
+(Calendario) -->(Ver Hora\n Consulta medica)
 
 @enduml
