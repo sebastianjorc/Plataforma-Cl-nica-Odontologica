@@ -1,0 +1,18 @@
+@startuml
+title Casos de Uso: Paciente
+
+actor :Usuario Nuevo:
+actor :Usuario Regristrado:
+
+:Usuario Nuevo: --> (Registrar)
+
+:Usuario Regristrado: --> (Login)
+(Login) -> (Interfaz Paciente)
+
+(Interfaz Paciente) --> (Toma de Hora)
+(Toma de Hora) --> (Entregar Boleta)
+
+(Interfaz Paciente) --> (Lista de Diagnosticos)
+(Lista de Diagnosticos) --> (Entregar Diagnostico)
+
+@enduml
