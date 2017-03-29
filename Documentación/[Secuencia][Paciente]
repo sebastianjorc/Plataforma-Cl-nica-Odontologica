@@ -183,11 +183,9 @@
 	<size:26><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
 	endlegend
 	
-	actor "Usuario Nuevo" as newUser #red
 	actor "Usuario Registrado" as user #lightgreen
 	
 	box "Login" #lightblue
-	participant Registrar
 	database Usuarios #yellow
 	participant Login
 	database Usuarios #yellow
@@ -206,14 +204,6 @@
 	participant Calendario
 	participant "Consulta medica"
 	endbox
-	
-	activate newUser #pink
-	newUser -> Registrar: Ingresa datos
-	Activate Registrar #lightgreen
-	Registrar -> Usuarios: Guardar
-	Registrar -> user :Se convierte
-	deactivate newUser
-	Deactivate Registrar
 	
 	activate user #lightgreen
 	user -> Login :Ingresa
@@ -273,7 +263,10 @@
 
 @enduml
 
-Problematicas.
+Problematicas
 1. ¿El calendario y la lista de evaluaciones se mostrarán de forma dinámica en la interfaz, o será mediante pestañas?
+Sol: Por pestañas
 2. ¿La entrega de información vía plataforma (Fechas, evaluaciones, boleta), se dará como archivo descargable/generado ó solo se mostrará en pantalla?
+Sol: Por pantalla e impresión directa
 3. Respecto a la creación de usuarios 'Pacientes', ¿quién podrá crearlo? Digo, si alguien quisiera atenderse por primera vez, podría o no registrarse inmediatamente en la plataforma, o debería primero ir a la secretaria para que le abriera una cuenta?
+Sol: Solo usuarios registrados, solo ADM puede agregar/eliminar
