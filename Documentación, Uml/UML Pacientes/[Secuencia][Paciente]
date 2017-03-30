@@ -1,0 +1,272 @@
+/'@startuml
+	title Diagrama de Secuencia: __Paciente nuevo__
+	
+	actor "Usuario Nuevo" as newUser #red
+	participant Registrar
+	database Usuarios #yellow
+	
+	newUser -> Registrar: Ingresa datos
+	Activate Registrar #lightgreen
+	Registrar -> Usuarios: Guardar
+	Deactivate Registrar
+@enduml'/
+
+@startuml
+	title Diagrama de Secuencia: Paciente __TOMA DE HORA__\n
+	
+	legend 
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
+	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
+	endlegend
+	
+	actor "Usuario Registrado" as user #lightgreen
+	box "Login" #lightblue
+	participant Login
+	database Usuarios #yellow
+	endbox
+	
+	box "Interfaz"
+	participant "Interfaz Paciente"
+	participant "Toma de hora"
+	database Calendarización  #yellow
+	Participant Boleta
+	endbox
+	
+	activate user #lightgreen
+	user -> Login :Ingresa
+	activate Login #lightgreen
+	Login -> Usuarios :Cargar
+	activate Usuarios #yellow
+	Usuarios -> "Interfaz Paciente" :Direcciona
+	deactivate Usuarios
+	deactivate Login
+	
+	activate "Interfaz Paciente" #lightgreen
+	"Interfaz Paciente" -> "Toma de hora" :Selecciona
+	
+	activate "Toma de hora" #lightgreen
+	"Toma de hora" -> Calendarización :Guarda
+	activate Calendarización #yellow
+	deactivate Calendarización
+	activate Boleta #white
+	"Toma de hora" -> Boleta :Crea
+	deactivate "Toma de hora"
+	Boleta --> user :Entrega
+	Boleta --> "Interfaz Paciente":Volver
+	deactivate Boleta
+	
+	"Interfaz Paciente" --> Login: Salir
+	deactivate "Interfaz Paciente"
+	activate Login #Lightgreen
+	Login --> "user": Cerrar
+	deactivate user
+	deactivate Login
+
+@enduml
+
+@startuml
+	title Diagrama de Secuencia: Paciente __Calendario__
+	
+	legend 
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
+	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
+	endlegend
+	
+	actor "Usuario Registrado" as user #lightgreen
+	box "Login" #lightblue
+	participant Login
+	database Usuarios #yellow
+	endbox
+	
+	box "Interfaz"
+	participant "Interfaz Paciente"
+	participant Calendario
+	database Calendarización  #yellow
+	participant "Consulta medica"
+	endbox
+	
+	activate user #lightgreen
+	user -> Login :Ingresa
+	activate Login #lightgreen
+	Login -> Usuarios :Cargar
+	activate Usuarios #yellow
+	Usuarios -> "Interfaz Paciente" :Direcciona
+	deactivate Usuarios
+	deactivate Login
+	
+	activate "Interfaz Paciente" #lightgreen
+	"Interfaz Paciente" -> Calendario :Selecciona
+	activate Calendario #lightgreen
+	Calendario -> Calendarización :Pedir 
+	activate Calendarización #yellow
+	Calendarización --> Calendario :Entregar
+	deactivate Calendarización
+	Calendario -> "Consulta medica" :Ver
+	activate "Consulta medica" #White
+	"Consulta medica" --> Calendario :Volver
+	deactivate "Consulta medica"
+	Calendario --> "Interfaz Paciente" :Volver
+	deactivate Calendario
+	
+	
+	"Interfaz Paciente" --> Login: Salir
+	deactivate "Interfaz Paciente"
+	activate Login #Lightgreen
+	Login --> "user": Cerrar
+	deactivate user
+	deactivate Login
+@enduml
+
+@startuml
+	title Diagrama de Secuencia: Paciente __DIAGNOSTICO__
+	
+	legend 
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
+	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
+	endlegend
+	
+	actor "Usuario Registrado" as user #lightgreen
+	box "Login" #lightblue
+	participant Login
+	database Usuarios #yellow
+	endbox
+	
+	box "Interfaz"
+	participant "Interfaz Paciente"
+	participant "Ficha medica"
+	database "Diagnosticos"  #yellow
+	participant Diagnostico
+	endbox
+	
+	activate user #lightgreen
+	user -> Login :Ingresa
+	activate Login #lightgreen
+	Login -> Usuarios :Cargar
+	activate Usuarios #yellow
+	Usuarios -> "Interfaz Paciente" :Direcciona
+	deactivate Usuarios
+	deactivate Login
+	
+	activate "Interfaz Paciente" #lightgreen
+	"Interfaz Paciente" -> "Ficha medica" : Ver
+	activate "Ficha medica" #lightgreen
+	"Ficha medica" -> Diagnosticos :pedir
+	activate Diagnosticos #yellow
+	Diagnosticos --> "Ficha medica" :devolver
+	deactivate Diagnosticos
+	"Ficha medica" -> Diagnostico :Ver
+	activate Diagnostico #White
+	Diagnostico-->"Ficha medica":volver
+	deactivate Diagnostico
+	"Ficha medica" --> "Interfaz Paciente" :Volver
+	deactivate "Ficha medica"
+	
+	"Interfaz Paciente" --> Login: Salir
+	deactivate "Interfaz Paciente"
+	activate Login #Lightgreen
+	Login --> "user": Cerrar
+	deactivate user
+	deactivate Login
+
+@enduml
+
+@startuml
+
+	title Diagrama de Secuencia: Paciente __GENERAL__
+		
+	legend 
+	<size:26><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:26><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
+	<size:26><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
+	endlegend
+	
+	actor "Usuario Registrado" as user #lightgreen
+	
+	box "Login" #lightblue
+	database Usuarios #yellow
+	participant Login
+	database Usuarios #yellow
+	endbox
+	
+	box "Interfaz"
+	participant "Interfaz Paciente"
+	participant "Toma de hora"
+	database Calendarización  #yellow
+	Participant Boleta
+	
+	participant "Ficha medica"
+	database "Diagnosticos"  #yellow
+	participant Diagnostico
+	
+	participant Calendario
+	participant "Consulta medica"
+	endbox
+	
+	activate user #lightgreen
+	user -> Login :Ingresa
+	activate Login #lightgreen
+	Login -> Usuarios :Cargar
+	activate Usuarios #yellow
+	Usuarios -> "Interfaz Paciente" :Direcciona
+	deactivate Usuarios
+	deactivate Login
+	
+	activate "Interfaz Paciente" #lightgreen
+	"Interfaz Paciente" -> "Toma de hora" :Selecciona
+	
+	activate "Toma de hora" #lightgreen
+	"Toma de hora" -> Calendarización :Guarda
+	activate Calendarización #yellow
+	deactivate Calendarización
+	activate Boleta #white
+	"Toma de hora" -> Boleta :Crea
+	deactivate "Toma de hora"
+	Boleta --> user :Entrega
+	Boleta --> "Interfaz Paciente":Volver
+	deactivate Boleta
+	
+	"Interfaz Paciente" -> "Ficha medica" : Ver
+	activate "Ficha medica" #lightgreen
+	"Ficha medica" -> Diagnosticos :pedir
+	activate Diagnosticos #yellow
+	Diagnosticos --> "Ficha medica" :devolver
+	deactivate Diagnosticos
+	"Ficha medica" -> Diagnostico :Ver
+	activate Diagnostico #White
+	Diagnostico-->"Ficha medica":volver
+	deactivate Diagnostico
+	"Ficha medica" --> "Interfaz Paciente" :Volver
+	deactivate "Ficha medica"
+	
+	"Interfaz Paciente" -> Calendario :Selecciona
+	activate Calendario #lightgreen
+	Calendario -> Calendarización :Pedir 
+	activate Calendarización #yellow
+	Calendarización --> Calendario :Entregar
+	deactivate Calendarización
+	Calendario -> "Consulta medica" :Ver
+	activate "Consulta medica" #White
+	"Consulta medica" --> Calendario :Volver
+	deactivate "Consulta medica"
+	Calendario --> "Interfaz Paciente" :Volver
+	deactivate Calendario
+	
+	"Interfaz Paciente" --> Login: Salir
+	deactivate "Interfaz Paciente"
+	activate Login #Lightgreen
+	Login --> "user": Cerrar
+	deactivate user
+	deactivate Login
+
+@enduml
+
+Problematicas
+1. ¿El calendario y la lista de evaluaciones se mostrarán de forma dinámica en la interfaz, o será mediante pestañas?
+Sol: Por pestañas
+2. ¿La entrega de información vía plataforma (Fechas, evaluaciones, boleta), se dará como archivo descargable/generado ó solo se mostrará en pantalla?
+Sol: Por pantalla e impresión directa
+3. Respecto a la creación de usuarios 'Pacientes', ¿quién podrá crearlo? Digo, si alguien quisiera atenderse por primera vez, podría o no registrarse inmediatamente en la plataforma, o debería primero ir a la secretaria para que le abriera una cuenta?
+Sol: Solo usuarios registrados, solo ADM puede agregar/eliminar
