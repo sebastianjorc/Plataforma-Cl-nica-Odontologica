@@ -5,16 +5,15 @@
 	
 	user -> (Login)
 	(Login) --> (Interfaz Administrador):direcciona
+	(Inventario) <- (Interfaz Administrador):agregar\neliminar\nmodificar
+	(Inventario) --> (Insumo)
 	
-	(Inventario) <- (Interfaz Administrador):modificar
-	(Inventario) --> (Insumos):Administrar
-	
-	(Interfaz Administrador) --> (Servicios):modificar
+	(Interfaz Administrador) --> (Servicios):agregar\neliminar\nmodificar
 	(Servicios) --> (Salud dental)
 	(Servicios) --> (Estetica dental)
 	(Servicios) --> (Especialidad)
 	
-	(Interfaz Administrador) -> (Usuarios):modificar
+	(Interfaz Administrador) -> (Usuarios):agregar\neliminar\nmodificar
 	(Usuarios) --> (Alumno)
 	(Usuarios) --> (Paciente)
 	(Usuarios) --> (Secretaria)
