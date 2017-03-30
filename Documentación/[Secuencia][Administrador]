@@ -374,10 +374,10 @@
 	B5-->B1:volver	
 	deactivate B5
 	
+	B1-->Interfaz:volver
 	deactivate B1
-	B1-->Interfaz:volver		
 	
-		Interfaz -> C1 :Seleccionar
+	Interfaz -> C1 :Seleccionar
 	
 	activate C1 #lightgreen
 	C1 -> C2:-Agregar\n-Eliminar\n-Modificar	
