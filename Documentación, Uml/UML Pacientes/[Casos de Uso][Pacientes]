@@ -1,0 +1,23 @@
+@startuml
+title Casos de Uso: Paciente
+
+actor "Usuario Regristrado" as user #lightgreen
+
+/'actor "Usuario Nuevo" as newUser #pink
+(Registrar) <- newUser 
+user <- (Registrar)'/
+
+user -> (Login)
+(Login) -> (Interfaz Paciente)
+
+(Interfaz Paciente) --> (Toma de Hora)
+(Toma de Hora) --> (Entregar Boleta)
+
+(Interfaz Paciente) --> (Lista de Diagnosticos)
+(Lista de Diagnosticos) --> (Entregar Diagnostico)
+
+
+(Interfaz Paciente) --> (Calendario)
+(Calendario) -->(Ver Hora\n Consulta medica)
+
+@enduml
