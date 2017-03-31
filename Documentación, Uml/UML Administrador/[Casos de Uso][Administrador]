@@ -1,0 +1,22 @@
+@startuml
+	title Casos de Uso: Administrador
+	
+	actor "Administrador" as user #lightgreen
+	
+	user -> (Login)
+	(Login) --> (Interfaz Administrador):direcciona
+	(Inventario) <- (Interfaz Administrador):agregar\neliminar\nmodificar
+	(Inventario) --> (Insumo)
+	
+	(Interfaz Administrador) --> (Servicios):agregar\neliminar\nmodificar
+	(Servicios) --> (Salud dental)
+	(Servicios) --> (Estetica dental)
+	(Servicios) --> (Especialidad)
+	
+	(Interfaz Administrador) -> (Usuarios):agregar\neliminar\nmodificar
+	(Usuarios) --> (Alumno)
+	(Usuarios) --> (Paciente)
+	(Usuarios) --> (Secretaria)
+	(Usuarios) -> (Tesorero)
+
+@enduml
