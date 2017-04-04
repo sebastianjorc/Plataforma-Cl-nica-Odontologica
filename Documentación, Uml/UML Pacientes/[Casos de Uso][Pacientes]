@@ -1,11 +1,7 @@
 @startuml
 title Casos de Uso: Paciente
 
-actor "Usuario Regristrado" as user #lightgreen
-
-/'actor "Usuario Nuevo" as newUser #pink
-(Registrar) <- newUser 
-user <- (Registrar)'/
+actor "Paciente" as user #lightgreen
 
 user -> (Login)
 (Login) -> (Interfaz Paciente)

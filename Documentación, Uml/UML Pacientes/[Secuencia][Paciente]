@@ -15,12 +15,12 @@
 	title Diagrama de Secuencia: Paciente __TOMA DE HORA__\n
 	
 	legend 
-	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interaccion usuario-interfaz</b> </size>
 	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
 	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
 	endlegend
 	
-	actor "Usuario Registrado" as user #lightgreen
+	actor "Paciente" as user #lightgreen
 	box "Login" #lightblue
 	participant Login
 	database Usuarios #yellow
@@ -29,7 +29,7 @@
 	box "Interfaz"
 	participant "Interfaz Paciente"
 	participant "Toma de hora"
-	database Calendarización  #yellow
+	database Calendarizacion  #yellow
 	Participant Boleta
 	endbox
 	
@@ -46,9 +46,9 @@
 	"Interfaz Paciente" -> "Toma de hora" :Selecciona
 	
 	activate "Toma de hora" #lightgreen
-	"Toma de hora" -> Calendarización :Guarda
-	activate Calendarización #yellow
-	deactivate Calendarización
+	"Toma de hora" -> Calendarizacion :Guarda
+	activate Calendarizacion #yellow
+	deactivate Calendarizacion
 	activate Boleta #white
 	"Toma de hora" -> Boleta :Crea
 	deactivate "Toma de hora"
@@ -69,12 +69,12 @@
 	title Diagrama de Secuencia: Paciente __Calendario__
 	
 	legend 
-	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interaccion usuario-interfaz</b> </size>
 	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
 	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
 	endlegend
 	
-	actor "Usuario Registrado" as user #lightgreen
+	actor "Paciente" as user #lightgreen
 	box "Login" #lightblue
 	participant Login
 	database Usuarios #yellow
@@ -83,7 +83,7 @@
 	box "Interfaz"
 	participant "Interfaz Paciente"
 	participant Calendario
-	database Calendarización  #yellow
+	database Calendarizacion  #yellow
 	participant "Consulta medica"
 	endbox
 	
@@ -99,10 +99,10 @@
 	activate "Interfaz Paciente" #lightgreen
 	"Interfaz Paciente" -> Calendario :Selecciona
 	activate Calendario #lightgreen
-	Calendario -> Calendarización :Pedir 
-	activate Calendarización #yellow
-	Calendarización --> Calendario :Entregar
-	deactivate Calendarización
+	Calendario -> Calendarizacion :Pedir 
+	activate Calendarizacion #yellow
+	Calendarizacion --> Calendario :Entregar
+	deactivate Calendarizacion
 	Calendario -> "Consulta medica" :Ver
 	activate "Consulta medica" #White
 	"Consulta medica" --> Calendario :Volver
@@ -123,12 +123,12 @@
 	title Diagrama de Secuencia: Paciente __DIAGNOSTICO__
 	
 	legend 
-	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:20><b>Desarollo en verde <color:lightgreen>   █</color>: Interaccion usuario-interfaz</b> </size>
 	<size:20><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
 	<size:20><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
 	endlegend
 	
-	actor "Usuario Registrado" as user #lightgreen
+	actor "Paciente" as user #lightgreen
 	box "Login" #lightblue
 	participant Login
 	database Usuarios #yellow
@@ -178,12 +178,12 @@
 	title Diagrama de Secuencia: Paciente __GENERAL__
 		
 	legend 
-	<size:26><b>Desarollo en verde <color:lightgreen>   █</color>: Interacción usuario-interfaz</b> </size>
+	<size:26><b>Desarollo en verde <color:lightgreen>   █</color>: Interaccion usuario-interfaz</b> </size>
 	<size:26><b>Desarollo en amarillo <color:yellow>█</color>: procesamiento de datos</b> </size>
 	<size:26><b>Desarollo en blanco <color:white>  █</color>: entrega de datos</b> </size>	
 	endlegend
 	
-	actor "Usuario Registrado" as user #lightgreen
+	actor "Paciente" as user #lightgreen
 	
 	box "Login" #lightblue
 	database Usuarios #yellow
@@ -194,7 +194,7 @@
 	box "Interfaz"
 	participant "Interfaz Paciente"
 	participant "Toma de hora"
-	database Calendarización  #yellow
+	database Calendarizacion  #yellow
 	Participant Boleta
 	
 	participant "Ficha medica"
@@ -218,9 +218,9 @@
 	"Interfaz Paciente" -> "Toma de hora" :Selecciona
 	
 	activate "Toma de hora" #lightgreen
-	"Toma de hora" -> Calendarización :Guarda
-	activate Calendarización #yellow
-	deactivate Calendarización
+	"Toma de hora" -> Calendarizacion :Guarda
+	activate Calendarizacion #yellow
+	deactivate Calendarizacion
 	activate Boleta #white
 	"Toma de hora" -> Boleta :Crea
 	deactivate "Toma de hora"
@@ -243,10 +243,10 @@
 	
 	"Interfaz Paciente" -> Calendario :Selecciona
 	activate Calendario #lightgreen
-	Calendario -> Calendarización :Pedir 
-	activate Calendarización #yellow
-	Calendarización --> Calendario :Entregar
-	deactivate Calendarización
+	Calendario -> Calendarizacion :Pedir 
+	activate Calendarizacion #yellow
+	Calendarizacion --> Calendario :Entregar
+	deactivate Calendarizacion
 	Calendario -> "Consulta medica" :Ver
 	activate "Consulta medica" #White
 	"Consulta medica" --> Calendario :Volver
@@ -264,9 +264,9 @@
 @enduml
 
 Problematicas
-1. ¿El calendario y la lista de evaluaciones se mostrarán de forma dinámica en la interfaz, o será mediante pestañas?
-Sol: Por pestañas
-2. ¿La entrega de información vía plataforma (Fechas, evaluaciones, boleta), se dará como archivo descargable/generado ó solo se mostrará en pantalla?
-Sol: Por pantalla e impresión directa
-3. Respecto a la creación de usuarios 'Pacientes', ¿quién podrá crearlo? Digo, si alguien quisiera atenderse por primera vez, podría o no registrarse inmediatamente en la plataforma, o debería primero ir a la secretaria para que le abriera una cuenta?
+1. Â¿El calendario y la lista de evaluaciones se mostrarÃ¡n de forma dinÃ¡mica en la interfaz, o serÃ¡ mediante pestaÃ±as?
+Sol: Por pestaÃ±as
+2. Â¿La entrega de informaciÃ³n vÃ­a plataforma (Fechas, evaluaciones, boleta), se darÃ¡ como archivo descargable/generado Ã³ solo se mostrarÃ¡ en pantalla?
+Sol: Por pantalla e impresiÃ³n directa
+3. Respecto a la creaciÃ³n de usuarios 'Pacientes', Â¿quiÃ©n podrÃ¡ crearlo? Digo, si alguien quisiera atenderse por primera vez, podrÃ­a o no registrarse inmediatamente en la plataforma, o deberÃ­a primero ir a la secretaria para que le abriera una cuenta?
 Sol: Solo usuarios registrados, solo ADM puede agregar/eliminar

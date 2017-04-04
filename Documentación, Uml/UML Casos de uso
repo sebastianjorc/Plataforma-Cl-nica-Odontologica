@@ -1,0 +1,142 @@
+@startuml
+	
+	/'USUARIOS'/
+	actor "Administrador" 		 as Adm	#lightblue
+	actor "Tesorero" 	  		 as T	#orange
+	actor "Secretaria" 	  		 as S	#pink
+	actor "Paciente" 	  		 as P	#yellow	
+	actor "Alumno/\nProfesional" as A	#lightgreen
+	actor "Cobrador\n/Cajero" 	 as C	#white
+	
+	/'INTERFACES'/
+	(Login)
+	(Interfaz\nAdministrador) as iAdm #lightblue
+	(Interfaz\nTesorero)	  as iT	  #orange
+	(Interfaz\nSecretaria)	  as iS	  #pink
+	(Interfaz\nPaciente)	  as iP	  #yellow
+	(Interfaz\nAlumno)		  as iA	  #lightgreen
+	(Interfaz\nCobranza)	  as iC	  #lightred
+	
+	
+	/'ADM			COLOR: CELESTE'/
+	(Inventario) #lightblue
+	(Insumo)	 #lightblue
+	
+	(Lista\nServicios) 	as lSv	#lightblue
+	(Servicio)			as Sv	#lightblue
+	/'	SALUD - ESTETICA - ESPECIALIDAD	'/
+	
+	(Lista\nUsuarios)  				as lU	#lightblue
+	(Lista\nCrobranzas)				as lC	#lightblue
+	(Lista\nSecretarias)			as lS	#lightblue
+	(Lista\nTesoreros)				as lT	#lightblue
+	(Lista\nPacientes)				as lP
+	(Lista\nAlumnos/Profecionales)	as lA
+	
+	(Cobranza)				as dC	#lightblue
+	(Secretaria)			as dS	#lightblue
+	(Tesorero) 				as dT	#lightblue
+	(Paciente)				as dP
+	(Alumno/\nProfecional)  as dA
+	
+	/'	TESORERO, SECERTARIA, PACIENTE, ALUMNO	'/
+	
+	
+		
+	/'SECRETARIA	COLOR: ROSADO'/
+	(Calendarios)					as Cals	#pink
+	(Lista\nPacientes)  			as lP
+	(Paciente)						as dP
+	(Confirmar\nHora) 				as cH 	#pink
+	(Lista Alumnos/\nProfecionales) as lA
+	(Alumno/\nProfecional)			as dA
+	(Toma de\nHora)					as tH
+	(Entregar\nVale) 				as eV 	#pink
+	
+	/'PACIENTE		COLOR: AMARILLO'/
+	(Ficha)						as lD
+	(Ver\nDiagnostico)			as dD
+	(Toma de\nHora)				as tH
+	(Entregar\nBoleta)			as eB	#yellow
+	(Calendario)				as Cal
+	(Ver hora\nconsulta medica)	as vH
+	
+	/'TESORERO		COLOR: NARANJO'/
+	(Gestionar)	as dG	#orange
+	(Ingresos)	as dI	#orange
+	(Egresos)	as dE	#orange
+	(Fondo)		as dF	#orange
+	
+	
+	/'ALUMNO		COLOR: VERDE'/
+	
+	/'COBRANZA		COLOR: BLANCO'/
+	
+	
+	Adm --> Login
+	A --> Login
+	P --> Login
+	S --> Login
+	C --> Login
+	T --> Login
+	
+	Login --> iAdm
+	Login --> iA	
+	Login --> iS
+	Login --> iP	
+	Login --> iC		
+	Login --> iT
+	
+	
+	/'LVL 1'/
+	iAdm --> Inventario
+	iAdm --> lSv
+	iAdm --> lU
+	
+	iS	--> Cals
+	iS 	--> tH
+	
+	iP 	--> tH
+	iP	--> lD
+	iP	--> Cal
+	
+	iT	--> dG
+	
+	
+	/'LVL 2'/
+	Inventario 	-->  Insumo
+	lSv 		-->	 Sv
+	
+	lU			--> lP
+	lU			--> lC
+	lU			--> lA
+	lU			--> lT
+	lU			--> lS
+	
+	Cals		--> lP
+	Cals		--> lA
+	
+	tH 			--> eV
+	tH 			--> eB
+	
+	lD			-->	dD
+	
+	dG			--> dF
+	dG			--> dI
+	dG			--> dE
+	
+	/'LVL 3'/
+	Cal	--> vH	
+	
+	lP			--> dP
+	lC			--> dC
+	lA			--> dA
+	lT			--> dT
+	lS			--> dS
+	
+	/'LVL 4'/
+	dP --> cH
+	
+	
+	
+@enduml

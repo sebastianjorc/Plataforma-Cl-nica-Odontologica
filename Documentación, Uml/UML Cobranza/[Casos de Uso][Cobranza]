@@ -1,0 +1,26 @@
+@startuml
+
+	title Casos de Uso: Cobranza
+	
+	actor "Cobranza\n/Cajero" as C #lightgreen
+	(Interfaz\nCobranza) as iC
+	C -> (Login)
+	Login --> iC
+	(Venta) <- iC
+	Venta --> (Recibir\nvale)
+	(Recibir\nvale) --> (Metodos\nde pago)
+	(Metodos\nde pago) --> (Aplicar\nDcto)
+	(Aplicar\nDcto) --> (Pago\ntotal)
+	(Aplicar\nDcto) --> (Abonar)
+	(Abonar) --(Subir\nPaga)
+	(Abonar) --(Subir\nDeuda)
+	(Pago\ntotal) --> (Subir\nPaga)
+	(Subir\nDeuda)--> (Entregar\nboleta)
+	(Subir\nPaga) --> (Entregar\nboleta)
+	
+	iC -> (Pago\nDeudas)
+	(Pago\nDeudas)	--> (Id\nPaciente)
+	(Id\nPaciente)	--> (Mostrar\nDeudas)
+	(Mostrar\nDeudas) -->(Metodos\nde pago)
+
+@enduml
