@@ -1,0 +1,26 @@
+@startuml
+	Title: __Modelo Base de Datos__
+	(Usuario)
+	(Usuario)	--> (Tesorero)		: 1 .. ∞
+	(Usuario)	--> (Secretaria)	: 1 .. ∞
+	(Usuario)	--> (Recaudador)	: 1 .. ∞
+	(Usuario)	--> (Paciente)		: 1 .. ∞
+	(Usuario)	--> (Alumno)		: 1 .. ∞
+	(Usuario)	--> (Administrador)	: 1 .. ∞
+	
+	(Paciente)	--> (Calendario)		: 1 .. 1
+	(Paciente)	--> (Ficha)				: 1 .. 1
+	(Paciente)	--> (Estado financiero)	: 1 .. 1
+	
+	(Alumno)	--> (Calendario)			: 1 .. 1
+	(Alumno)	--> (Historial de servicios): 1 .. 1
+	(Alumno)	--> (Alumno_has_servicio)	: 1 .. ∞
+	(Alumno_has_servicio)--> (Servicio)		: ∞ .. 1
+	
+	(Estado financiero)	--> (Deuda)	: 1 .. ∞
+	(Estado financiero)	--> (Pagos)	: 1 .. ∞
+	
+	(Insumo)
+	(Finanza)
+	
+@enduml
