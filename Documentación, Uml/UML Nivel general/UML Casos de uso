@@ -15,7 +15,7 @@
 	(Interfaz\nSecretaria)	  as iS	  #pink
 	(Interfaz\nPaciente)	  as iP	  #yellow
 	(Interfaz\nAlumno)		  as iA	  #lightgreen
-	(Interfaz\nCobranza)	  as iC	  #lightred
+	(Interfaz\nCobranza)	  as iC	  #white
 	
 	
 	/'ADM			COLOR: CELESTE'/
@@ -23,7 +23,7 @@
 	(Insumo)	 #lightblue
 	
 	(Lista\nServicios) 	as lSv	#lightblue
-	(Servicio)			as Sv	#lightblue
+	(Servicio)			as Sv
 	/'	SALUD - ESTETICA - ESPECIALIDAD	'/
 	
 	(Lista\nUsuarios)  				as lU	#lightblue
@@ -51,13 +51,13 @@
 	(Lista Alumnos/\nProfecionales) as lA
 	(Alumno/\nProfecional)			as dA
 	(Toma de\nHora)					as tH
-	(Entregar\nVale) 				as eV 	#pink
+	(Entregar\nVale) 				as eV 
 	
 	/'PACIENTE		COLOR: AMARILLO'/
 	(Ficha)						as lD
 	(Ver\nDiagnostico)			as dD
 	(Toma de\nHora)				as tH
-	(Entregar\nBoleta)			as eB	#yellow
+	(Entregar\nBoleta)			as eB	
 	(Calendario)				as Cal
 	(Ver hora\nconsulta medica)	as vH
 	
@@ -69,8 +69,51 @@
 	
 	
 	/'ALUMNO		COLOR: VERDE'/
+	(Ficha)					 as lD	
+	(Ver\nDiagnostico)		 as dD
+	(Informaciones)			 as inf	#lightgreen
+	(Calendario)			 as Cal
+	(Historial\nde servicios)as hS	#lightgreen
+	(Servicios\nPrestados)	 as sPr	#lightgreen
+	(Servicio)				 as Sv
 	
 	/'COBRANZA		COLOR: BLANCO'/
+	(Pago)				as dPa	
+	(Pago de\ndeudas)	as pD	
+	(Pago\ntotal)		as pT	
+	(Recibir\nvale)		as rV	
+	(Metodos\nde pago)	as mP	
+	(Abonar)			as dAb	
+	(Dcto)						
+	(Subir\nPaga)		as sP	
+	(Subir\nDeuda)		as sD	
+	(Lista de\nDeudas)	as lDe	
+	(Deuda)				as dDe	
+	(Id\nPaciente)		as idP	
+	
+	
+		
+	dPa --> rV
+	rV --> mP
+	mP --> Dcto
+	
+	Dcto --> pT
+	Dcto --> dAb
+	dAb --> sD
+	dAb --> sP
+	pT --> sP
+	sD--> eB
+	sP --> eB
+	
+	iC --> dPa
+	dPa	--> pD
+	pD --> idP
+	idP	--> lDe
+	lDe --> dDe
+	dDe -->mP
+	dPa --> mP
+	
+	
 	
 	
 	Adm --> Login
@@ -102,6 +145,11 @@
 	
 	iT	--> dG
 	
+	iA --> lD
+	iA --> inf
+	iA --> Cal
+	iA --> hS
+	
 	
 	/'LVL 2'/
 	Inventario 	-->  Insumo
@@ -117,13 +165,16 @@
 	Cals		--> lA
 	
 	tH 			--> eV
-	tH 			--> eB
+	tH 			--> dPa
 	
 	lD			-->	dD
 	
 	dG			--> dF
 	dG			--> dI
 	dG			--> dE
+	
+	hS 			--> sPr
+	sPr			--> Sv
 	
 	/'LVL 3'/
 	Cal	--> vH	
