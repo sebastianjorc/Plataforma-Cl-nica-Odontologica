@@ -1,4 +1,14 @@
 @startuml
+	title: Diagrama Casos de Uso: __GENERAL__
+
+	legend 
+		<size:26><b>En color verde <color:lightgreen>     █</color>: Uso exclusivo Alumno</b> </size>
+		<size:26><b>En color amarillo <color:yellow>█</color>:  Uso exclusivo Paciente</b> </size>
+		<size:26><b>En color blanco <color:white>   █</color>:  Uso exclusivo Cobranza</b> </size>
+		<size:26><b>En color Celeste <color:lightblue>  █</color>:  Uso exclusivo Administrador</b> </size>
+		<size:26><b>En color Rosado <color:pink>  █</color>:  Uso exclusivo Secretaria</b> </size>
+		<size:26><b>En color Naranja <color:orange>  █</color>:  Uso exclusivo Tesorero</b> </size>	
+	endlegend
 	
 	/'USUARIOS'/
 	actor "Administrador" 		 as Adm	#lightblue
