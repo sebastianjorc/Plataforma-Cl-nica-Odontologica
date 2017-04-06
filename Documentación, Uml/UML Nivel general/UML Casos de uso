@@ -7,25 +7,28 @@
 		<size:26><b>En color blanco <color:white>   █</color>:  Uso exclusivo Cobranza</b> </size>
 		<size:26><b>En color Celeste <color:lightblue>  █</color>:  Uso exclusivo Administrador</b> </size>
 		<size:26><b>En color Rosado <color:pink>  █</color>:  Uso exclusivo Secretaria</b> </size>
-		<size:26><b>En color Naranja <color:orange>  █</color>:  Uso exclusivo Tesorero</b> </size>	
+		<size:26><b>En color Naranja <color:orange>  █</color>:  Uso exclusivo Administrador\n de Finanzas</b> </size>
+		<size:26><b>En color Violeta <color:violet>  █</color>:  Uso exclusivo Tutor</b> </size>	
 	endlegend
 	
 	/'USUARIOS'/
 	actor "Administrador" 		 as Adm	#lightblue
-	actor "Tesorero" 	  		 as T	#orange
+	actor "Administrador\n de Finanzas" as T	#orange
 	actor "Secretaria" 	  		 as S	#pink
 	actor "Paciente" 	  		 as P	#yellow	
 	actor "Alumno/\nProfesional" as A	#lightgreen
-	actor "Cobrador\n/Cajero" 	 as C	#white
+	actor "Recaudador" 	 		 as C	#white
+	actor "Tutor"				 as Tt   #violet 
 	
 	/'INTERFACES'/
 	(Login)
 	(Interfaz\nAdministrador) as iAdm #lightblue
-	(Interfaz\nTesorero)	  as iT	  #orange
+	(Interfaz\n Finanzas)	  as iT	  #orange
 	(Interfaz\nSecretaria)	  as iS	  #pink
 	(Interfaz\nPaciente)	  as iP	  #yellow
 	(Interfaz\nAlumno)		  as iA	  #lightgreen
-	(Interfaz\nCobranza)	  as iC	  #white
+	(Interfaz\nRecaudador)	  as iC	  #white
+	(Interfaz\nTutor)	  	  as iTt  #violet
 	
 	
 	/'ADM			COLOR: CELESTE'/
@@ -37,19 +40,21 @@
 	/'	SALUD - ESTETICA - ESPECIALIDAD	'/
 	
 	(Lista\nUsuarios)  				as lU	#lightblue
+	(Lista\nTutores)  				as lTt	#lightblue
 	(Lista\nCrobranzas)				as lC	#lightblue
 	(Lista\nSecretarias)			as lS	#lightblue
-	(Lista\nTesoreros)				as lT	#lightblue
+	(Lista\nAdministrador\n de Finanzass)as lT	#lightblue
 	(Lista\nPacientes)				as lP
 	(Lista\nAlumnos/Profecionales)	as lA
 	
+	(Tutor)					as dTt	#lightblue
 	(Cobranza)				as dC	#lightblue
 	(Secretaria)			as dS	#lightblue
-	(Tesorero) 				as dT	#lightblue
+	(Administrador\n de Finanzas) as dT	#lightblue
 	(Paciente)				as dP
-	(Alumno/\nProfecional)  as dA
+	(Alumno)  as dA
 	
-	/'	TESORERO, SECERTARIA, PACIENTE, ALUMNO	'/
+	/'	Administrador\n de Finanzas, SECERTARIA, PACIENTE, ALUMNO	'/
 	
 	
 		
@@ -58,8 +63,8 @@
 	(Lista\nPacientes)  			as lP
 	(Paciente)						as dP
 	(Confirmar\nHora) 				as cH 	#pink
-	(Lista Alumnos/\nProfecionales) as lA
-	(Alumno/\nProfecional)			as dA
+	(Lista\nAlumnos) as lA
+	(Alumno)			as dA
 	(Toma de\nHora)					as tH
 	(Entregar\nVale) 				as eV 
 	
@@ -71,7 +76,7 @@
 	(Calendario)				as Cal
 	(Ver hora\nconsulta medica)	as vH
 	
-	/'TESORERO		COLOR: NARANJO'/
+	/'Administrador\n de Finanzas		COLOR: NARANJO'/
 	(Gestionar)	as dG	#orange
 	(Ingresos)	as dI	#orange
 	(Egresos)	as dE	#orange
@@ -101,6 +106,9 @@
 	(Deuda)				as dDe	
 	(Id\nPaciente)		as idP	
 	
+	/'TUTOR'/
+	(Lista de\nAlumnos\nDel Nivel)	as lAn #violet
+	(Historial de servicios\nAlumno)as hsA
 	
 		
 	dPa --> rV
@@ -132,6 +140,7 @@
 	S --> Login
 	C --> Login
 	T --> Login
+	Tt--> Login
 	
 	Login --> iAdm
 	Login --> iA	
@@ -139,6 +148,7 @@
 	Login --> iP	
 	Login --> iC		
 	Login --> iT
+	Login --> iTt
 	
 	
 	/'LVL 1'/
@@ -160,6 +170,7 @@
 	iA --> Cal
 	iA --> hS
 	
+	iTt-->lAn
 	
 	/'LVL 2'/
 	Inventario 	-->  Insumo
@@ -169,7 +180,8 @@
 	lU			--> lC
 	lU			--> lA
 	lU			--> lT
-	lU			--> lS
+	lU			--> lS	
+	lU			--> lTt
 	
 	Cals		--> lP
 	Cals		--> lA
@@ -186,6 +198,8 @@
 	hS 			--> sPr
 	sPr			--> Sv
 	
+	lAn			--> dA
+	
 	/'LVL 3'/
 	Cal	--> vH	
 	
@@ -194,6 +208,9 @@
 	lA			--> dA
 	lT			--> dT
 	lS			--> dS
+	lTt			--> dTt
+	
+	dA			--> hsA
 	
 	/'LVL 4'/
 	dP --> cH

@@ -1,0 +1,20 @@
+@startuml
+	Title: Casos de uso __Tutor__
+
+	actor Tutor #lightgreen
+	(Login)
+	(Interfaz\ntutor) as iTt
+	(Lista de\nAlumnos) as lA
+	(Historial de Servicios\nAlumno) as fA
+	 Tutor -> Login
+	 Login --> iTt
+	 iTt --> lA
+	 lA --> (Alumno)
+	 (Alumno) --> (fA)
+	 /'	(Informaciones\nTutor) as infT
+	iT --> infT'/
+	
+@enduml
+
+¿Quién asigna los servicios?
+Servicios acorde a: Alumno del nivel, y con bloque libre.
