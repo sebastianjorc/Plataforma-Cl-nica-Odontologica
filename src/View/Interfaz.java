@@ -1,41 +1,40 @@
 package View;
 
-import java.awt.Color;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
-public class Interfaz extends JFrame {
+public class Interfaz extends JFrame implements Colores{
 	private static final long serialVersionUID = 1L;
-	Color navyblue	= Color.decode("#0C3062");
-	Color rojo		= Color.decode("#DA233F");
-	Color celeste	= Color.decode("#84A1C6");
-	Color gris		= Color.decode("#EAECEF");
-	Color blanco	= Color.decode("#FBFCFE");
-
-	ImageIcon ulsback=new ImageIcon(getClass().getResource("logo_xl.png"));
-
-	protected JPanel PanelContenedor;
+	protected PanelFondo PanelContenedor;
 	
-	public Interfaz(){
-		
+	public Interfaz(){		
 		setResizable(false);
 		setBackground(blanco);
 		setTitle("Odontolog\u00EDa ULS");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(270, 76, 940, 600);
-		PanelContenedor = new JPanel();
+		PanelContenedor = new PanelFondo();
 		PanelContenedor.setBackground(blanco);
 		setContentPane(PanelContenedor);
 		
-		JLabel lu = new JLabel ("Interfaz usuacio: ");
+		LabelBase lu = new LabelBase ("Interfaz usuario: ");
 		PanelContenedor.add(lu);
-
-		JLabel l = new JLabel();
-		l.setIcon(ulsback);
-		PanelContenedor.add(l);
+		PanelContenedor.setBackground();			
 	}
+	public Interfaz(String title){		
+		setResizable(false);
+		setBackground(blanco);
+		setTitle("Odontolog\u00EDa ULS");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(270, 76, 940, 600);
+		PanelContenedor = new PanelFondo();
+		PanelContenedor.setBackground(blanco);
+		setContentPane(PanelContenedor);
+		
+		LabelBase lu = new LabelBase ("Interfaz usuacio: "+title);
+		PanelContenedor.add(lu);
+		PanelContenedor.setBackground();			
+	}
+	
 
 }

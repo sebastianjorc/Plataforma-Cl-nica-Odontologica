@@ -8,10 +8,10 @@ import View.Login;
 public class controller {
 	public static void main(String[] args) {
 	
-		JFrame login = new Login(); //Frame principal
-		JFrame intf = new Interfaz(); //Frame principal
+		JFrame login = new Login();
+		JFrame intf = new Interfaz();
 		intf.setVisible(true);
 		login.setVisible(true);
+		
 	}
 }
-

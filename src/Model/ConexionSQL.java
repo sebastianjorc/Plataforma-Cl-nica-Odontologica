@@ -29,11 +29,27 @@ public class ConexionSQL {
 		    }
 	}
 
-	public void imprimi_tabla(String Tabla){
+	public void imprimir_tabla(String Tabla){
 		ResultSet rs = null;	Statement s = null;
 		try {
 			s = con.createStatement();
 			rs = s.executeQuery ("select * from "+Tabla);
+			System.out.println("Imprimir Administradores\n");
+			while (rs.next()){
+				System.out.println("\nid:\t"+rs.getInt(1)+"\n"+"Nombre:\t"+rs.getString(2));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Error al imprimir administradores");
+			e.printStackTrace();
+		}
+	}
+	
+	public void consulta(String id, String pass){
+		ResultSet rs = null;	Statement s = null;
+		try {
+			s = con.createStatement();
+			rs = s.executeQuery ("select * from ");
 			System.out.println("Imprimir Administradores\n");
 			while (rs.next()){
 				System.out.println("\nid:\t"+rs.getInt(1)+"\n"+"Nombre:\t"+rs.getString(2));
