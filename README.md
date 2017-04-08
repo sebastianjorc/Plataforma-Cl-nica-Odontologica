@@ -4,6 +4,7 @@ Proyecto de trabajo grupal para la Asignatura de Diseño y Análisis de Algoritm
 Integrantes:
 
  Sebastián Rojas (Joshua) 
+ 
  Norton Irrarazabal (Dante) 
  
  :v
