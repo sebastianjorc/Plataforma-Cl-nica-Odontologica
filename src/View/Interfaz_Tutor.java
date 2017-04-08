@@ -1,5 +1,8 @@
 package View;
 
-public class Interfaz_Tutor extends Interfaz {
+import javax.swing.JFrame;
+
+@SuppressWarnings("serial")
+public class Interfaz_Tutor extends JFrame {
 
 }
