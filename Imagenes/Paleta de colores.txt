@@ -1,0 +1,7 @@
+Dirección paleta:	goo.gl/NZtdf4
+
+Rojo HEX: 			DA233F
+Azul oscuro:		0C3062
+Celeste:			84A1C6
+Gris				EAECEF
+blanco				FBFCFE
