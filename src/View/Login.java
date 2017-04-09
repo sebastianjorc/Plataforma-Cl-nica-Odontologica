@@ -78,7 +78,7 @@ public class Login extends Interfaz  {
 		LoginIzquierda.setBounds(0, 0, 306, 571);
 		PanelContenedor.add(LoginIzquierda);
 		
-		BotonIniciar.addActionListener(new ClickLogin(Usuario.getText(), Usuario_1.getText()));
+		BotonIniciar.addActionListener(new ClickLogin(Usuario, Usuario_1,BotonIniciar));
 	}
 
 	

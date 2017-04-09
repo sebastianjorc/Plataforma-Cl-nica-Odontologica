@@ -6,7 +6,7 @@ public class main {
 	public static void main(String[] args) {		
 		ConexionSQL con = new ConexionSQL();
 		con.connect();
-		con.imprimir_tabla("Alumno");
+		con.imprimir_tabla("Paciente");
 		
 		new controller();
 

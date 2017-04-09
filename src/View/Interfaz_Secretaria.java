@@ -1,10 +1,8 @@
 package View;
 
-import javax.swing.JFrame;
-
 @SuppressWarnings("serial")
-public class Interfaz_Secretaria extends JFrame {
-	Interfaz_Secretaria(){
+public class Interfaz_Secretaria extends Interfaz {
+	public Interfaz_Secretaria(){
 		super("Secretaria");
 		
 	}

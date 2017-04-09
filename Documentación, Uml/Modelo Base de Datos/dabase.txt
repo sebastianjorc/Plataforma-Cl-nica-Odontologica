@@ -7,3 +7,108 @@ Port number: 		3306
 numero de cuenta: 	208249
 
 Database alojada en: http://www.freesqldatabase.com/
+
+
+SQL. TABLAS:
+
+CREATE TABLE IF NOT EXISTS `Usuario` (
+  `id` INT(8) NOT NULL,
+  `pass` VARCHAR(8) NOT NULL,
+  `name` VARCHAR(30) NOT NULL,
+  `tipoUsuario` VARCHAR(15) NOT NULL,
+  PRIMARY KEY (`id`));
+  
+  CREATE TABLE IF NOT EXISTS `Tutor` (
+  `Usuario_id` INT NOT NULL,
+  `nivel` INT(2) NOT NULL,
+  PRIMARY KEY (`Usuario_id`),
+  CONSTRAINT `fk_Tutor_Usuario1`
+    FOREIGN KEY (`Usuario_id`)
+    REFERENCES `Usuario` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+    
+    CREATE TABLE IF NOT EXISTS `Administrador` (
+  `Usuario_id` INT NOT NULL,
+  PRIMARY KEY (`Usuario_id`),
+  CONSTRAINT `fk_Administrador_Usuario`
+    FOREIGN KEY (`Usuario_id`)
+    REFERENCES `Usuario` (`id`)
+    ON DELETE cascade
+    ON UPDATE cascade);
+    
+    CREATE TABLE IF NOT EXISTS `Practicante` (
+  `Usuario_id` INT(8) NOT NULL,
+  `nivel` INT(2) NOT NULL,
+  PRIMARY KEY (`Usuario_id`),
+  CONSTRAINT `fk_Practicante_Usuario1`
+    FOREIGN KEY (`Usuario_id`)
+    REFERENCES `Usuario` (`id`)
+    ON DELETE cascade
+    ON UPDATE cascade);
+    
+    CREATE TABLE IF NOT EXISTS `AdmFinanza` (
+  `Usuario_id` INT NOT NULL,
+  PRIMARY KEY (`Usuario_id`),
+  CONSTRAINT `fk_AdmFinanza_Usuario1`
+    FOREIGN KEY (`Usuario_id`)
+    REFERENCES `Usuario` (`id`)
+    ON DELETE cascade
+    ON UPDATE cascade);
+    
+    CREATE TABLE IF NOT EXISTS `Recaudador` (
+  `Usuario_id` INT NOT NULL,
+  PRIMARY KEY (`Usuario_id`),
+  CONSTRAINT `fk_Recaudador_Usuario1`
+    FOREIGN KEY (`Usuario_id`)
+    REFERENCES `Usuario` (`id`)
+    ON DELETE cascade
+    ON UPDATE cascade);
+    
+    CREATE TABLE IF NOT EXISTS `Secretaria` (
+  `Usuario_id` INT NOT NULL,
+  PRIMARY KEY (`Usuario_id`),
+  CONSTRAINT `fk_Secretaria_Usuario1`
+    FOREIGN KEY (`Usuario_id`)
+    REFERENCES `Usuario` (`id`)
+    ON DELETE cascade
+    ON UPDATE cascade);
+    
+    INSERT INTO User VALUE 
+    ('18655201','1','Sebastian Rojas', 'Administrador'),
+    ('0','1','Norton Irarrazabal', 'Administrador'),
+    
+    ('10','1','Practicante 1', 'Practicante'),
+    ('11','1','Practicante 2', 'Practicante'),
+    ('12','1','Practicante 3', 'Practicante'),
+    ('13','1','Practicante 4', 'Practicante'),
+    ('14','1','Practicante 5', 'Practicante'),
+    ('15','1','Practicante 6', 'Practicante'),
+        
+    ('20','1','Tutor 1', 'Tutor'),
+    ('21','1','Tutor 2', 'Tutor'),
+    ('22','1','Tutor 3', 'Tutor'),
+    ('23','1','Tutor 4', 'Tutor'),
+        
+    ('1','1','Paciente 1', 'Paciente'),
+    ('2','1','Paciente 2', 'Paciente'),
+    ('3','1','Paciente 3', 'Paciente'),
+    ('4','1','Paciente 4', 'Paciente'),
+    ('5','1','Paciente 5', 'Paciente'),
+    ('6','1','Paciente 6', 'Paciente'),
+    ('7','1','Paciente 7', 'Paciente'),
+    ('8','1','Paciente 8', 'Paciente'),
+    ('9','1','Paciente 9', 'Paciente'),
+    
+    ('30','1','Administrador Financiero', 'AdmFinanza'),
+    ('31','1','Secretaria', 'Secretaria'),
+    ('32','1','Recaudador', 'Recaudador');
+    
+    INSERT INTO Administrador VALUE('18655201'),('0');
+    INSERT INTO AdmFinanza VALUE('30');
+    INSERT INTO Secretaria VALUE('31');
+    INSERT INTO Recaudador VALUE('32');
+    INSERT INTO Paciente VALUE('1'),('2'),('3'),('4'),('5'),('6'),('7'),('8'),('9');
+    INSERT INTO Tutor VALUE('20','1'),('21','2'),('22','3'),('23','4');
+    INSERT INTO Practicante VALUE('10','1'),('11','2'),('12','3'),('13','4'),('14','3'),('15','4');
+    

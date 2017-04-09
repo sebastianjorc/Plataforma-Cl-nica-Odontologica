@@ -3,9 +3,9 @@ package View;
 import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
-public class Interfaz_Practicante extends JFrame {
+public class Interfaz_Practicante extends Interfaz {
 	
-	Interfaz_Practicante(){
+	public Interfaz_Practicante(){
 		super("Practicante");
 	}
 }

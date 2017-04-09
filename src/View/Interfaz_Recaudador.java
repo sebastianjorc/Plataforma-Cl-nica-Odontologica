@@ -1,10 +1,8 @@
 package View;
 
-import javax.swing.JFrame;
-
 @SuppressWarnings("serial")
-public class Interfaz_Recaudador extends JFrame {
-	Interfaz_Recaudador(){
+public class Interfaz_Recaudador extends Interfaz {
+	public Interfaz_Recaudador(){
 		super("Recaudador");
 	}
 
