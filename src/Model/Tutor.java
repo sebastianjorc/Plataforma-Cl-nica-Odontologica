@@ -2,8 +2,8 @@ package Model;
 
 public class Tutor extends User {
 
-	Tutor(int id, String name, String password) {
-		super(id, name, password);
+	public Tutor(int id, String pass, String name, String tipo) {
+		super(id, pass, name, tipo);
 		// TODO Auto-generated constructor stub
 	}
 

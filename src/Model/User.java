@@ -3,23 +3,24 @@ package Model;
 public class User {
 	private int		id;
 	private	String	name;
-	private String	password;
+	private String	pass;
 	private String	tipoUsuario;
 	
-	public User (int id, String name, String password){
+	public User (int id, String pass, String name, String tipo){
 		this.id=id;
+		this.pass=pass;
 		this.name=name;
-		this.password=password;
+		this.tipoUsuario=tipo;
 	}
 	
 
 	/*GETTERS Y SETTERS*/
 	public String getPassword() {
-		return password;
+		return pass;
 	}
 	
 	public void setPassword(String password) {
-		this.password = password;
+		this.pass = password;
 	}
 	
 	public int getId() {

@@ -2,8 +2,8 @@ package Model;
 
 public class Secretaria extends User {
 
-	Secretaria(int id, String name, String password) {
-		super(id, name, password);
+	public Secretaria(int id, String pass, String name, String tipo) {
+		super(id, pass, name, tipo);
 		// TODO Auto-generated constructor stub
 	}
 

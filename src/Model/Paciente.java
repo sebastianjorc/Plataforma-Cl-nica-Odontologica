@@ -2,8 +2,8 @@ package Model;
 
 public class Paciente extends User {
 
-	Paciente(int id, String name, String password) {
-		super(id, name, password);
+	public Paciente(int id, String pass, String name, String tipo) {
+		super(id, pass, name, tipo);
 		// TODO Auto-generated constructor stub
 	}
 

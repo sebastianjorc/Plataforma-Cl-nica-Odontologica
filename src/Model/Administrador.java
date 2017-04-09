@@ -2,8 +2,8 @@ package Model;
 
 public class Administrador extends User {
 
-	Administrador(int id, String name, String password) {
-		super(id, name, password);
+	public Administrador(int id, String pass, String name, String tipo) {
+		super(id, pass, name, tipo);
 	}	
 
 }

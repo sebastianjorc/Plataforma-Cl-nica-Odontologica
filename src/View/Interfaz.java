@@ -21,7 +21,8 @@ public class Interfaz extends JFrame implements Colores{
 		PanelContenedor.add(lu);
 		PanelContenedor.setBackground();			
 	}
-	public Interfaz(String title){		
+	
+	public Interfaz(String title, int id, String name){		
 		setResizable(false);
 		setBackground(blanco);
 		setTitle("Odontolog\u00EDa ULS");
@@ -31,9 +32,11 @@ public class Interfaz extends JFrame implements Colores{
 		PanelContenedor.setBackground(blanco);
 		setContentPane(PanelContenedor);
 		
-		LabelBase lu = new LabelBase ("Interfaz usuacio: "+title);
-		PanelContenedor.add(lu);
-		PanelContenedor.setBackground();			
+		PanelContenedor.add(new LabelBase ("\tInterfaz usuario: "+title));
+		PanelContenedor.add(new LabelBase ("\tId Usuario: "+id));
+		PanelContenedor.add(new LabelBase ("\tnombre Usuario: "+name));
+		
+		PanelContenedor.setBackground();
 	}
 	
 
