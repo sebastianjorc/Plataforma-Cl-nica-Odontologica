@@ -20,8 +20,8 @@ public class Login extends Interfaz  {
 	LabelBase LoginDerecha = new LabelBase();
 	LabelBase LoginIzquierda = new LabelBase();
 	
-	ImageIcon e=new ImageIcon(getClass().getResource("IniciarSesion.png"));
-	ImageIcon g=new ImageIcon(getClass().getResource("LogoUls.png"));
+	ImageIcon e=new ImageIcon(getClass().getResource("img/IniciarSesion.png"));
+	ImageIcon g=new ImageIcon(getClass().getResource("img/LogoUls.png"));
 	
 	BaseButton BotonIniciar = new BaseButton();
 	
@@ -29,7 +29,7 @@ public class Login extends Interfaz  {
 		
 		PanelContenedor.setBorder(new EmptyBorder(5, 5, 5, 5));		
 		PanelContenedor.setLayout(null);
-		PanelContenedor.setBackground("backgroundLogin.png");
+		PanelContenedor.setBackground("img/backgroundLogin.png");
 		
 		LogoUls.setBounds(82, 23, 138, 137);
 		ImageIcon h=new ImageIcon(g.getImage().getScaledInstance(LogoUls.getWidth(),LogoUls.getHeight(),Image.SCALE_DEFAULT));

@@ -12,13 +12,11 @@ public class PanelBase extends JPanel implements Colores {
 	private static final long serialVersionUID = 1L;
 	private Image background;
 	
-	PanelBase(){
-		super();
-		//this.setBackground(blanco);
-		this.setBorder(BorderFactory.createLineBorder(navyblue));
+	public PanelBase(){
+		this.setBackground(blanco);
 		this.setForeground(navyblue);
 		this.setOpaque(false);
-		this.background = new ImageIcon(getClass().getResource("transparent.png")).getImage();
+		this.background = new ImageIcon(getClass().getResource("img/transparent.png")).getImage();
 		repaint();
 	}
 	
@@ -31,9 +29,9 @@ public class PanelBase extends JPanel implements Colores {
 	}
 
 	public void paintComponent(Graphics g) {
-
 		int width = this.getSize().width;
 		int height = this.getSize().height;
+		System.out.println(width+"\t"+height);
 		g.drawImage(this.background, 0, 0, width, height, null);			
 		super.paintComponent(g);
 		
