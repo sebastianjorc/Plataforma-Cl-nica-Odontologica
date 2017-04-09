@@ -1,16 +1,3 @@
-phpmyadmin: 		http://www.phpmyadmin.co
-Host: 				sql10.freesqldatabase.com
-Database name: 		sql10168005
-Database user: 		sql10168005
-Database password: 	jzpLmgzlcn
-Port number: 		3306
-numero de cuenta: 	208249
-
-Database alojada en: http://www.freesqldatabase.com/
-
-
-SQL. TABLAS:
-
 CREATE TABLE IF NOT EXISTS `Usuario` (
   `id` INT(8) NOT NULL,
   `pass` VARCHAR(8) NOT NULL,
@@ -74,7 +61,16 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
     ON DELETE cascade
     ON UPDATE cascade);
     
-    INSERT INTO User VALUE 
+    CREATE TABLE IF NOT EXISTS `Paciente` (
+  `Usuario_id` INT NOT NULL,
+  PRIMARY KEY (`Usuario_id`),
+  CONSTRAINT `fk_Paciente_Usuario1`
+    FOREIGN KEY (`Usuario_id`)
+    REFERENCES `Usuario` (`id`)
+    ON DELETE cascade
+    ON UPDATE cascade);
+    
+    INSERT INTO Usuario VALUE 
     ('18655201','1','Sebastian Rojas', 'Administrador'),
     ('0','1','Norton Irarrazabal', 'Administrador'),
     

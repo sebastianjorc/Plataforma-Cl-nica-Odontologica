@@ -3,7 +3,6 @@ import java.sql.*;
 
 import javax.swing.JFrame;
 
-import View.Interfaz;
 import View.Interfaz_Administrador;
 import View.Interfaz_Paciente;
 import View.Interfaz_Practicante;
@@ -46,7 +45,8 @@ public class ConexionSQL {
 			rs = s.executeQuery ("select * from "+Tabla);
 			System.out.println("Imprimir "+Tabla+"\n");
 			while (rs.next()){
-				System.out.println("\nid:\t"+rs.getInt(1)+"\n"+"Tipo Usuario:\t"+rs.getString(3));
+				System.out.println("id:"+rs.getInt(1)+"-Pass:"+rs.getString(2)+
+						"-nombre:"+rs.getString(3)+"-tipo"+rs.getString(4));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

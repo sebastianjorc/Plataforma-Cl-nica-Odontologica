@@ -1,0 +1,24 @@
+id:0-Pass:1-nombre:Norton Irarrazabal-tipoAdministrador
+id:1-Pass:1-nombre:Paciente 1-tipoPaciente
+id:2-Pass:1-nombre:Paciente 2-tipoPaciente
+id:3-Pass:1-nombre:Paciente 3-tipoPaciente
+id:4-Pass:1-nombre:Paciente 4-tipoPaciente
+id:5-Pass:1-nombre:Paciente 5-tipoPaciente
+id:6-Pass:1-nombre:Paciente 6-tipoPaciente
+id:7-Pass:1-nombre:Paciente 7-tipoPaciente
+id:8-Pass:1-nombre:Paciente 8-tipoPaciente
+id:9-Pass:1-nombre:Paciente 9-tipoPaciente
+id:10-Pass:1-nombre:Practicante 1-tipoPracticante
+id:11-Pass:1-nombre:Practicante 2-tipoPracticante
+id:12-Pass:1-nombre:Practicante 3-tipoPracticante
+id:13-Pass:1-nombre:Practicante 4-tipoPracticante
+id:14-Pass:1-nombre:Practicante 5-tipoPracticante
+id:15-Pass:1-nombre:Practicante 6-tipoPracticante
+id:20-Pass:1-nombre:Tutor 1-tipoTutor
+id:21-Pass:1-nombre:Tutor 2-tipoTutor
+id:22-Pass:1-nombre:Tutor 3-tipoTutor
+id:23-Pass:1-nombre:Tutor 4-tipoTutor
+id:30-Pass:1-nombre:Administrador Financiero-tipoAdmFinanza
+id:31-Pass:1-nombre:Secretaria-tipoSecretaria
+id:32-Pass:1-nombre:Recaudador-tipoRecaudador
+id:18655201-Pass:1-nombre:Sebastian Rojas-tipoAdministrador
