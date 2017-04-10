@@ -10,4 +10,8 @@ public class BaseButton extends JButton implements Colores {
 		this.setForeground(navyblue);
 	}
 
+	public BaseButton(String string) {
+		super(string);
+	}
+
 }

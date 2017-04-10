@@ -3,7 +3,6 @@ package View;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -31,7 +30,6 @@ public class PanelBase extends JPanel implements Colores {
 	public void paintComponent(Graphics g) {
 		int width = this.getSize().width;
 		int height = this.getSize().height;
-		System.out.println(width+"\t"+height);
 		g.drawImage(this.background, 0, 0, width, height, null);			
 		super.paintComponent(g);
 		

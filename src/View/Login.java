@@ -3,6 +3,7 @@ package View;
 import java.awt.Font;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
@@ -79,6 +80,12 @@ public class Login extends Interfaz  {
 		PanelContenedor.add(LoginIzquierda);
 		
 		BotonIniciar.addActionListener(new ClickLogin(Usuario, Usuario_1,BotonIniciar,this));
+	}
+
+	@Override
+	public JTabbedPane Paneles() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
