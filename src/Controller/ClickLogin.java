@@ -8,6 +8,7 @@ import java.sql.Statement;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 
 import Model.Administrador;
 import Model.AdministradorFinanza;
@@ -29,18 +30,20 @@ import View.Interfaz_Tutor;
 import View.Login;
 
 public class ClickLogin implements ActionListener{
-	private BaseTextField id, pass;
+	private BaseTextField id;
+	JPasswordField pass;
 	ConexionSQL con;
 	BaseButton btn;
 	JFrame login;
 	
-	public ClickLogin(BaseTextField id, BaseTextField pass, BaseButton botonIniciar, Login login){
+	public ClickLogin(BaseTextField id, JPasswordField usuario_1, BaseButton botonIniciar, Login login){
 		this.id=id;
-		this.pass=pass;
+		this.pass=usuario_1;
 		btn = botonIniciar;
 		this.login=login;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		con = new ConexionSQL();

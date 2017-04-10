@@ -3,6 +3,7 @@ package View;
 import java.awt.Font;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -13,7 +14,7 @@ import Controller.ClickLogin;
 public class Login extends Interfaz  {
 	
 	private BaseTextField Usuario = new BaseTextField();
-	private BaseTextField Usuario_1 = new BaseTextField();
+	private JPasswordField Usuario_1 = new JPasswordField();
 	
 	LabelBase IniciarSesion = new LabelBase("Iniciar Sesi\u00F3n");
 	LabelBase RutUsuario = new LabelBase("Rut Usuario");
@@ -61,6 +62,7 @@ public class Login extends Interfaz  {
 		PanelContenedor.add(Usuario);
 		Usuario.setColumns(10);
 		
+		Usuario_1.setBackground(gris);
 		Usuario_1.setHorizontalAlignment(SwingConstants.CENTER);
 		Usuario_1.setColumns(10);
 		Usuario_1.setBounds(80, 324, 154, 20);
