@@ -49,7 +49,6 @@ public class ClickLogin implements ActionListener{
 		con = new ConexionSQL();
 		
 		consultaLogin(id.getText(), pass.getText());
-		btn.setSelected(false);
 		
 		//Cerrar login
 		//Abrir interfaz de usuario

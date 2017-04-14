@@ -1,9 +1,9 @@
 phpmyadmin: 		http://www.phpmyadmin.co
 Host: 				sql10.freesqldatabase.com
-Database name: 		sql10168005
-Database user: 		sql10168005
-Database password: 	jzpLmgzlcn
+Database name: 		sql10169087
+Database user: 		sql10169087
+Database password: 	4HByt1ECX7
 Port number: 		3306
-numero de cuenta: 	208249
+numero de cuenta: 	209439
 
 Database alojada en: http://www.freesqldatabase.com/

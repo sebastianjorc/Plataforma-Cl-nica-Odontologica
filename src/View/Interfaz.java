@@ -39,7 +39,7 @@ public abstract class Interfaz extends JFrame implements Colores{
 		this.setIconImage(Icono);
 		setResizable(false);
 		setBackground(blanco);
-		setTitle("Odontolog\u00EDa ULS");
+		setTitle("Odontolog\u00EDa ULS   ["+title+"] ["+name+"]");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(270, 76, 940, 600);
 		PanelContenedor = new PanelBase("img/logo_xl.png");
