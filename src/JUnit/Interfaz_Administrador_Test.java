@@ -1,11 +1,14 @@
 package JUnit;
 
+
 import org.junit.*;
 
+import Controller.look;
 import Model.User;
+import View.Colores;
 import View.Interfaz_Administrador;
 
-public class Interfaz_Administrador_Test {
+public class Interfaz_Administrador_Test implements Colores{
 	
 	Interfaz_Administrador iAdm;
 	User usr;
@@ -16,6 +19,7 @@ public class Interfaz_Administrador_Test {
 
 	@Before
 	public void before(){
+		new look();		
 		usr 	= new User(id,pass,name,tipoUsuario);
 		iAdm	= new Interfaz_Administrador(usr);
 	}

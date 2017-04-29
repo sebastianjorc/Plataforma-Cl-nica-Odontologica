@@ -23,23 +23,36 @@ public class Tab_Usuarios extends PanelBase{
 			"Recaudador", 
 			"Secretaria", 
 			"Tutor"	};
-	String [] ids = {"1","2","3"};
+	String [] ids = {null};
+	
+	JComboBox 	comboUsersM  = new JComboBox(ids),
+				comboUsersA  = new JComboBox(ids),
+				comboUsersE  = new JComboBox(ids),
+				comboTipesA  = new JComboBox(tiposUsuarios),
+				comboTipesM  = new JComboBox(tiposUsuarios),
+				comboTipesMN = new JComboBox(tiposUsuarios),
+				comboTipesE  = new JComboBox(tiposUsuarios);
+
+	JLabel		rTipo 	= new JLabel("Tipo actual"),
+				rId		= new JLabel("Id actual"),
+				rName  	= new JLabel("Name actual"),
+				rPass  	= new JLabel("Pass actual");
+	
+	JTextField  nId  	= new JTextField(),
+				nName  	= new JTextField(),
+				nPass  	= new JTextField();
+	
+	JButton		Modificar	= new JButton("Modificar"),
+				Agregar 	= new JButton("Agregar"),
+				Eliminar 	= new JButton("Eliminar");
 	
 	public Tab_Usuarios(){
 		super("../img/backgroundjtp.png");		
 		this.setLayout(new GridLayout(1,0));		
 		
-		this.add(getConIzq());	
+		this.add(getConIzq());
 		this.add(getpM());
 		
-	}
-
-	public Border getLinea() {
-		return linea;
-	}
-
-	public void setLinea(Border linea) {
-		this.linea = linea;
 	}
 
 	public PanelBase getConIzq() {		
@@ -50,7 +63,7 @@ public class Tab_Usuarios extends PanelBase{
 		return conIzq;
 	}
 
-	public PanelBase getpM() {	
+	public PanelBase getpM() {
 		pM = new PanelBase();
 		PanelBase pb = new PanelBase();
 		
@@ -59,24 +72,21 @@ public class Tab_Usuarios extends PanelBase{
 		pM.setLayout(g);
 
 		pM.add(new JLabel("Tipo de Usuario"));
-		pM.add(new JComboBox(tiposUsuarios));
+		pM.add(comboTipesM);
 		pM.add(new JLabel("Id Usuario"));
-		pM.add(new JComboBox(ids));
-		pM.add(new JLabel());
-		pM.add(new JLabel());
+		pM.add(comboUsersM);
+		pM.add(new JLabel(""));
+		pM.add(new JLabel(""));
 		
-		pM.add(new JLabel("Resultados"));
-		pM.add(new JLabel());
-		pM.add(new JLabel("tipo actual"));
-		pM.add(new JComboBox(tiposUsuarios));
-		pM.add(new JLabel("id actual"));
-		pM.add(new JTextField("Nuevo id"));
-		pM.add(new JLabel("nombre actual"));
-		pM.add(new JTextField("nombre nuevo"));
-		pM.add(new JLabel("pass actual"));
-		pM.add(new JTextField("pass nueva"));
-		pM.add(new JLabel());
-		pM.add(new JButton ("Modificar"));
+		pM.add(new JLabel("Resultados:"));
+		pM.add(new JLabel(""));
+		pM.add(rTipo);
+		pM.add(comboTipesMN);
+		pM.add(rId);	pM.add(nId);
+		pM.add(rName);	pM.add(nName);
+		pM.add(rPass);	pM.add(nPass);
+		pM.add(new JLabel(""));
+		pM.add(Modificar);
 
 		pM.setBounds(120,60,260,280);
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Modificar usuario"));
@@ -98,13 +108,13 @@ public class Tab_Usuarios extends PanelBase{
 		pE.add(new JComboBox(tiposUsuarios));
 		pE.add(new JLabel("Id Usuario"));
 		pE.add(new JComboBox(ids));
-		pE.add(new JLabel());
-		pE.add(new JLabel());
+		pE.add(new JLabel(""));
+		pE.add(new JLabel(""));
 		pE.add(new JLabel("Resultados"));
-		pE.add(new JLabel());
+		pE.add(new JLabel(""));
 		pE.add(new JLabel("Datos"));
-		pE.add(new JLabel());
-		pE.add(new JLabel());
+		pE.add(new JLabel(""));
+		pE.add(new JLabel(""));
 		pE.add(new JButton ("Eliminar"));
 
 		pE.setBounds(120,40,230,140);
@@ -130,7 +140,7 @@ public class Tab_Usuarios extends PanelBase{
 		pA.add(new JTextField(""));
 		pA.add(new JLabel("Tipo de Usuario: "));
 		pA.add(new JComboBox(tiposUsuarios));
-		pA.add(new JLabel());
+		pA.add(new JLabel(""));
 		pA.add(new JButton ("Agregar"));
 
 		pA.setBounds(120,40,230,140);

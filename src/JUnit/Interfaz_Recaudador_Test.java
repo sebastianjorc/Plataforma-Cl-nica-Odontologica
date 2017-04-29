@@ -3,6 +3,7 @@ package JUnit;
 import org.junit.Before;
 import org.junit.Test;
 
+import Controller.look;
 import Model.User;
 import View.Interfaz_Recaudador;
 
@@ -16,6 +17,7 @@ public class Interfaz_Recaudador_Test {
 
 	@Before
 	public void before(){
+		new look();		
 		usr 	= new User(id,pass,name,tipoUsuario);
 		iRecaudador	= new Interfaz_Recaudador(usr);
 	}

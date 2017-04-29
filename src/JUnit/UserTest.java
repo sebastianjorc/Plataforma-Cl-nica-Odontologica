@@ -3,6 +3,8 @@ package JUnit;
 import static org.junit.Assert.*;
 
 import org.junit.*;
+
+import Controller.look;
 import Model.User;
 
 public class UserTest {
@@ -15,6 +17,7 @@ public class UserTest {
 	
 	@Before
 	public void Before(){
+		new look();		
 		System.out.println("Before");
 		 usr = new User(id,pass,name,tipoUsuario);
 	}

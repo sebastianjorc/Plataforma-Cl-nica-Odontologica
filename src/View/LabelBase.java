@@ -8,7 +8,7 @@ public class LabelBase extends JLabel implements Colores{
 		this.setForeground(navyblue);
 		this.setBackground(gris);
 	}
-	LabelBase(String text){
+	public LabelBase(String text){
 		super(text);
 		this.setForeground(navyblue);
 		this.setBackground(gris);
