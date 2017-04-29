@@ -24,7 +24,7 @@ public class Interfaz_Administrador_Test {
 	public void test() {
 		iAdm.setVisible(true);
 		try{
-			Thread.sleep(20000);
+			Thread.sleep(50000);
 		}catch(Exception e){
 			
 		}

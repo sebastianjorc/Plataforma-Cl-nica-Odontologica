@@ -7,6 +7,7 @@ import View.Colores;
 import View.Login;
 
 public class controller implements Colores {
+		
 	public static void main(String[] args) {
 		lyf_TabbedPane();
 		JFrame login = new Login();

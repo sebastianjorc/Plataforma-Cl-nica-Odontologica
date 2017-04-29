@@ -3,11 +3,11 @@ package View;
 import javax.swing.JTabbedPane;
 
 import Model.User;
+import View.Administrador.*;
 
 @SuppressWarnings("serial")
 public class Interfaz_Administrador extends Interfaz {
-	PanelBase	pb0;
-	BaseTabAdmin pb1,pb2,pb3;
+	PanelBase	pb0, pb1,pb2,pb3;
 	User	user;
 	
 	public Interfaz_Administrador(User user){
@@ -27,7 +27,6 @@ public class Interfaz_Administrador extends Interfaz {
 	}
 	
 	void inicializar_pb1(){
-		pb1.getpE();
 	}
 	
 	void inicializar_pb2(){
@@ -39,14 +38,14 @@ public class Interfaz_Administrador extends Interfaz {
 	@Override
 	public JTabbedPane Paneles() {
 		pb0 = new PanelBase("img/backgroundjtp.png");
-		pb1 = new BaseTabAdmin();
-		pb2 = new BaseTabAdmin();
-		pb3 = new BaseTabAdmin();
+		pb1 = new Tab_Usuarios();
+		pb2 = new Tab_Servicios();
+		pb3 = new Tab_Inventario();
 		
 		jtp.addTab("Informaciones", null, pb0,"");
 		jtp.addTab("Usuarios", null, pb1,"");
-		jtp.addTab("Inventario", null, pb2,"");
-		jtp.addTab("Servicios", null, pb3,""); 
+		jtp.addTab("Servicios", null, pb2,""); 
+		jtp.addTab("Inventario", null, pb3,"");
 		 
 		jtp.setBackgroundAt(0, gris);
 		jtp.setBackgroundAt(1, gris);
