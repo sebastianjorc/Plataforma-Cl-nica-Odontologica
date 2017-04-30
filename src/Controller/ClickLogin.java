@@ -47,11 +47,8 @@ public class ClickLogin implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		con = new ConexionSQL();
-		
 		consultaLogin(id.getText(), pass.getText());
-		
-		//Cerrar login
-		//Abrir interfaz de usuario
+		btn.setSelected(false);
 		
 	}
 

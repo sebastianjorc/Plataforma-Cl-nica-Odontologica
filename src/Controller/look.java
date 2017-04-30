@@ -28,7 +28,7 @@ public class look implements Colores{
 		
 		UIManager.put("ComboBox.foreground", navyblue);
 		UIManager.put("ComboBox.background", blanco);
-		UIManager.put("ComboBox.selectionBackground", navyblue);
+		UIManager.put("ComboBox.selectionBackground", celeste);
 		UIManager.put("ComboBox.selectionForeground", blanco);
 		
 

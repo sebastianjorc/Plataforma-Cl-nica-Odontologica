@@ -22,7 +22,7 @@ public class Toma_de_hora extends PanelBase{
 				cbHorarios		= new JComboBox(bloques);
 	JButton		btnGenVale		= new JButton("Generar vale");
 	
-	public Toma_de_hora(){
+	public Toma_de_hora(){ 
 		this.setLayout(new GridLayout(0,2));
 		this.add(new JLabel ("Id"));				this.add(jtaId);
 		this.add(new JLabel ("Tipo de servicio"));	this.add(cbTipoServicio);		
