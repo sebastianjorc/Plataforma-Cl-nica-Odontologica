@@ -19,11 +19,13 @@ public class Interfaz_Secretaria extends Interfaz {
 				Ver			= new JButton("Ver calendario");
 	JComboBox 	cbTipo		= new JComboBox(tiposUsuarios),
 			 	cbUsuarios	= new JComboBox(Usuarios);
+	Toma_de_hora tdh		= new Toma_de_hora();
 	
 	public Interfaz_Secretaria(User user){ 
 		super("Secretaria",user.getId(),user.getName());
 		this.user = user;	inicializar_pb0();
-		inicializar_pb1();	inicializar_pb2();
+		inicializar_pb1();	
+		inicializar_pb2();
 	}
 	private void inicializar_pb0() { 
 		pb0.add(new LabelBase("Id: "+ String.valueOf(user.getId())));
@@ -31,7 +33,9 @@ public class Interfaz_Secretaria extends Interfaz {
 		pb0.add(new LabelBase("Nombre:\t "+user.getName()+"\n"));		
 	}
 	private void inicializar_pb1() { 
-		pb1.add(tomaHora);
+		pb1.setLayout(null);
+		tdh.setBounds(40,10,800,500);
+		pb1.add(tdh);
 	}
 	private void inicializar_pb2() { 
 		pb2.add(new JLabel ("Tipo de usuario"));pb2.add(cbTipo);
