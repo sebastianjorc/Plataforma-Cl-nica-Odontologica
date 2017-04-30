@@ -15,7 +15,7 @@ public class look implements Colores{
 		UIManager.put("Spinner.foreground", navyblue);
 		UIManager.put("Spinner.background", blanco);
 		
-		UIManager.put("Button.focus", celeste);
+		UIManager.put("Button.focus", navyblue);
 		UIManager.put("Button.foreground", blanco);
 		UIManager.put("Button.background", navyblue);
 		UIManager.put("Button.select", celeste);

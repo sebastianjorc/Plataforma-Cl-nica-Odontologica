@@ -9,32 +9,29 @@ import Model.User;
 
 @SuppressWarnings("serial")
 public class Interfaz_Tutor extends Interfaz {
-	PanelBase	pb0, pb1;
-	User	user;
-	public Interfaz_Tutor(User user){
+	PanelBase	pb0, 
+				pb1;
+	User		user;
+	String [] 	practicantes 	= {null};
+	JComboBox 	cbPracticantes 	= new JComboBox(practicantes);
+	JButton		Ver 			= new JButton("Ver");
+	
+	public Interfaz_Tutor(User user){ 
 		super("Tutor",user.getId(),user.getName());
 		this.user = user;
-		inicializar_pb0();
-		inicializar_pb1();
+		inicializar_pb0();		inicializar_pb1();
 	}
-
-	void inicializar_pb0(){		
+	void inicializar_pb0() { 
 		pb0.add(new LabelBase("Id: "+ String.valueOf(user.getId())));
 		pb0.add(new LabelBase("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
 		pb0.add(new LabelBase("Nombre:\t "+user.getName()+"\n"));
 	}
-	
-	void inicializar_pb1() {
-		String [] practicantes = {"1","2","2","3","4"};
+	void inicializar_pb1() { 
 		PanelBase pb = new PanelBase();
-		pb.add(new JLabel("Buscar Practicante"));
-		pb.add(new JComboBox(practicantes));
-		pb.add(new JLabel());
-		pb.add(new JButton("Ver"));
+		pb.add(new JLabel("Buscar Practicante"));	pb.add(cbPracticantes);
+		pb.add(new JLabel());						pb.add(Ver);
 		pb1.add(pb);		
-		
 	}
-
 	@Override
 	public JTabbedPane Paneles() {
 		 
