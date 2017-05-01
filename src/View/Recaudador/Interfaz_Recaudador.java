@@ -27,7 +27,6 @@ public class Interfaz_Recaudador extends Interfaz {
 	}
 	
 	void inicializar_pb1() {
-		
 	}
 
 	@Override
