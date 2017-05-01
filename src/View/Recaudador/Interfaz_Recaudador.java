@@ -1,10 +1,10 @@
 package View.Recaudador;
 
+import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 import Model.User;
 import View.Interfaz;
-import View.LabelBase;
 import View.PanelBase;
 
 @SuppressWarnings("serial")
@@ -21,9 +21,9 @@ public class Interfaz_Recaudador extends Interfaz {
 
 	void inicializar_pb0(){
 		
-		pb0.add(new LabelBase("Id: "+ String.valueOf(user.getId())));
-		pb0.add(new LabelBase("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
-		pb0.add(new LabelBase("Nombre:\t "+user.getName()+"\n"));
+		pb0.add(new JLabel("Id: "+ String.valueOf(user.getId())));
+		pb0.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
+		pb0.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
 	}
 	
 	void inicializar_pb1() {

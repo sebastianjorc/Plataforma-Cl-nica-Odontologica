@@ -3,33 +3,33 @@ package View.Login;
 import java.awt.Font;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Controller.ClickLogin;
-import View.BaseButton;
-import View.BaseTextField;
 import View.Interfaz;
-import View.LabelBase;
 
 @SuppressWarnings("serial")
 public class Login extends Interfaz  {
 	
-	private BaseTextField Usuario = new BaseTextField();
+	private JTextField Usuario = new JTextField();
 	private JPasswordField Usuario_1 = new JPasswordField();
 	
-	LabelBase IniciarSesion = new LabelBase("Iniciar Sesi\u00F3n");
-	LabelBase RutUsuario = new LabelBase("Rut Usuario");
-	LabelBase LogoUls = new LabelBase();
-	LabelBase LoginDerecha = new LabelBase();
-	LabelBase LoginIzquierda = new LabelBase();
+	JLabel IniciarSesion = new JLabel("Iniciar Sesi\u00F3n");
+	JLabel RutUsuario = new JLabel("Rut Usuario");
+	JLabel LogoUls = new JLabel();
+	JLabel LoginDerecha = new JLabel();
+	JLabel LoginIzquierda = new JLabel();
 	
 	ImageIcon e=new ImageIcon(getClass().getResource("../img/IniciarSesion.png"));
 	ImageIcon g=new ImageIcon(getClass().getResource("../img/LogoUls.png"));
 	
-	BaseButton BotonIniciar = new BaseButton();
+	JButton BotonIniciar = new JButton();
 	
 	public Login(){
 		
@@ -49,13 +49,13 @@ public class Login extends Interfaz  {
 		IniciarSesion.setBounds(52, 180, 203, 29);
 		PanelContenedor.add(IniciarSesion);
 		
-		LabelBase RutUsuario = new LabelBase("Rut Usuario");
+		JLabel RutUsuario = new JLabel("Rut Usuario");
 		RutUsuario.setHorizontalAlignment(SwingConstants.CENTER);
 		RutUsuario.setFont(new Font("Book Antiqua", Font.BOLD, 18));
 		RutUsuario.setBounds(52, 229, 203, 21);
 		PanelContenedor.add(RutUsuario);
 		
-		LabelBase lblContrasea = new LabelBase("Contrase\u00F1a");
+		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
 		lblContrasea.setHorizontalAlignment(SwingConstants.CENTER);
 		lblContrasea.setFont(new Font("Book Antiqua", Font.BOLD, 18));
 		lblContrasea.setBounds(52, 292, 203, 21);
@@ -72,6 +72,7 @@ public class Login extends Interfaz  {
 		Usuario_1.setBounds(80, 324, 154, 20);
 		PanelContenedor.add(Usuario_1);
 		
+		BotonIniciar.setBackground(blanco);
 		BotonIniciar.setBorder(null);
 		BotonIniciar.setFont(new Font("MS Gothic", Font.BOLD, 18));
 		BotonIniciar.setBounds(59, 409, 196, 78);

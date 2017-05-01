@@ -7,7 +7,6 @@ import javax.swing.JTabbedPane;
 
 import Model.User;
 import View.Interfaz;
-import View.LabelBase;
 import View.PanelBase;
 import View.Toma_de_hora;
 
@@ -32,9 +31,9 @@ public class Interfaz_Secretaria extends Interfaz {
 		inicializar_pb2();
 	}
 	private void inicializar_pb0() { 
-		pb0.add(new LabelBase("Id: "+ String.valueOf(user.getId())));
-		pb0.add(new LabelBase("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
-		pb0.add(new LabelBase("Nombre:\t "+user.getName()+"\n"));		
+		pb0.add(new JLabel("Id: "+ String.valueOf(user.getId())));
+		pb0.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
+		pb0.add(new JLabel("Nombre:\t "+user.getName()+"\n"));		
 	}
 	private void inicializar_pb1() { 
 		pb1.setLayout(null);

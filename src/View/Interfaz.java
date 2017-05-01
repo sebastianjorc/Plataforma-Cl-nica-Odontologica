@@ -4,7 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 import Controller.ClickSalir;
@@ -16,7 +18,7 @@ public abstract class Interfaz extends JFrame implements Colores{
 	protected PanelBase PanelContenedor;
 	protected JTabbedPane jtp = new JTabbedPane();
 	PanelBase pfa, pfc;
-	BaseButton btnSalir = new BaseButton("Salir");
+	JButton btnSalir = new JButton("Salir");
 
 	public Interfaz(){
 		this.setIconImage(Icono);
@@ -29,9 +31,10 @@ public abstract class Interfaz extends JFrame implements Colores{
 		PanelContenedor.setBackground(blanco);
 		setContentPane(PanelContenedor);
 		
-		LabelBase lu = new LabelBase ("Interfaz usuario: ");
+		JLabel lu = new JLabel ("Interfaz usuario: ");
 		PanelContenedor.add(lu);		
 		btnSalir.addActionListener(new ClickSalir(this));
+		btnSalir.setBackground(blanco);
 
 	}
 	
@@ -48,6 +51,7 @@ public abstract class Interfaz extends JFrame implements Colores{
 		setContentPane(PanelContenedor);
 		PanelContenedor.add(Paneles());
 		btnSalir.addActionListener(new ClickSalir(this));
+		btnSalir.setBackground(blanco);
 		jtp.add(btnSalir,"Salir");
 
 	}

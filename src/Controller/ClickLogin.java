@@ -6,9 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 import Model.Administrador;
 import Model.AdministradorFinanza;
@@ -18,8 +20,6 @@ import Model.Recaudador;
 import Model.Secretaria;
 import Model.Tutor;
 import Model.User;
-import View.BaseButton;
-import View.BaseTextField;
 import View.Administrador.Interfaz_Administrador;
 import View.Finanza.Interfaz_Finanza;
 import View.Login.Login;
@@ -30,13 +30,13 @@ import View.Secretaria.Interfaz_Secretaria;
 import View.Tutor.Interfaz_Tutor;
 
 public class ClickLogin implements ActionListener{
-	private BaseTextField id;
+	private JTextField id;
 	JPasswordField pass;
 	ConexionSQL con;
-	BaseButton btn;
+	JButton btn;
 	JFrame login;
 	
-	public ClickLogin(BaseTextField id, JPasswordField usuario_1, BaseButton botonIniciar, Login login){
+	public ClickLogin(JTextField id, JPasswordField usuario_1, JButton botonIniciar, Login login){
 		this.id=id;
 		this.pass=usuario_1;
 		btn = botonIniciar;
