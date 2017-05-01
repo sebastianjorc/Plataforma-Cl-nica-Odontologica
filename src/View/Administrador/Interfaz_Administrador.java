@@ -1,9 +1,11 @@
-package View;
+package View.Administrador;
 
 import javax.swing.JTabbedPane;
 
 import Model.User;
-import View.Administrador.*;
+import View.Interfaz;
+import View.LabelBase;
+import View.PanelBase;
 
 @SuppressWarnings("serial")
 public class Interfaz_Administrador extends Interfaz {

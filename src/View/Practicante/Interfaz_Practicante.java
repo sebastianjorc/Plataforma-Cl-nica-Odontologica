@@ -1,8 +1,10 @@
-package View;
+package View.Practicante;
 
 import javax.swing.JTabbedPane;
 
 import Model.User;
+import View.Interfaz;
+import View.PanelBase;
 
 @SuppressWarnings("serial")
 public class Interfaz_Practicante extends Interfaz {

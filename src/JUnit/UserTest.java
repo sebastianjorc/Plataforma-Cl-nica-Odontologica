@@ -9,11 +9,11 @@ import Model.User;
 
 public class UserTest {
 	
-	User usr;
-	int id = 1;
-	String pass = "1";
-	String name = "2";
-	String tipoUsuario = "1";
+	User 	usr;
+	int 	id = 1;
+	String 	pass = "1";
+	String 	name = "2";
+	String 	tipoUsuario = "1";
 	
 	@Before
 	public void Before(){

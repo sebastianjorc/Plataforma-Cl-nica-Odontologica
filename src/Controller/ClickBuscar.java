@@ -89,4 +89,5 @@ public class ClickBuscar implements ActionListener{
 			e.printStackTrace();
 		}
 	}
+
 }

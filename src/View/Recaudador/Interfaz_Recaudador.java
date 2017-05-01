@@ -1,9 +1,11 @@
-package View;
+package View.Recaudador;
 
 import javax.swing.JTabbedPane;
 
 import Model.User;
-import View.Recaudador.*;
+import View.Interfaz;
+import View.LabelBase;
+import View.PanelBase;
 
 @SuppressWarnings("serial")
 public class Interfaz_Recaudador extends Interfaz {

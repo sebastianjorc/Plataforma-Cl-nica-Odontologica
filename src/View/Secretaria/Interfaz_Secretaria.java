@@ -1,4 +1,4 @@
-package View;
+package View.Secretaria;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -6,6 +6,10 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 import Model.User;
+import View.Interfaz;
+import View.LabelBase;
+import View.PanelBase;
+import View.Toma_de_hora;
 
 @SuppressWarnings("serial")
 public class Interfaz_Secretaria extends Interfaz {
@@ -17,9 +21,9 @@ public class Interfaz_Secretaria extends Interfaz {
 	String [] 	Usuarios	= {null}; 
 	JButton 	tomaHora	= new JButton("Tomar hora"),
 				Ver			= new JButton("Ver calendario");
-	JComboBox 	cbTipo		= new JComboBox(tiposUsuarios),
-			 	cbUsuarios	= new JComboBox(Usuarios);
 	Toma_de_hora tdh		= new Toma_de_hora();
+	JComboBox<String> 	cbTipo		= new JComboBox<String>(tiposUsuarios),
+ 						cbUsuarios	= new JComboBox<String>(Usuarios);
 	
 	public Interfaz_Secretaria(User user){ 
 		super("Secretaria",user.getId(),user.getName());

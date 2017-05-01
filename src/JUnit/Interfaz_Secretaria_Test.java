@@ -7,7 +7,7 @@ import org.junit.Test;
 import Controller.look;
 import Model.User;
 import View.Colores;
-import View.Interfaz_Secretaria;
+import View.Secretaria.Interfaz_Secretaria;
 
 public class Interfaz_Secretaria_Test  implements Colores{
 	

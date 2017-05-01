@@ -34,13 +34,13 @@ public class Tab_Servicios  extends PanelBase{
 				rPrecioM	= new JLabel("Precio actual"),
 				ResultadoE1	= new JLabel("Datos resultado 1"),
 				ResultadoE2	= new JLabel("Datos resultado 2");
-	JComboBox 	comboServiciosM = new JComboBox(ids),
-				comboServiciosA = new JComboBox(ids),
-				comboServiciosE = new JComboBox(ids),
-				comboTiposA 	= new JComboBox(tiposServicios),
-				comboTiposM 	= new JComboBox(tiposServicios),
-				comboTiposMN	= new JComboBox(tiposServicios),
-				comboTiposE 	= new JComboBox(tiposServicios);	
+	JComboBox<String>	comboServiciosM = new JComboBox<String>(ids),
+						comboServiciosA = new JComboBox<String>(ids),
+						comboServiciosE = new JComboBox<String>(ids),
+						comboTiposA 	= new JComboBox<String>(tiposServicios),
+						comboTiposM 	= new JComboBox<String>(tiposServicios),
+						comboTiposMN	= new JComboBox<String>(tiposServicios),
+						comboTiposE 	= new JComboBox<String>(tiposServicios);	
 	
 	public Tab_Servicios(){		
 		super("../img/backgroundjtp.png");
@@ -106,4 +106,5 @@ public class Tab_Servicios  extends PanelBase{
 		
 		return pb;
 	}
+
 }

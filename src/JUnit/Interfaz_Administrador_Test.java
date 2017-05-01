@@ -6,7 +6,7 @@ import org.junit.*;
 import Controller.look;
 import Model.User;
 import View.Colores;
-import View.Interfaz_Administrador;
+import View.Administrador.Interfaz_Administrador;
 
 public class Interfaz_Administrador_Test implements Colores{
 	

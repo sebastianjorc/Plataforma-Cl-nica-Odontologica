@@ -16,11 +16,11 @@ public class Toma_de_hora extends PanelBase{
 	
 	JLabel 		jlPrecio 	= new JLabel ();
 	JTextField	jtaId 		= new JTextField();
-	JComboBox	cbTipoServicio 	= new JComboBox(tiposServicios),
-				cbServicios		= new JComboBox(Servicios),
-				cbPracticantes	= new JComboBox(Practicantes),
-				cbHorarios		= new JComboBox(bloques);
-	JButton		btnGenVale		= new JButton("Generar vale");
+	JButton		btnGenVale	= new JButton("Generar vale");
+	JComboBox<String>	cbTipoServicio 	= new JComboBox<String>(tiposServicios),
+						cbServicios		= new JComboBox<String>(Servicios),
+						cbPracticantes	= new JComboBox<String>(Practicantes),
+						cbHorarios		= new JComboBox<String>(bloques);
 	
 	public Toma_de_hora(){ 
 		this.setLayout(new GridLayout(0,2));

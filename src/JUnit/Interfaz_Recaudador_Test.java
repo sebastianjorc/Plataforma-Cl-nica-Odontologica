@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import Controller.look;
 import Model.User;
-import View.Interfaz_Recaudador;
+import View.Recaudador.Interfaz_Recaudador;
 
 public class Interfaz_Recaudador_Test {
 	

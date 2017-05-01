@@ -28,14 +28,7 @@ public class Tab_Inventario  extends PanelBase{
 				nPrecioA 	= new JTextField();
 	JSpinner 	nCantidadA 	= new JSpinner(),
 				nCantidadM 	= new JSpinner(),
-				nCantidadE 	= new JSpinner();
-	JComboBox 	comboUsersM = new JComboBox(ids),
-				comboUsersA = new JComboBox(ids),
-				comboUsersE = new JComboBox(ids),
-				comboTiposA = new JComboBox(tipoInsumo),
-				comboTiposM = new JComboBox(tipoInsumo),
-				comboTiposMN= new JComboBox(tipoInsumo),
-				comboTiposE = new JComboBox(tipoInsumo);	
+				nCantidadE 	= new JSpinner();	
 	JLabel		rTipoM 		= new JLabel("Tipo actual"),
 				rIdM		= new JLabel("Id actual"),
 				rNameM 		= new JLabel("Name actual"),
@@ -46,6 +39,13 @@ public class Tab_Inventario  extends PanelBase{
 	JButton		Modificar	= new JButton("Modificar"),
 				Agregar 	= new JButton("Agregar"),
 				Eliminar 	= new JButton("Eliminar");
+	JComboBox<String>	comboUsersM = new JComboBox<String>(ids),
+						comboUsersA = new JComboBox<String>(ids),
+						comboUsersE = new JComboBox<String>(ids),
+						comboTiposA = new JComboBox<String>(tipoInsumo),
+						comboTiposM = new JComboBox<String>(tipoInsumo),
+						comboTiposMN= new JComboBox<String>(tipoInsumo),
+						comboTiposE = new JComboBox<String>(tipoInsumo);
 	
 	public Tab_Inventario() {
 		super("../img/backgroundjtp.png");		

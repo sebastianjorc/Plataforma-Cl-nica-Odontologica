@@ -20,14 +20,14 @@ import Model.Tutor;
 import Model.User;
 import View.BaseButton;
 import View.BaseTextField;
-import View.Interfaz_Administrador;
-import View.Interfaz_Finanza;
-import View.Interfaz_Paciente;
-import View.Interfaz_Practicante;
-import View.Interfaz_Recaudador;
-import View.Interfaz_Secretaria;
-import View.Interfaz_Tutor;
 import View.Login;
+import View.Administrador.Interfaz_Administrador;
+import View.Finanza.Interfaz_Finanza;
+import View.Paciente.Interfaz_Paciente;
+import View.Practicante.Interfaz_Practicante;
+import View.Recaudador.Interfaz_Recaudador;
+import View.Secretaria.Interfaz_Secretaria;
+import View.Tutor.Interfaz_Tutor;
 
 public class ClickLogin implements ActionListener{
 	private BaseTextField id;

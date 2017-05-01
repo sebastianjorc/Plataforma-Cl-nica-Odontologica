@@ -15,6 +15,7 @@ import javax.swing.border.EtchedBorder;
 import View.PanelBase;
 
 public class Tab_Pago extends PanelBase {
+	private static final long serialVersionUID = 1L;
 	PanelBase	pVale, 
 				pDeuda;
 	Border 		linea 		= BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);	
@@ -24,6 +25,7 @@ public class Tab_Pago extends PanelBase {
 	JButton		pagarVale 	= new JButton ("Pagar"),
 				pagarDeuda	= new JButton ("Pagar");
 	JTable 		table 		= new JTable();
+	
 	public Tab_Pago(){ 
 		super("../img/backgroundjtp.png");
 		this.setLayout(new BorderLayout());

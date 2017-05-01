@@ -11,10 +11,10 @@ import Controller.ClickSalir;
 
 public abstract class Interfaz extends JFrame implements Colores{
 	private static final long serialVersionUID = 1L;
-	Image 		Icono		= Toolkit.getDefaultToolkit().getImage(getClass().getResource("img/icon1.png"));	
+	Image 		Icono		= Toolkit.getDefaultToolkit().getImage(getClass().getResource("../img/icon1.png"));	
 	
 	protected PanelBase PanelContenedor;
-	 JTabbedPane jtp = new JTabbedPane();
+	protected JTabbedPane jtp = new JTabbedPane();
 	PanelBase pfa, pfc;
 	BaseButton btnSalir = new BaseButton("Salir");
 

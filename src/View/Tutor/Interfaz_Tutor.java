@@ -1,4 +1,4 @@
-package View;
+package View.Tutor;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -6,6 +6,9 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 import Model.User;
+import View.Interfaz;
+import View.LabelBase;
+import View.PanelBase;
 
 @SuppressWarnings("serial")
 public class Interfaz_Tutor extends Interfaz {
@@ -13,8 +16,8 @@ public class Interfaz_Tutor extends Interfaz {
 				pb1;
 	User		user;
 	String [] 	practicantes 	= {null};
-	JComboBox 	cbPracticantes 	= new JComboBox(practicantes);
 	JButton		Ver 			= new JButton("Ver");
+	JComboBox<String> cbPracticantes = new JComboBox<String>(practicantes);
 	
 	public Interfaz_Tutor(User user){ 
 		super("Tutor",user.getId(),user.getName());

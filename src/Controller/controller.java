@@ -1,7 +1,6 @@
 package Controller;
 
 import javax.swing.JFrame;
-import javax.swing.UIManager;
 
 import View.Colores;
 import View.Login;
