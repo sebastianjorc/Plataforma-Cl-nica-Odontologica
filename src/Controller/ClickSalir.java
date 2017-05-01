@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 import View.Interfaz;
-import View.Login;
+import View.Login.Login;
 
 public class ClickSalir implements ActionListener {
 	Interfaz in; JFrame login;

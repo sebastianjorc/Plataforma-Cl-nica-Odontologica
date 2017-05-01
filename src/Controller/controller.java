@@ -3,7 +3,7 @@ package Controller;
 import javax.swing.JFrame;
 
 import View.Colores;
-import View.Login;
+import View.Login.Login;
 
 public class controller implements Colores {
 		

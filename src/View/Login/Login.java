@@ -1,4 +1,4 @@
-package View;
+package View.Login;
 
 import java.awt.Font;
 import java.awt.Image;
@@ -9,6 +9,10 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Controller.ClickLogin;
+import View.BaseButton;
+import View.BaseTextField;
+import View.Interfaz;
+import View.LabelBase;
 
 @SuppressWarnings("serial")
 public class Login extends Interfaz  {
@@ -22,8 +26,8 @@ public class Login extends Interfaz  {
 	LabelBase LoginDerecha = new LabelBase();
 	LabelBase LoginIzquierda = new LabelBase();
 	
-	ImageIcon e=new ImageIcon(getClass().getResource("img/IniciarSesion.png"));
-	ImageIcon g=new ImageIcon(getClass().getResource("img/LogoUls.png"));
+	ImageIcon e=new ImageIcon(getClass().getResource("../img/IniciarSesion.png"));
+	ImageIcon g=new ImageIcon(getClass().getResource("../img/LogoUls.png"));
 	
 	BaseButton BotonIniciar = new BaseButton();
 	

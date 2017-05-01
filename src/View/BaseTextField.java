@@ -6,7 +6,7 @@ public class BaseTextField extends JTextField implements Colores{
 	
 	private static final long serialVersionUID = 1L;
 
-	BaseTextField(){
+	public BaseTextField(){
 		this.setBackground(gris);
 		this.setForeground(navyblue);
 	}
