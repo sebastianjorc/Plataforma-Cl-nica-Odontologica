@@ -1,5 +1,5 @@
 package View.Administrador;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
@@ -12,23 +12,29 @@ import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
 import View.PanelBase;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 public class Tab_Inventario  extends PanelBase{
 	
 	private static final long serialVersionUID = 1L;	
+	
 	PanelBase 	conIzq,pM,pE,pA;
+	
 	Border 		linea 		= BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
+	
 	String [] 	tipoInsumo 	= {null};
 	String [] 	ids 		= {null};
+	
 	JTextField  nIdM  		= new JTextField(),
 				nNameM 		= new JTextField(),
 				nPrecioM	= new JTextField(),
 				nIdA		= new JTextField(),
 				nNameA 		= new JTextField(),
 				nPrecioA 	= new JTextField();
+	
 	JSpinner 	nCantidadA 	= new JSpinner(),
 				nCantidadM 	= new JSpinner(),
-				nCantidadE 	= new JSpinner();	
+				nCantidadE 	= new JSpinner();
+	
 	JLabel		rTipoM 		= new JLabel("Tipo actual"),
 				rIdM		= new JLabel("Id actual"),
 				rNameM 		= new JLabel("Name actual"),
@@ -36,9 +42,11 @@ public class Tab_Inventario  extends PanelBase{
 				rCantidadM 	= new JLabel("Cantidad actual"),
 				ResultadoE1	= new JLabel("Datos resultado 1"),
 				ResultadoE2	= new JLabel("Datos resultado 2");
+	
 	JButton		Modificar	= new JButton("Modificar"),
 				Agregar 	= new JButton("Agregar"),
 				Eliminar 	= new JButton("Eliminar");
+	
 	JComboBox<String>	comboUsersM = new JComboBox<String>(ids),
 						comboUsersA = new JComboBox<String>(ids),
 						comboUsersE = new JComboBox<String>(ids),
@@ -46,13 +54,14 @@ public class Tab_Inventario  extends PanelBase{
 						comboTiposM = new JComboBox<String>(tipoInsumo),
 						comboTiposMN= new JComboBox<String>(tipoInsumo),
 						comboTiposE = new JComboBox<String>(tipoInsumo);
-	
+/*--------------------------------------------------------------------------------------------------------*/	
 	public Tab_Inventario() {
 		super("../img/backgroundjtp.png");		
 		this.setLayout(new GridLayout(1,0));		
 		this.add(getConIzq());
 		this.add(getpM());
 	}
+/*--------------------------------------------------------------------------------------------------------*/		
 	protected PanelBase getConIzq() {
 		conIzq = new PanelBase();
 		conIzq.setLayout(new GridLayout(0,1));
@@ -60,6 +69,7 @@ public class Tab_Inventario  extends PanelBase{
 		conIzq.add(getpE());
 		return conIzq;
 	}
+	
 	protected PanelBase getpM() {
 		pM = new PanelBase();
 		PanelBase pb = new PanelBase();			GridLayout g = new GridLayout(0,2);
@@ -78,10 +88,10 @@ public class Tab_Inventario  extends PanelBase{
 		pM.add(new JLabel());					pM.add(Modificar);
 
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Modificar Insumo"));
-		pM.setBounds(120,60,260,280);			pb.add(pM);
+		pM.setBounds(70,60,300,280);			pb.add(pM);
 		return pb;
-
 	}
+	
 	protected PanelBase getpE() {
 		pE = new PanelBase();
 		PanelBase pb = new PanelBase();			GridLayout g = new GridLayout(0,2);
@@ -95,9 +105,10 @@ public class Tab_Inventario  extends PanelBase{
 		pE.add(new JLabel());					pE.add(Eliminar);
 
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Eliminar Insumo"));
-		pE.setBounds(120,40,230,140);			pb.add(pE);		
+		pE.setBounds(70,40,300,160);			pb.add(pE);		
 		return pb;
 	}
+	
 	protected PanelBase getpA() {
 		pA = new PanelBase();
 		PanelBase pb = new PanelBase();			pb.setLayout(null);		
@@ -111,7 +122,8 @@ public class Tab_Inventario  extends PanelBase{
 		pA.add(new JLabel());					pA.add(Agregar);
 
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Agregar Insumo"));
-		pA.setBounds(120,40,230,140);			pb.add(pA);
+		pA.setBounds(70,40,300,150);			pb.add(pA);
 		return pb;
 	}
 }
+/*--------------------------------------------------------------------------------------------------------*/	

@@ -1,5 +1,5 @@
 package Controller;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -20,6 +20,7 @@ import Model.Recaudador;
 import Model.Secretaria;
 import Model.Tutor;
 import Model.User;
+
 import View.Administrador.Interfaz_Administrador;
 import View.Finanza.Interfaz_Finanza;
 import View.Login.Login;
@@ -28,21 +29,21 @@ import View.Practicante.Interfaz_Practicante;
 import View.Recaudador.Interfaz_Recaudador;
 import View.Secretaria.Interfaz_Secretaria;
 import View.Tutor.Interfaz_Tutor;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 public class ClickLogin implements ActionListener{
 	private JTextField id;
 	JPasswordField pass;
 	ConexionSQL con;
 	JButton btn;
 	JFrame login;
-	
+/*--------------------------------------------------------------------------------------------------------*/	
 	public ClickLogin(JTextField id, JPasswordField usuario_1, JButton botonIniciar, Login login){
 		this.id=id;
 		this.pass=usuario_1;
 		btn = botonIniciar;
 		this.login=login;
 	}
-
+/*--------------------------------------------------------------------------------------------------------*/	
 	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -51,7 +52,7 @@ public class ClickLogin implements ActionListener{
 		btn.setSelected(false);
 		
 	}
-
+/*--------------------------------------------------------------------------------------------------------*/	
 	public void consultaLogin(String id, String pass){
 
 		ResultSet rs = null;	Statement s = null; String tipoResultado;
@@ -96,18 +97,15 @@ public class ClickLogin implements ActionListener{
 				
 				in.setVisible(true);
 				login.dispose();
-				
+
 			}else JOptionPane.showMessageDialog(null, "Error. Ingrese un usuario valido \n", "Error Login", JOptionPane.ERROR_MESSAGE);			
-			
 			con.con.close();
-			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Error al buscar el usuario en la base de datos");
 			e.printStackTrace();
-		}
-		
+		}	
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	

@@ -1,7 +1,8 @@
 package Controller;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,7 +15,7 @@ import javax.swing.JTextField;
 import com.mxrck.autocompleter.TextAutoCompleter;
 
 import Model.ConexionSQL;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 public class consulta_ComboBoxTipoUsuario implements ActionListener{
 	JComboBox<?>cbTipo;
 	String		tipo;
@@ -22,14 +23,14 @@ public class consulta_ComboBoxTipoUsuario implements ActionListener{
 	JTextField tfUsuario;
 	ConexionSQL con;
 	JButton btn;
-	
+/*--------------------------------------------------------------------------------------------------------*/	
 	public consulta_ComboBoxTipoUsuario(JComboBox<String> cbtipo, TextAutoCompleter autoCompleterIdM, JTextField usuarioM, JButton buscar){		
 		cbTipo		=cbtipo;
 		tField		=autoCompleterIdM;
 		tfUsuario	=usuarioM;
 		btn			=buscar;
 	}
-	
+/*--------------------------------------------------------------------------------------------------------*/	
 	public void actionPerformed(ActionEvent e) {
 		cbTipo	= (JComboBox<?>)e.getSource();
         tipo	= (String)cbTipo.getSelectedItem();
@@ -37,7 +38,7 @@ public class consulta_ComboBoxTipoUsuario implements ActionListener{
         tfUsuario.setEnabled(true);
         btn.setEnabled(true);
 	}
-	
+/*--------------------------------------------------------------------------------------------------------*/	
 	public void consulta(String tipo){
 		ResultSet rs= null;
 		Statement s	= null;
@@ -58,5 +59,5 @@ public class consulta_ComboBoxTipoUsuario implements ActionListener{
 			e.printStackTrace();
 		}
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	

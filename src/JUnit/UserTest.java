@@ -1,12 +1,12 @@
 package JUnit;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import static org.junit.Assert.*;
-
 import org.junit.*;
 
 import Controller.look;
-import Model.User;
 
+import Model.User;
+/*--------------------------------------------------------------------------------------------------------*/	
 public class UserTest {
 	
 	User 	usr;
@@ -31,5 +31,6 @@ public class UserTest {
 		usr.getPassword();
 		usr.getTipoUsuario();
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	
+

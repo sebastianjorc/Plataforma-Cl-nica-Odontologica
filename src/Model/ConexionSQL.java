@@ -1,8 +1,9 @@
 package Model;
+/*--------------------------------------------------------------------------------------------------------*/	
 import java.sql.*;
 
 import javax.swing.JOptionPane;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 /**Clase encargada de realizar la conexión con el servidor.
  */
 public class ConexionSQL {
@@ -29,7 +30,7 @@ public class ConexionSQL {
 			    			+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);		    	
 		    }
 	}
-
+/*--------------------------------------------------------------------------------------------------------*/	
 	public void imprimir_tabla(String Tabla){
 		ResultSet rs = null;	Statement s = null;
 		try {
@@ -48,3 +49,4 @@ public class ConexionSQL {
 		}
 	}		
 }
+/*--------------------------------------------------------------------------------------------------------*/	

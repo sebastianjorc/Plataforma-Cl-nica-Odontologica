@@ -1,7 +1,8 @@
 package Controller;
-
+/*--------------------------------------------------------------------------------------------------------*/
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,8 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import Model.ConexionSQL;
 
+import Model.ConexionSQL;
+/*--------------------------------------------------------------------------------------------------------*/
 public class ClickBuscar implements ActionListener{
 	JComboBox<String> string_tipo, nTipo;
 	JTextField jtfId,nId,nName,nPass; 
@@ -21,7 +23,7 @@ public class ClickBuscar implements ActionListener{
 	ConexionSQL con;
 	JButton btn;
 	JPanel jp;
-	
+/*--------------------------------------------------------------------------------------------------------*/	
 	public ClickBuscar (JPanel jp, JTextField usuarioE, JComboBox<String> comboTiposM, JLabel rTipoM, JLabel rIdM, 
 			JLabel rNameM, JLabel rPassM, JButton btn, JComboBox<String> nTipoM, JTextField nIdM, JTextField nNameM, JTextField nPassM){
 		this.jp		= jp;
@@ -46,7 +48,7 @@ public class ClickBuscar implements ActionListener{
 		string_tipo	= tipoUsuario;
 		this.btn	= btn;
 	}
-
+/*--------------------------------------------------------------------------------------------------------*/	
 	public void actionPerformed(ActionEvent arg0) {
 		con = new ConexionSQL();
 		consulta(jtfId.getText(), string_tipo.getSelectedItem().toString());
@@ -61,11 +63,9 @@ public class ClickBuscar implements ActionListener{
 			pass.repaint();		
 		}
 		name.repaint();
-		btn.setEnabled(true);
-			
-		
+		btn.setEnabled(true);	
 	}
-
+/*--------------------------------------------------------------------------------------------------------*/	
 	private void consulta(String ID, String string_tipo) {
 		ResultSet rs = null;	Statement s = null;
 		
@@ -89,5 +89,5 @@ public class ClickBuscar implements ActionListener{
 			e.printStackTrace();
 		}
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	

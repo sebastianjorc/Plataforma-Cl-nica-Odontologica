@@ -1,8 +1,9 @@
 package Controller;
+/*--------------------------------------------------------------------------------------------------------*/	
 import javax.swing.UIManager;
 
 import View.Colores;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 public class look implements Colores{
 	public look(){
 		UIManager.put("TabbedPane.borderHightlightColor", navyblue);
@@ -33,4 +34,6 @@ public class look implements Colores{
 		UIManager.put("Table.foreground", navyblue);
 
 	}
+/*--------------------------------------------------------------------------------------------------------*/	
+
 }

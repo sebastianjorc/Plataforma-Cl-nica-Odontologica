@@ -1,35 +1,39 @@
 package View.Secretaria;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 import Model.User;
+
 import View.Interfaz;
 import View.PanelBase;
 import View.Toma_de_hora;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 @SuppressWarnings("serial")
 public class Interfaz_Secretaria extends Interfaz {
-	PanelBase 	pb0,
-	pb1,
-	pb2;
+	PanelBase 	pb0,pb1,pb2;
+	
 	User 		user;
+	
 	String [] 	tiposUsuarios= {"Paciente","Practicante","Tutor"}; 
 	String [] 	Usuarios	= {null}; 
-	JButton 	tomaHora	= new JButton("Tomar hora"),
-				Ver			= new JButton("Ver calendario");
+	
+	JButton		Ver			= new JButton("Ver calendario");
+	
 	Toma_de_hora tdh		= new Toma_de_hora();
+	
 	JComboBox<String> 	cbTipo		= new JComboBox<String>(tiposUsuarios),
  						cbUsuarios	= new JComboBox<String>(Usuarios);
-	
+/*--------------------------------------------------------------------------------------------------------*/	
 	public Interfaz_Secretaria(User user){ 
 		super("Secretaria",user.getId(),user.getName());
 		this.user = user;	inicializar_pb0();
 		inicializar_pb1();	
 		inicializar_pb2();
 	}
+/*--------------------------------------------------------------------------------------------------------*/		
 	private void inicializar_pb0() { 
 		pb0.add(new JLabel("Id: "+ String.valueOf(user.getId())));
 		pb0.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
@@ -37,7 +41,7 @@ public class Interfaz_Secretaria extends Interfaz {
 	}
 	private void inicializar_pb1() { 
 		pb1.setLayout(null);
-		tdh.setBounds(40,10,800,500);
+		tdh.setBounds(140,40,600,440);
 		pb1.add(tdh);
 	}
 	private void inicializar_pb2() { 
@@ -46,6 +50,7 @@ public class Interfaz_Secretaria extends Interfaz {
 		pb2.add(new JLabel("Usuario"));			pb2.add(cbUsuarios);
 		pb2.add(new JLabel());					pb2.add(Ver);
 	}
+/*--------------------------------------------------------------------------------------------------------*/	
 	public JTabbedPane Paneles() { 
 		 
 		 pb0 = new PanelBase("img/backgroundjtp.png");
@@ -62,5 +67,6 @@ public class Interfaz_Secretaria extends Interfaz {
 
 		return jtp;
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	
+

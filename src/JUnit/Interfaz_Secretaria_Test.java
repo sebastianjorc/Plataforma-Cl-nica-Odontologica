@@ -1,14 +1,15 @@
 package JUnit;
-
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import org.junit.Before;
 import org.junit.Test;
 
 import Controller.look;
+
 import Model.User;
+
 import View.Colores;
 import View.Secretaria.Interfaz_Secretaria;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 public class Interfaz_Secretaria_Test  implements Colores{
 	
 	Interfaz_Secretaria iSecreataria;
@@ -30,10 +31,7 @@ public class Interfaz_Secretaria_Test  implements Colores{
 		iSecreataria.setVisible(true);
 		try{
 			Thread.sleep(50000);
-		}catch(Exception e){
-			
-		}
-		
+		}catch(Exception e){}	
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	

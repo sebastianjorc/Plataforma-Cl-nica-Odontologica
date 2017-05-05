@@ -1,7 +1,8 @@
 package View.Login;
-
+/*--------------------------------------------------------------------------------------------------------*/
 import java.awt.Font;
 import java.awt.Image;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -13,7 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 import Controller.ClickLogin;
 import View.Interfaz;
-
+/*--------------------------------------------------------------------------------------------------------*/
 @SuppressWarnings("serial")
 public class Login extends Interfaz  {
 	
@@ -30,7 +31,7 @@ public class Login extends Interfaz  {
 	ImageIcon g=new ImageIcon(getClass().getResource("../img/LogoUls.png"));
 	
 	JButton BotonIniciar = new JButton();
-	
+/*--------------------------------------------------------------------------------------------------------*/
 	public Login(){
 		
 		PanelContenedor.setBorder(new EmptyBorder(5, 5, 5, 5));		
@@ -61,6 +62,7 @@ public class Login extends Interfaz  {
 		lblContrasea.setBounds(52, 292, 203, 21);
 		PanelContenedor.add(lblContrasea);
 		
+		Usuario.setBackground(celeste);
 		Usuario.setHorizontalAlignment(SwingConstants.CENTER);
 		Usuario.setBounds(80, 261, 154, 20);
 		PanelContenedor.add(Usuario);
@@ -88,12 +90,11 @@ public class Login extends Interfaz  {
 		
 		BotonIniciar.addActionListener(new ClickLogin(Usuario, Usuario_1,BotonIniciar,this));
 	}
-
+/*--------------------------------------------------------------------------------------------------------*/
 	@Override
 	public JTabbedPane Paneles() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
 }
+/*--------------------------------------------------------------------------------------------------------*/

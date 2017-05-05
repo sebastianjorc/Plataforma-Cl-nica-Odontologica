@@ -1,12 +1,14 @@
 package JUnit;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import org.junit.Before;
 import org.junit.Test;
 
 import Controller.look;
-import Model.User;
-import View.Recaudador.Interfaz_Recaudador;
 
+import Model.User;
+
+import View.Recaudador.Interfaz_Recaudador;
+/*--------------------------------------------------------------------------------------------------------*/	
 public class Interfaz_Recaudador_Test {
 	
 	Interfaz_Recaudador iRecaudador;
@@ -27,10 +29,7 @@ public class Interfaz_Recaudador_Test {
 		iRecaudador.setVisible(true);
 		try{
 			Thread.sleep(50000);
-		}catch(Exception e){
-			
-		}
-		
+		}catch(Exception e){}	
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	

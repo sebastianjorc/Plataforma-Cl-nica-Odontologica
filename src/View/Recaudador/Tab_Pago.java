@@ -1,5 +1,5 @@
 package View.Recaudador;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -13,25 +13,30 @@ import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
 import View.PanelBase;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 public class Tab_Pago extends PanelBase {
 	private static final long serialVersionUID = 1L;
 	PanelBase	pVale, 
 				pDeuda;
 	Border 		linea 		= BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);	
+	
 	JLabel 		jlResultado = new JLabel("resultado");
+	
 	JTextField	jtfVale 	= new JTextField(),
 				idUser		= new JTextField();	
+	
 	JButton		pagarVale 	= new JButton ("Pagar"),
 				pagarDeuda	= new JButton ("Pagar");
-	JTable 		table 		= new JTable();
 	
+	JTable 		table 		= new JTable();
+/*--------------------------------------------------------------------------------------------------------*/	
 	public Tab_Pago(){ 
 		super("../img/backgroundjtp.png");
 		this.setLayout(new BorderLayout());
 		this.add(panel_deuda(),BorderLayout.CENTER);
 		this.add(panel_vale(),BorderLayout.NORTH);		
 	}
+/*--------------------------------------------------------------------------------------------------------*/	
 	private Component panel_vale() {
 		PanelBase pb = new PanelBase();	
 		pVale = new PanelBase();				pVale.setLayout(new GridLayout(1,0));
@@ -59,3 +64,4 @@ public class Tab_Pago extends PanelBase {
 		return pb;
 	}
 }
+/*--------------------------------------------------------------------------------------------------------*/	

@@ -1,28 +1,32 @@
 package View.Tutor;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 import Model.User;
+
 import View.Interfaz;
 import View.PanelBase;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 @SuppressWarnings("serial")
 public class Interfaz_Tutor extends Interfaz {
 	PanelBase	pb0, 
 				pb1;
 	User		user;
 	String [] 	practicantes 	= {null};
-	JButton		Ver 			= new JButton("Ver");
-	JComboBox<String> cbPracticantes = new JComboBox<String>(practicantes);
 	
+	JButton		Ver 			= new JButton("Ver");
+	
+	JComboBox<String> cbPracticantes = new JComboBox<String>(practicantes);
+/*--------------------------------------------------------------------------------------------------------*/	
 	public Interfaz_Tutor(User user){ 
 		super("Tutor",user.getId(),user.getName());
 		this.user = user;
 		inicializar_pb0();		inicializar_pb1();
 	}
+/*--------------------------------------------------------------------------------------------------------*/	
 	void inicializar_pb0() { 
 		pb0.add(new JLabel("Id: "+ String.valueOf(user.getId())));
 		pb0.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
@@ -34,6 +38,7 @@ public class Interfaz_Tutor extends Interfaz {
 		pb.add(new JLabel());						pb.add(Ver);
 		pb1.add(pb);		
 	}
+/*--------------------------------------------------------------------------------------------------------*/	
 	@Override
 	public JTabbedPane Paneles() {
 		 
@@ -49,3 +54,4 @@ public class Interfaz_Tutor extends Interfaz {
 		return jtp;
 	}
 }
+/*--------------------------------------------------------------------------------------------------------*/	

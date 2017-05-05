@@ -1,15 +1,15 @@
 package JUnit;
-
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import org.junit.*;
 
 import Controller.look;
+
 import Model.User;
+
 import View.Colores;
 import View.Administrador.Interfaz_Administrador;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 public class Interfaz_Administrador_Test implements Colores{
-	
 	Interfaz_Administrador iAdm;
 	User usr;
 	int id = 1;
@@ -29,10 +29,7 @@ public class Interfaz_Administrador_Test implements Colores{
 		iAdm.setVisible(true);
 		try{
 			Thread.sleep(50000);
-		}catch(Exception e){
-			
-		}
-		
+		}catch(Exception e){}	
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	

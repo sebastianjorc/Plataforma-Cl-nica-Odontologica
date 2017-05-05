@@ -1,34 +1,34 @@
 package View.Recaudador;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 import Model.User;
+
 import View.Interfaz;
 import View.PanelBase;
-
+/*--------------------------------------------------------------------------------------------------------*/	
 @SuppressWarnings("serial")
 public class Interfaz_Recaudador extends Interfaz {
 	PanelBase	pb0, pb1;
 	User	user;
-	
+/*--------------------------------------------------------------------------------------------------------*/	
 	public Interfaz_Recaudador(User user){
 		super("Recaudador",user.getId(),user.getName());
 		this.user = user;
 		inicializar_pb0();
 		inicializar_pb1();
 	}
-
+/*--------------------------------------------------------------------------------------------------------*/	
 	void inicializar_pb0(){
 		
 		pb0.add(new JLabel("Id: "+ String.valueOf(user.getId())));
 		pb0.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
 		pb0.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
 	}
-	
 	void inicializar_pb1() {
 	}
-
+/*--------------------------------------------------------------------------------------------------------*/	
 	@Override
 	public JTabbedPane Paneles() {
 
@@ -43,5 +43,5 @@ public class Interfaz_Recaudador extends Interfaz {
 
 		return jtp;
 	}
-
 }
+/*--------------------------------------------------------------------------------------------------------*/	
