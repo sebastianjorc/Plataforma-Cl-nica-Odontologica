@@ -1,14 +1,20 @@
 package View.Secretaria;
+import java.awt.BorderLayout;
+
+import javax.swing.BorderFactory;
 /*--------------------------------------------------------------------------------------------------------*/	
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
+import com.toedter.calendar.JCalendar;
+
 import Model.User;
 
 import View.Interfaz;
 import View.PanelBase;
+import View.ScrollPaneBase;
 import View.Toma_de_hora;
 /*--------------------------------------------------------------------------------------------------------*/	
 @SuppressWarnings("serial")
@@ -35,9 +41,12 @@ public class Interfaz_Secretaria extends Interfaz {
 	}
 /*--------------------------------------------------------------------------------------------------------*/		
 	private void inicializar_pb0() { 
-		pb0.add(new JLabel("Id: "+ String.valueOf(user.getId())));
-		pb0.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
-		pb0.add(new JLabel("Nombre:\t "+user.getName()+"\n"));		
+		PanelBase pb = new PanelBase();
+		pb.setBorder(BorderFactory.createTitledBorder(linea, "Datos personal"));
+		pb.add(new JLabel("Id: "+ String.valueOf(user.getId())));
+		pb.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
+		pb.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
+		pb0.add(pb);
 	}
 	private void inicializar_pb1() { 
 		pb1.setLayout(null);
@@ -45,10 +54,28 @@ public class Interfaz_Secretaria extends Interfaz {
 		pb1.add(tdh);
 	}
 	private void inicializar_pb2() { 
-		pb2.add(new JLabel ("Tipo de usuario"));pb2.add(cbTipo);
-		pb2.add(new JLabel());
-		pb2.add(new JLabel("Usuario"));			pb2.add(cbUsuarios);
-		pb2.add(new JLabel());					pb2.add(Ver);
+		PanelBase pb = new PanelBase();
+		pb2.setLayout(new BorderLayout());
+		
+		pb.add(new JLabel ("Tipo de usuario"));	pb.add(cbTipo);
+		pb.add(new JLabel());
+		pb.add(new JLabel("Usuario"));			pb.add(cbUsuarios);
+		pb.add(new JLabel());					pb.add(Ver);
+		
+		ScrollPaneBase scpane = new ScrollPaneBase();		
+		JCalendar calendar = new JCalendar();
+		calendar.setBounds(28, 33, 700, 500);		
+		scpane.setViewportView(calendar);
+		
+		
+		pb.setBorder(BorderFactory.createTitledBorder(linea, "Buscar calendario"));
+		scpane.setBorder(BorderFactory.createTitledBorder(linea, "Calendario"));
+		
+		pb2.add(pb,BorderLayout.NORTH);
+		pb2.add(scpane,BorderLayout.CENTER);
+		
+		
+		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
 	public JTabbedPane Paneles() { 
@@ -65,6 +92,7 @@ public class Interfaz_Secretaria extends Interfaz {
 		 jtp.setBackgroundAt(1, gris);
 		 jtp.setBackgroundAt(2, gris);
 
+		 pb1.setBorder(BorderFactory.createTitledBorder(linea, "Toma de hora"));
 		return jtp;
 	}
 }

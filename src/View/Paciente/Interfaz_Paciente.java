@@ -49,13 +49,14 @@ public class Interfaz_Paciente extends Interfaz {
 		panel_base_1.add(a);
 		panel_base_1.add(b);
 		panel_base_1.add(c);
+		
 	}
 	
 	private void inicializar_panel_base2() { 
 		panel_base_2.setLayout(null);
 		toma_de_hora.setBounds(140,40,600,440);
-		panel_base_2.setBorder(BorderFactory.createTitledBorder(linea, ""));
 		panel_base_2.add(toma_de_hora);
+		panel_base_2.setBorder(BorderFactory.createTitledBorder(linea, "Toma de hora"));
 	}
 	
 /*--------------------------------------------------------------------------------------------------------*/	
@@ -73,6 +74,8 @@ public class Interfaz_Paciente extends Interfaz {
 		jtp.addTab("Calendario",panel_base_3);
 		jtp.addTab("Evaluar Atencion",panel_base_4);
 		jtp.addTab("Ficha",panel_base_5); 
+
+		panel_base_1.setBorder(BorderFactory.createTitledBorder(linea, "Datos personal"));
 
 		return jtp;
 	}

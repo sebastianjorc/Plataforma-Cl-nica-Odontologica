@@ -30,7 +30,7 @@ public class Tab_Fondo extends PanelBase{
 	public Tab_Fondo(){	
 		super("../img/backgroundjtp.png");	
 		setLayout(null);
-		setBorder(BorderFactory.createTitledBorder(linea,""));
+		setBorder(BorderFactory.createTitledBorder(linea,"Fondos"));
 		
 		fondot.setBounds(20, 16, 200, 30);
 		fondot.setFont(new Font("Book Antiqua", Font.PLAIN, 18));

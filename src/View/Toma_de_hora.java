@@ -32,6 +32,7 @@ public class Toma_de_hora extends PanelBase{
 						cbServicios		= new JComboBox<String>(Servicios),
 						cbPracticantes	= new JComboBox<String>(Practicantes),
 						cbHorarios		= new JComboBox<String>(bloques);
+
 /*--------------------------------------------------------------------------------------------------------*/	
 	public Toma_de_hora(){ 
 		this.setLayout(new GridLayout(0,2,0,15));
@@ -50,7 +51,8 @@ public class Toma_de_hora extends PanelBase{
 		this.add(new JLabel());						this.add(new JLabel());	
 		this.add(new JLabel());						this.add(btnGenVale);
 		this.add(new JLabel());						this.add(new JLabel());	
-		this.add(new JLabel());						this.add(jlPrecio);		
+		this.add(new JLabel());						this.add(jlPrecio);
+		
 	}
 }
 /*--------------------------------------------------------------------------------------------------------*/	

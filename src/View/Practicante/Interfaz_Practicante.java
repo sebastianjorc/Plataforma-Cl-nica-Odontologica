@@ -30,7 +30,8 @@ public class Interfaz_Practicante extends Interfaz {
 		inicializar_panel_base1();
 	}
 	
-	void inicializar_panel_base1(){		
+	void inicializar_panel_base1(){	
+		
 		String ID = String.valueOf(usuario.getId());
 		
 		a=new JLabel("Id:  \t "+ID+".\n      ");
@@ -45,6 +46,7 @@ public class Interfaz_Practicante extends Interfaz {
 		panel_base_1.add(a);
 		panel_base_1.add(b);
 		panel_base_1.add(c);
+		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
 	@Override
@@ -59,6 +61,8 @@ public class Interfaz_Practicante extends Interfaz {
 		 jtp.addTab("Horario", panel_base_2);
 		 jtp.addTab("Buscar Ficha", panel_base_3); 
 		 jtp.addTab("Historial de servicios", panel_base_4); 
+		 panel_base_1.setBorder(BorderFactory.createTitledBorder(linea, "Datos personales"));
+		 
 
 		return jtp;
 	}

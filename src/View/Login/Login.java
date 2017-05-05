@@ -62,8 +62,8 @@ public class Login extends Interfaz  {
 		lblContrasea.setBounds(52, 292, 203, 21);
 		PanelContenedor.add(lblContrasea);
 		
-		Usuario.setBackground(celeste);
 		Usuario.setHorizontalAlignment(SwingConstants.CENTER);
+		Usuario.setBackground(gris);
 		Usuario.setBounds(80, 261, 154, 20);
 		PanelContenedor.add(Usuario);
 		Usuario.setColumns(10);

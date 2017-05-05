@@ -1,4 +1,5 @@
 package View.Administrador;
+import javax.swing.BorderFactory;
 /*--------------------------------------------------------------------------------------------------------*/
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
@@ -20,10 +21,12 @@ public class Interfaz_Administrador extends Interfaz {
 	}
 /*--------------------------------------------------------------------------------------------------------*/
 	void inicializar_pb0(){		
-		String ID = String.valueOf(user.getId());
-		pb0.add(new JLabel("Id:\t "+ID+"\n"));
-		pb0.add(new JLabel("Tipo de Usuario:\t "+user.getTipoUsuario()+"\n"));
-		pb0.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
+		PanelBase pb = new PanelBase();
+		pb.setBorder(BorderFactory.createTitledBorder(linea, "Datos personal"));
+		pb.add(new JLabel("Id: "+ String.valueOf(user.getId())));
+		pb.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
+		pb.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
+		pb0.add(pb);
 	}
 /*--------------------------------------------------------------------------------------------------------*/
 	@Override

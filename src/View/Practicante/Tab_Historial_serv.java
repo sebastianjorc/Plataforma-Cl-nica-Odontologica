@@ -36,7 +36,7 @@ public class Tab_Historial_serv extends PanelBase {
 	public Tab_Historial_serv(){	
 		super("../img/backgroundjtp.png");	
 		setLayout(null);
-		setBorder(BorderFactory.createTitledBorder(linea, ""));
+		setBorder(BorderFactory.createTitledBorder(linea, "Historial"));
 		
 		DecimalFormat f = new DecimalFormat("###,###.##");
 		

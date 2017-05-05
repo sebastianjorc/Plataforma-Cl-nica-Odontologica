@@ -4,9 +4,12 @@ import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+import javax.swing.border.Border;
+import javax.swing.border.EtchedBorder;
 
 import Controller.ClickSalir;
 /*--------------------------------------------------------------------------------------------------------*/
@@ -16,7 +19,9 @@ public abstract class Interfaz extends JFrame implements Colores{
 		  			Image Icono		= Toolkit.getDefaultToolkit().getImage(getClass().getResource("../img/icon1.png"));	
 		  protected PanelBase PanelContenedor;
 		  protected JTabbedPane jtp = new JTabbedPane();
-	      			JButton btnSalir = new JButton("Salir");// 
+	      			JButton btnSalir = new JButton("Salir");
+
+	      protected Border 		linea 		= BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
 /*--------------------------------------------------------------------------------------------------------*/
 	public Interfaz(){
 		this.setIconImage(Icono);

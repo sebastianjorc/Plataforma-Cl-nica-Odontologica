@@ -1,9 +1,14 @@
 package View.Tutor;
+import java.awt.BorderLayout;
+
+import javax.swing.BorderFactory;
 /*--------------------------------------------------------------------------------------------------------*/	
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 
 import Model.User;
 
@@ -19,7 +24,7 @@ public class Interfaz_Tutor extends Interfaz {
 	
 	JButton		Ver 			= new JButton("Ver");
 	
-	JComboBox<String> cbPracticantes = new JComboBox<String>(practicantes);
+	JComboBox<String> cbPracticantes;
 /*--------------------------------------------------------------------------------------------------------*/	
 	public Interfaz_Tutor(User user){ 
 		super("Tutor",user.getId(),user.getName());
@@ -28,15 +33,49 @@ public class Interfaz_Tutor extends Interfaz {
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
 	void inicializar_pb0() { 
-		pb0.add(new JLabel("Id: "+ String.valueOf(user.getId())));
-		pb0.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
-		pb0.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
+		PanelBase pb = new PanelBase();
+
+		pb.setBorder(BorderFactory.createTitledBorder(linea, "Datos personal"));
+		pb.add(new JLabel("Id: "+ String.valueOf(user.getId())));
+		pb.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
+		pb.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
+		pb0.add(pb);
 	}
 	void inicializar_pb1() { 
+		String[] alumnos = {"Alumno 1", "Alumno 2", "Alumno 3", "Alumno 4"};
+		cbPracticantes = new JComboBox<String>(alumnos);
 		PanelBase pb = new PanelBase();
+		pb1.setLayout(new BorderLayout());
 		pb.add(new JLabel("Buscar Practicante"));	pb.add(cbPracticantes);
 		pb.add(new JLabel());						pb.add(Ver);
-		pb1.add(pb);		
+		
+		PanelBase pbb = new PanelBase();
+		String[] columnas = {"Nombre"};
+		Object[][] filas = {{"Alumno 1"},
+							{"Alumno 2"},
+							{"Alumno 3"}};
+		JTable table = new JTable(filas,columnas);
+		table.setFillsViewportHeight(true);
+		table.setBackground(blanco);
+		table.setOpaque(false);
+		table.getTableHeader().setOpaque(false);
+		table.getTableHeader().setBackground(navyblue);
+		table.getTableHeader().setForeground(blanco);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setViewportView(table);
+		scrollPane.setOpaque(false);
+		scrollPane.getViewport().setOpaque(false);
+		scrollPane.setBounds(40, 34, 850, 474);
+		
+		pbb.add(scrollPane);
+		pb.setBorder(BorderFactory.createTitledBorder(linea, "Buscar practicante"));
+		pbb.setBorder(BorderFactory.createTitledBorder(linea, "Datos de practicante"));
+		
+		
+		pb1.add(pb, BorderLayout.NORTH);					
+		pb1.add(pbb, BorderLayout.CENTER);
+
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
 	@Override
