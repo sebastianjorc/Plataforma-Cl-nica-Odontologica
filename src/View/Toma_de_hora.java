@@ -26,7 +26,7 @@ public class Toma_de_hora extends PanelBase{
 
 	JTextField	jtaId 		= new JTextField();
 	
-	JButton		btnGenVale	= new JButton("Generar vale");
+	JButton		btnGenVale	= new JButton("Reservar Hora");
 	
 	JComboBox<String>	cbTipoServicio 	= new JComboBox<String>(tiposServicios),
 						cbServicios		= new JComboBox<String>(Servicios),

@@ -5,6 +5,7 @@ import java.awt.Component;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -13,6 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
+import Controller.ClickPagar;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
 public class Tab_Pago extends PanelBase {
@@ -33,11 +35,13 @@ public class Tab_Pago extends PanelBase {
 /*--------------------------------------------------------------------------------------------------------*/	
 	public Tab_Pago(){ 
 		super("../img/backgroundjtp.png");
-		this.setLayout(new BorderLayout());
-		this.add(panel_deuda(),BorderLayout.CENTER);
-		this.add(panel_vale(),BorderLayout.NORTH);		
+		pagarVale.addActionListener(new ClickPagar());
+		pagarDeuda.addActionListener(new ClickPagar());
+		panel_deuda();
+		//this.add(panel_vale(),BorderLayout.NORTH);		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	@SuppressWarnings("unused")
 	private Component panel_vale() {
 		PanelBase pb = new PanelBase();	
 		pVale = new PanelBase();				pVale.setLayout(new GridLayout(1,0));
@@ -50,13 +54,18 @@ public class Tab_Pago extends PanelBase {
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Pago por vale"));
 		return pb;
 	}
-	private Component panel_deuda() {
-		PanelBase pb = new PanelBase();			pDeuda = new PanelBase();
-		pb.setLayout(null);						pDeuda.setLayout(new GridLayout(0,2));
+	private void panel_deuda() {
+		this.setLayout(new BorderLayout());
+		PanelBase pb = new PanelBase();
+		pb.setLayout(new BoxLayout(pb,BoxLayout.X_AXIS));
+		pb.add(new JLabel("Buscar usuario:    "));	pb.add(idUser);	
+		pb.add(new JLabel("      ")); 				pb.add(new JLabel("   Id usuario:            "));
+		this.add(pb,BorderLayout.NORTH);
 		
-		pDeuda.add(new JLabel());				pDeuda.add(new JLabel());	
-		pDeuda.add(new JLabel("Id usuario:"));	pDeuda.add(idUser);	
-		pDeuda.add(new JLabel("Resultados:"));	
+		pDeuda = new PanelBase();			pDeuda.setLayout(new GridLayout(0,2,0,15));
+		
+		pDeuda.add(new JLabel("Resultados:"));			
+		pDeuda.add(new JLabel());			pDeuda.add(new JLabel());
 		
 		String[] columnas = {"id","Servicio","Monto"};
 		Object[][] filas = {{"Alumno 1","Servicio 1","5425432"},
@@ -77,12 +86,13 @@ public class Tab_Pago extends PanelBase {
 		scrollPane.getViewport().setOpaque(false);
 		pDeuda.add(scrollPane);
 		
-		pDeuda.add(new JLabel());				pDeuda.add(pagarDeuda);		
-		pDeuda.setBounds(50, 10, 800, 300);		pb.add(pDeuda);
+		pDeuda.add(new JLabel());				pDeuda.add(new JLabel());
+		pDeuda.add(new JLabel());		
+		pDeuda.add(pagarDeuda);		
+		pDeuda.setBounds(50, 10, 800, 300);		this.add(pDeuda,BorderLayout.CENTER);
 		
-		pb.setBorder(BorderFactory.createTitledBorder(linea, "Pago de deudas"));
+		this.setBorder(BorderFactory.createTitledBorder(linea, "Pago de deudas"));
 		
-		return pb;
 	}
 }
 /*--------------------------------------------------------------------------------------------------------*/	

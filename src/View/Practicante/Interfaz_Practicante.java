@@ -27,7 +27,8 @@ public class Interfaz_Practicante extends Interfaz {
 	public Interfaz_Practicante(User user){
 		super("Practicante",user.getId(),user.getName());
 		usuario=user;
-		inicializar_panel_base1();
+		inicializar_pb0(panel_base_1,usuario);
+		//inicializar_panel_base1();
 	}
 	
 	void inicializar_panel_base1(){	

@@ -29,18 +29,9 @@ public class Interfaz_Tutor extends Interfaz {
 	public Interfaz_Tutor(User user){ 
 		super("Tutor",user.getId(),user.getName());
 		this.user = user;
-		inicializar_pb0();		inicializar_pb1();
+		inicializar_pb0(pb0,user);		inicializar_pb1();
 	}
-/*--------------------------------------------------------------------------------------------------------*/	
-	void inicializar_pb0() { 
-		PanelBase pb = new PanelBase();
-
-		pb.setBorder(BorderFactory.createTitledBorder(linea, "Datos personal"));
-		pb.add(new JLabel("Id: "+ String.valueOf(user.getId())));
-		pb.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
-		pb.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
-		pb0.add(pb);
-	}
+/*--------------------------------------------------------------------------------------------------------*/
 	void inicializar_pb1() { 
 		String[] alumnos = {"Alumno 1", "Alumno 2", "Alumno 3", "Alumno 4"};
 		cbPracticantes = new JComboBox<String>(alumnos);

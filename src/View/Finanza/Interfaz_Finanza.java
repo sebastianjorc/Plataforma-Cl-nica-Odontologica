@@ -27,7 +27,8 @@ public class Interfaz_Finanza extends Interfaz{
 	public Interfaz_Finanza(User user){
 		super("Administrador Financiero",user.getId(),user.getName());
 		usuario=user;
-		inicializar_panel_base1();
+		inicializar_pb0(panel_base_1,usuario);
+		//inicializar_panel_base1();
 	}
 /*--------------------------------------------------------------------------------------------------------*/
 void inicializar_panel_base1(){		

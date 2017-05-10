@@ -30,7 +30,8 @@ public class Interfaz_Paciente extends Interfaz {
 	public Interfaz_Paciente(User user){
 		super("Paciente",user.getId(),user.getName());
 		usuario=user;
-		inicializar_panel_base1();
+		inicializar_pb0(panel_base_1,usuario);
+		//inicializar_panel_base1();
 		inicializar_panel_base2();
 	}
 	

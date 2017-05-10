@@ -35,19 +35,12 @@ public class Interfaz_Secretaria extends Interfaz {
 /*--------------------------------------------------------------------------------------------------------*/	
 	public Interfaz_Secretaria(User user){ 
 		super("Secretaria",user.getId(),user.getName());
-		this.user = user;	inicializar_pb0();
+		this.user = user;	
+		inicializar_pb0(pb0,user);
 		inicializar_pb1();	
 		inicializar_pb2();
 	}
 /*--------------------------------------------------------------------------------------------------------*/		
-	private void inicializar_pb0() { 
-		PanelBase pb = new PanelBase();
-		pb.setBorder(BorderFactory.createTitledBorder(linea, "Datos personal"));
-		pb.add(new JLabel("Id: "+ String.valueOf(user.getId())));
-		pb.add(new JLabel("Tipo de Usuario:\t "+ user.getTipoUsuario() +"\n"));
-		pb.add(new JLabel("Nombre:\t "+user.getName()+"\n"));
-		pb0.add(pb);
-	}
 	private void inicializar_pb1() { 
 		pb1.setLayout(null);
 		tdh.setBounds(140,40,600,440);
@@ -64,6 +57,7 @@ public class Interfaz_Secretaria extends Interfaz {
 		
 		ScrollPaneBase scpane = new ScrollPaneBase();		
 		JCalendar calendar = new JCalendar();
+		calendar.setForeground(blanco);
 		calendar.setBounds(28, 33, 700, 500);		
 		scpane.setViewportView(calendar);
 		
