@@ -4,8 +4,6 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
-import java.awt.Font;
-
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
@@ -30,24 +28,6 @@ public class Interfaz_Finanza extends Interfaz{
 		inicializar_pb0(panel_base_1,usuario);
 		//inicializar_panel_base1();
 	}
-/*--------------------------------------------------------------------------------------------------------*/
-void inicializar_panel_base1(){		
-	String ID = String.valueOf(usuario.getId());
-	
-	a=new JLabel("Id:  \t "+ID+".\n      ");
-	a.setFont(new Font("Book Antiqua", Font.HANGING_BASELINE | Font.BOLD, 18));
-	
-	b=new JLabel("Tipo de Usuario:  \t "+usuario.getTipoUsuario()+".\n      ");
-	b.setFont(new Font("Book Antiqua", Font.HANGING_BASELINE | Font.BOLD, 18));
-	
-	c=new JLabel("Nombre:  \t "+usuario.getName()+".\n");
-	c.setFont(new Font("Book Antiqua", Font.HANGING_BASELINE | Font.BOLD, 18));
-	
-	panel_base_1.add(a);
-	panel_base_1.add(b);
-	panel_base_1.add(c);
-	panel_base_1.setBorder(BorderFactory.createTitledBorder(linea, "Datos del usuario"));
-}
 /*--------------------------------------------------------------------------------------------------------*/
 public JTabbedPane Paneles() {
 		panel_base_1 = new PanelBase("img/backgroundjtp.png");

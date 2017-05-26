@@ -41,7 +41,7 @@ private static final long serialVersionUID = 1L;
 	
 		panelresultado = new PanelBase();
 		panelresultado.setLayout(null);
-		panelresultado.setBounds(11, 140, 900,403);
+		panelresultado.setBounds(14, 140, 900,403);
 		panelresultado.setBorder(BorderFactory.createTitledBorder(linea, "resultado"));
 
 		add(panelresultado);

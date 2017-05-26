@@ -1,8 +1,7 @@
 package View.Secretaria;
 import java.awt.BorderLayout;
-
-import javax.swing.BorderFactory;
 /*--------------------------------------------------------------------------------------------------------*/	
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;

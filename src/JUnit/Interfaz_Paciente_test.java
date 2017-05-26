@@ -29,7 +29,7 @@ public class Interfaz_Paciente_test {
 	public void test() {
 		interfaz_paciente.setVisible(true);
 		try{
-			Thread.sleep(50000);
+			Thread.sleep(90000);
 		}catch(Exception e){}	
 	}
 }

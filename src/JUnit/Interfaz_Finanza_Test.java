@@ -29,7 +29,7 @@ public class Interfaz_Finanza_Test {
 	public void test() {
 		interfaz_finanza.setVisible(true);
 		try{
-			Thread.sleep(50000);
+			Thread.sleep(90000);
 		}catch(Exception e){}	
 	}
 }
