@@ -1,0 +1,3 @@
+//ID Practicante;Mes;Numero día;ID servicio;Calificación
+10;Junio;30;0;70
+11;Julio;1;2;60

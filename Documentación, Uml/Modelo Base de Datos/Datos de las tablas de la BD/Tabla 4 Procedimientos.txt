@@ -1,0 +1,23 @@
+//ID_PROCEDIMIENTO;DESCRIPCION;PRECIO
+0;Consulta;$6.000
+1;Instrucción en higiene oral;$0
+2;Control de placa bacteriana;$10.000
+3;Aplicación tópica de flúor;$0
+4;Limpieza dental;$20.000
+5;Extraccion;$15.000
+6;Sellantes de Fosetas y Fisuras;$10.000
+7;obsturacion;$13.000
+8;blanqueamiento;$50.000
+9;corona de porcelana;$35.000
+10;corona de zirconio;$75.000
+11;implante de titanio;$45.000
+12;tratamiento de conductos premolares;$45.000
+13;tratamiento de conducto molares inferiores vitales;$55.000
+14;tratamiento de conducto molares superiores vitales;$65.000
+17;bracket instalacion;$100.000
+18;bracket tratamiento;$15.000
+19;Tratamiento gengivitis por sesion;$20.000
+20;Tratamiento hipersensibilidad dentinaria;$20.000
+21;Tratamiento de absceso periodontal;$13.000
+
+

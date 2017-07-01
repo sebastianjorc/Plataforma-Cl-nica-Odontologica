@@ -1,0 +1,22 @@
+//ID_SERVICIO;TIPO_SERVICIO;NOMBRE_SERVICIO;IDS_PROCEDIMIENTOS;PRECIO_TOTAL
+0;General;Higiene Oral;0-1-2-3-4;$36.000
+1;General;Diagnostico general;0;$6.000
+2;General;Extracción dental;0-5;$21.000
+3;General;Obsturacion dental;0-7;$19.000
+4;General;Sellante de fosetas y fisuras;0-6;$16.000
+5;Estetica;porcelana;0-9;$41.000
+6;Estetica;zirconio;0-10;$81.000
+7;Estetica;Implantologia + porcelana atornillada;0-9-11;$86.000
+8;Estetica;Implantologia + zirconio atornillada;0-10-11;$126.000
+9;Estetica;Blanqueamiento;0-8;$56.000
+10;Endodoncia;tratamiento conductos premolares;0-12;$51.000
+11;Endodoncia;tratamiento conductos molares vitales;0-13-14;$126.000
+12;Ortodoncia;Brackets (una arcada);0-22;$106.000              
+13;Ortodoncia;tratamiento de brackets;0-23;$21.000 
+14;Peridoncia;Tratamiento gengivitis por sesion;0-19;$26.000
+15;Peridoncia;Tratamiento hipersensibilidad dentinaria;0-20;$26.000
+16;Peridoncia;Tratamiento de absceso periodontal;0-21;$19.000
+
+
+
+

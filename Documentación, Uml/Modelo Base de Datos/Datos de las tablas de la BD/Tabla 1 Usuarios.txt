@@ -1,0 +1,17 @@
+// ID;CONTRASEÑA;NOMBRE;TIPO;
+18919953;0;Norton Irarrázabal;Administrador
+1;1;Paciente 1;Paciente
+2;2;Paciente 2;Paciente
+3;3;Paciente 3;Paciente
+4;4;Paciente 4;Paciente
+10;5;Maria Soto;Practicante
+11;6;Fernanda Acuña;Practicante
+12;7;Nicolas Veliz;Practicante
+13;8;Raul Aguilar;Practicante
+14;9;Carlos Acevedo;Practicante
+15;10;Marco Duran;Practicante
+20;11;Tutor 1;Tutor
+30;12;Administrador financiero;Admistrador de Finanza
+31;13;Secretaria;Secretaria
+32;14;Recaudador;Recaudador
+18655201;15;Sebastian Rojas;Administrador

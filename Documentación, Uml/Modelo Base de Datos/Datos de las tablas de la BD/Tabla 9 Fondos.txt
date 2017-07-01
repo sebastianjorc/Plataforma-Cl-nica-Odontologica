@@ -1,0 +1,3 @@
+//Fonto total;Fondo para gastos;Fondo para inversion;Fondo preventivo //70%;10%;20%
+$60.000.000;$42.000.000;$6.000.000;$12.000.000
+$70.000.000;$49.000.000;$7.000.000;$14.000.000

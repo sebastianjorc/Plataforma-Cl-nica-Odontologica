@@ -1,0 +1,27 @@
+//Año;Mes;Dia;Numero dia;Ingreso
+2017;Junio;Lunes;12;$120.000
+2017;Junio;Martes;13;$130.000
+2017;Junio;Miercoles;14;$140.000
+2017;Junio;Jueves;15;$150.000
+2017;Junio;Viernes;16;$160.000
+2017;Junio;Sabado;17;$170.000
+2017;Junio;Domingo;18;$180.000
+2017;Junio;Lunes;19;$190.000
+2017;Junio;Martes;20;$200.000
+2017;Junio;Miercoles;21;$210.000
+2017;Junio;Jueves;22;$220.000
+2017;Junio;Viernes;23;$230.000
+2017;Junio;Sabado;24;$240.000
+2017;Junio;Domingo;25;$250.000
+2017;Junio;Lunes;26;$260.000
+2017;Junio;Martes;27;$270.000
+2017;Junio;Miercoles;28;$280.000
+2017;Junio;Jueves;29;$290.000
+2017;Junio;Viernes;30;$300.000
+2017;Julio;Sabado;1;$310.000
+2017;Julio;Domingo;2;$320.000
+2017;Julio;Lunes;3;$330.000
+2017;Julio;Martes;4;$340.000
+2017;Julio;Miercoles;5;$350.000
+2017;Julio;Jueves;6;$360.000
+2017;Julio;Viernes;7;$370.000
