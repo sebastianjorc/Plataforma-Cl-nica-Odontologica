@@ -1,4 +1,4 @@
-//ID pregunta;Parametro;ID Respuesta//(mas negativo a mas positivo)//se supone que el tutor tendra el cuestionario en mano
+//ID pregunta;Parametro;ID Respuesta//El id de respuesta es el numero del combo box
 1;5;1 
 2;4;2
 3;3;1
