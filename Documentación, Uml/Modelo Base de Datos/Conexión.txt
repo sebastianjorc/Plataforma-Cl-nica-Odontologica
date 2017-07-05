@@ -13,4 +13,4 @@ Port number: 		3306
 numero de cuenta: 	225766
 
 Database alojada en: 	https://www.freemysqlhosting.net
-entrar en:				http://www.phpmyadmin.co/index.php
+entraren:				http://www.phpmyadmin.co/index.php
