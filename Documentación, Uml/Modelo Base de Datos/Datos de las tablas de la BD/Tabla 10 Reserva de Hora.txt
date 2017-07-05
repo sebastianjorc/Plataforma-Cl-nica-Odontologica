@@ -1,4 +1,16 @@
-//ID Paciente;ID Profesional;Hora;ID Servicio;
-1;10;12:00;0
-2;11;16:00;2
+//ID Paciente','ID Profesional','Hora','ID Servicio','
 
+
+CREATE TABLE IF NOT EXISTS `Reserva de hora` (
+	`ID_PACIENTE` VARCHAR(45) NOT NULL,
+	`ID_PROFESIONAL` VARCHAR(45) NULL,
+	`HORA` VARCHAR(45) NULL,
+	`ID_SERVICIO` VARCHAR(45) NULL,
+	PRIMARY KEY (`ID_PACIENTE`)
+)
+
+INSERT INTO 'Reserva de hora' VALUE 
+
+	('1','10','12:00','0'),
+	('2','11','16:00','2')
+;

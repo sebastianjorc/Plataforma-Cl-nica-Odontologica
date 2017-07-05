@@ -1,14 +1,27 @@
-//ID pregunta;Parametro;ID Respuesta//(mas negativo a mas positivo)//se supone que el tutor tendra el cuestionario en mano
-1;5;1 
-2;4;2
-3;3;1
-4;3;2
-5;3;3
-6;2;1
-7;2;2
-8;2;1
-9;3;2
-10;3;1
-11;3;2
-12;4;1
-13;4;2
+//ID pregunta','Parametro','ID Respuesta//(mas negativo a mas positivo)//se supone que el tutor tendra el cuestionario en mano
+
+
+CREATE TABLE IF NOT EXISTS `Encuesta Practicantes` (
+	`ID_PREGUNTA` VARCHAR(45) NOT NULL,
+	`PARAMETRO` VARCHAR(45) NULL,
+	`INVERSION` VARCHAR(45) NULL,
+	`ID RESPUESTA` VARCHAR(45) NULL,
+	PRIMARY KEY (`ID_PREGUNTA`)
+)
+
+INSERT INTO 'Encuesta Practicantes' VALUE 
+
+	('1','5','1'),
+	('2','4','2'),
+	('3','3','1'),
+	('4','3','2'),
+	('5','3','3'),
+	('6','2','1'),
+	('7','2','2'),
+	('8','2','1'),
+	('9','3','2'),
+	('10','3','1'),
+	('11','3','2'),
+	('12','4','1'),
+	('13','4','2')
+;

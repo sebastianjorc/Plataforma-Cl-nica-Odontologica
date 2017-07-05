@@ -1,3 +1,14 @@
-//ID Paciente;ID Servicio;Precio
-1;0;$36.000
-2;2;$21.000
+//ID Paciente','ID Servicio','Precio
+
+CREATE TABLE IF NOT EXISTS `Deuda paciente` (
+	`ID_PACIENTE` VARCHAR(45) NOT NULL,
+	`ID_SERVICIO` VARCHAR(45) NULL,
+	`PRECIO` VARCHAR(45) NOT NULL,
+	PRIMARY KEY (`ID_PACIENTE`)
+)
+
+INSERT INTO 'Deuda paciente' VALUE 
+
+	('1','0','36000'),
+	('2','2','21000')
+;

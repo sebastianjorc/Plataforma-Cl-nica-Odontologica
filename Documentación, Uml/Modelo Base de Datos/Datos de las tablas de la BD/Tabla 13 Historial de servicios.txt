@@ -1,3 +1,16 @@
-//ID Practicante;Mes;Numero día;ID servicio;Calificación
-10;Junio;30;0;70
-11;Julio;1;2;60
+//ID Practicante','Mes','Numero día','ID servicio','Calificación
+
+CREATE TABLE IF NOT EXISTS `Historial de servicios` (
+	`ID_PRACTICANTE` VARCHAR(45) NOT NULL,
+	`MES` VARCHAR(45) NULL,
+	`NUMERO DÍA` VARCHAR(45) NOT NULL,
+	`ID SERVICIO` VARCHAR(45) NULL,
+	`CALIFICACION` VARCHAR(45) NULL,
+	PRIMARY KEY (`ID_PRACTICANTE`)
+)
+
+INSERT INTO 'Historial de servicios' VALUE 
+
+	('10','Junio','30','0','70'),
+	('11','Julio','1','2','60')
+;
