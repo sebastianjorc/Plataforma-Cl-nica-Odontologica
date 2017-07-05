@@ -1,16 +1,15 @@
-//Fonto total','Fondo para gastos','Fondo para inversion','Fondo preventivo //70%','10%','20%
+//Año;Mes;Fondo Sin descuentos (Suma de todos los ingresos del mes);Gasto total(sumar gastos del mes);Egreso total(sumar egresos del mes);Fondo con descuento (ingreso - (egresos+gastos);Impuesto;Deuda
 
 CREATE TABLE IF NOT EXISTS `Fondos` (
 	`ANO` VARCHAR(45) NOT NULL,
 	`MES` VARCHAR(45) NOT NULL,
-	`INVERSION INFRAESTRUCTURA` INT NULL,
-	`INVERSION TECNOLOGICA` NULL,
-	`INVERSION EN EQUIPO MEDICO` NULL,
+	`FONDO SIN DESCUENTO` INT NULL,
+	`GASTO TOTAL` INT NULL,
+	`EGRESO TOTAL` INT NULL,
+	`FONDO CON DESCUENTO` INT NULL;
 	PRIMARY KEY (`ANO`,`MES`)
 )
 
 INSERT INTO 'Fondos' VALUE 
-
-	('60000000','42000000','6000000','12000000'),
-	('70000000','49000000','7000000','14000000')
+	('2017','Junio','3400000','1250000','1030000','1120000','250000','400.000')
 ;
