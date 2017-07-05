@@ -1,0 +1,22 @@
+// ID;CONTRASEÑA;NOMBRE;TIPO;IMAGEN
+18919953;0;Norton Irarrázabal;Administrador;foto18919953.jpg
+18655201;1;Sebastian Rojas;Administrador;foto18655201.jpg
+16975564;2;Camila Torres;Paciente;foto16975564.jpg
+18775148;3;Fernanda Demarchi;Paciente;foto18775148.jpg
+16151627;4;Elizabeth Aguilar;Paciente;foto16151627.jpg
+17595220;5;Valentina Liverson;Paciente;foto17595220.jpg
+16151748;6;Maria Soto;Practicante;foto16151748.jpg
+18103219;7;Fernanda Acuña;Practicante;foto18103219.jpg
+18875761;8;Nicolas Veliz;Practicante;foto18875761.jpg
+18691610;9;Raul Aguilar;Practicante;foto18691610.jpg
+17056512;10;Carlos Acevedo;Practicante;foto17056512.jpg
+17912143;11;Marco Duran;Practicante;foto17912143.jpg
+16578248;12;Alberto Navarro;Tutor;foto16578248.jpg
+14084714;13;Arturo Fuentealba;Tutor;foto14084714.jpg
+15303610;14;Antonio Diaz;Tutor;foto15303610.jpg
+15757631;15;Alvaro Sepulveda;Tutor;foto15757631.jpg
+16145480;16;Fabian Pinto;Tutor;foto16145480.jpg
+16534060;17;Franco Muñoz;Tutor;foto16534060.jpg
+17912105;18;Lucas Millalonco;Admistrador de Finanza;foto17912105.jpg
+17912143;19;Eleana Espinoza;Secretaria;foto17912143.jpg
+14780020;20;Leonor Gallardo;Recaudador;foto14780020.jpg
