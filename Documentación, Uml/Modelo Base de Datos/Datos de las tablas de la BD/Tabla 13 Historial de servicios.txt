@@ -1,9 +1,9 @@
-//ID Practicante','Mes','Numero dÌa','ID servicio','CalificaciÛn
+//ID Practicante','Mes','Numero d√≠a','ID servicio','Calificaci√≥n
 
 CREATE TABLE IF NOT EXISTS `Historial de servicios` (
 	`ID_PRACTICANTE` VARCHAR(45) NOT NULL,
 	`MES` VARCHAR(45) NULL,
-	`NUMERO DÕA` VARCHAR(45) NOT NULL,
+	`NUMERO D√çA` VARCHAR(45) NOT NULL,
 	`ID SERVICIO` VARCHAR(45) NULL,
 	`CALIFICACION` VARCHAR(45) NULL,
 	PRIMARY KEY (`ID_PRACTICANTE`)
@@ -11,6 +11,6 @@ CREATE TABLE IF NOT EXISTS `Historial de servicios` (
 
 INSERT INTO 'Historial de servicios' VALUE 
 
-	('10','Junio','30','0','70'),
-	('11','Julio','1','2','60')
+	('16151748','Junio','30','0','70'),
+	('18103219','Julio','1','2','60')
 ;
