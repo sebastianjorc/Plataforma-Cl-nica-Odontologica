@@ -17,7 +17,6 @@ public class Interfaz_Administrador extends Interfaz {
 		inicializar_pb0(pb0,user);
 	}
 /*--------------------------------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------------------------------*/
 	@Override
 	public JTabbedPane Paneles() {
 		pb0 = new PanelBase("img/backgroundjtp.png");

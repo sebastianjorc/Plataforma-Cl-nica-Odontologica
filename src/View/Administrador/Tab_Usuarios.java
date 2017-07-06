@@ -12,6 +12,8 @@ import javax.swing.border.EtchedBorder;
 
 import com.mxrck.autocompleter.TextAutoCompleter;
 
+import Controller.CambioenBoxAdministrador;
+import Controller.ClickAgregarUsuario;
 import Controller.ClickBuscar;
 import Controller.consulta_ComboBoxTipoUsuario;
 
@@ -40,6 +42,7 @@ public class Tab_Usuarios extends PanelBase{
 				nIdA	= new JTextField(),
 				nNameA 	= new JTextField(),
 				nPassA	= new JTextField(),
+				nNivel  = new JTextField(),
 				usuarioM= new JTextField(),
 				usuarioA = new JTextField(),
 				usuarioE = new JTextField();
@@ -70,8 +73,8 @@ public class Tab_Usuarios extends PanelBase{
 		this.setLayout(new GridLayout(1,0));
 		this.add(getConIzq());
 		this.add(getpM());
-		comboTiposM.addActionListener(new consulta_ComboBoxTipoUsuario(comboTiposM, AutoCompleterIdM,usuarioM,buscarM));
-		comboTiposE.addActionListener(new consulta_ComboBoxTipoUsuario(comboTiposE, AutoCompleterIdE,usuarioE,buscarE));
+//		comboTiposM.addActionListener(new consulta_ComboBoxTipoUsuario(comboTiposM, AutoCompleterIdM,usuarioM,buscarM));
+//		comboTiposE.addActionListener(new consulta_ComboBoxTipoUsuario(comboTiposE, AutoCompleterIdE,usuarioE,buscarE));
 		
 		buscarM.addActionListener(new ClickBuscar(pM,usuarioM,comboTiposM,rTipoM,rIdM,rNameM,rPassM,Modificar,comboTiposMN,nIdM,nNameM,nPassM));
 		buscarE.addActionListener(new ClickBuscar(pE,usuarioE,comboTiposE,ResultadoE1,ResultadoE2,Eliminar));
@@ -106,7 +109,7 @@ public class Tab_Usuarios extends PanelBase{
 		
 		pM.add(new JLabel("Resultados:"));		pM.add(new JLabel());
 		pM.add(new JLabel());					pM.add(new JLabel());
-		pM.add(new JLabel("Valor actual:"));		pM.add(new JLabel("Valor nuevo:"));
+		pM.add(new JLabel("Valor actual:"));	pM.add(new JLabel("Valor nuevo:"));
 		pM.add(rTipoM);							pM.add(comboTiposMN);
 		pM.add(rIdM);							pM.add(nIdM);
 		pM.add(rNameM);							pM.add(nNameM);
@@ -134,7 +137,11 @@ public class Tab_Usuarios extends PanelBase{
 		pE.add(new JLabel("Resultados:"));		pE.add(new JLabel());
 		pE.add(ResultadoE1);					pE.add(ResultadoE2);
 		pE.add(new JLabel());					pE.add(Eliminar);
-
+		
+		//implementar action
+	//	buscarE.addActionListener(new ClickBuscarUsuario(comboTiposA,nIdA,nPassA,nNameA,nNivel));
+	//	Eliminar.addActionListener(new ClickEliminarUsuario(comboTiposA,nIdA,nPassA,nNameA,nNivel));
+		
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Eliminar usuario"));
 		pE.setBounds(70,40,300,170);			pb.add(pE);		
 		return pb;
@@ -149,15 +156,21 @@ public class Tab_Usuarios extends PanelBase{
 		nPassA.setEnabled(true);
 		nNameA.setEnabled(true);
 		nPassA.setEnabled(true);
+		nNivel.setEnabled(false);
 		Agregar.setEnabled(true);
 		
+		comboTiposA.addItemListener(new CambioenBoxAdministrador(nNivel,comboTiposA));
 		
-		pA.add(new JLabel("Tipo de Usuario:"));	pA.add(comboTiposA);
-		pA.add(new JLabel("Id usuario: "));		pA.add(nIdA);
-		pA.add(new JLabel("Contraseña: "));		pA.add(nPassA);
-		pA.add(new JLabel("Nombre:"));			pA.add(nNameA);
+		pA.add(new JLabel("Tipo de Usuario:"));		pA.add(comboTiposA);
+		pA.add(new JLabel("Id usuario: "));			pA.add(nIdA);
+		pA.add(new JLabel("Contraseña: "));			pA.add(nPassA);
+		pA.add(new JLabel("Nombre:"));				pA.add(nNameA);
+		pA.add(new JLabel("Nivel practicante:"));	pA.add(nNivel);	
 		pA.add(new JLabel());					pA.add(Agregar);
-
+		
+		//implementar action
+		Agregar.addActionListener(new ClickAgregarUsuario(comboTiposA,nIdA,nPassA,nNameA,nNivel));
+		
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Agregar Usuario"));
 		pA.setBounds(70,40,300,130);				pb.add(pA);
 		return pb;

@@ -9,6 +9,8 @@ import javax.swing.JTable;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
+import Model.ConexionSQL;
+
 import java.text.DecimalFormat;
 
 import View.PanelBase;
@@ -22,6 +24,8 @@ public class Tab_Ingresos extends PanelBase{
 	
 	JTable table;
 	
+	ConexionSQL con;
+	
 	JScrollPane scrollPane;
 /*---------------------------------------------------------------------------------------------------------*/	
 	public Tab_Ingresos(){
@@ -29,21 +33,26 @@ public class Tab_Ingresos extends PanelBase{
 		setBorder(BorderFactory.createTitledBorder(linea, "Historial de Ingresos"));
 		setLayout(null);
 		DecimalFormat f = new DecimalFormat("###,###.##");
-		//aca se van a obtener estos datos de la base de datos financiera; 
-		//Lo de abajo es para ver la interfaz solamente. Tambien las fechas se obtendran de la BDD;
-		int il=1000,im=2000,imi=3000,ij=404040,iv=238218,is=2392184,id=12381283;
-		int totali=(il+im+imi+ij+iv+is+id);
 		
-		String[] columnas = {"Fecha","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo","Total Semanal"};
-		Object[][] filas = {{"Mayo 01-07"     ,f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)},
-							{"Abril 24-30"    ,f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)},
-							{"Abril 17-23"    ,f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)},
-							{"Abril 10-16"    ,f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)},
-							{"Abril 3-9"      ,f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)},
-							{"Marzo 27-Abril 2",f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)},
-							{"Marzo 20-26"    ,f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)},
-							{"Marzo 13-19"    ,f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)}};
+		String AÑO,MES,DIA,NUMERO_DIA;
+		int INGRESO;
+//		System.out.println(AÑO+MES+DIA+NUMERO_DIA+INGRESO);
+		
+		con = new ConexionSQL();
+		con.connect(); 
+		
+		
+		
+		
+//		String[] columnas = {"Fecha","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo","Total Semanal"};
+//		Object[][] filas = {{"2017 Junio 26 - 2" ,f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)},
+//							{"2017 Junio 19 - 25",f.format(il),f.format(im),f.format(imi),f.format(ij),f.format(iv),f.format(is),f.format(id),f.format(totali)}};
 				
+		String[] columnas = {"Fecha","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo","Total Semanal"};
+		Object[][] filas = {{"2017 Junio 26 - 2" ,10,10,10,10,10,10,10,10},
+							{"2017 Junio 19 - 25",10,10,10,10,10,10,10,10}};
+		
+		
 		table = new JTable(filas,columnas);
 		table.setFillsViewportHeight(true);
 		table.setBackground(blanco);

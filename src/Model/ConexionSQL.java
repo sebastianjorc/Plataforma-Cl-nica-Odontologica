@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  */
 public class ConexionSQL {
 	public Connection con;
-
+	
 	/**Realiza conexión con el servidor.
 	 */
 	public void connect(){
@@ -30,23 +30,5 @@ public class ConexionSQL {
 			    			+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);		    	
 		    }
 	}
-/*--------------------------------------------------------------------------------------------------------*/	
-	public void imprimir_tabla(String Tabla){
-		ResultSet rs = null;	Statement s = null;
-		try {
-			con = (Connection) new ConexionSQL();
-			s = con.createStatement();
-			rs = s.executeQuery ("select * from "+Tabla);
-			System.out.println("Imprimir "+Tabla+"\n");
-			while (rs.next()){
-				System.out.println("id:"+rs.getInt(1)+"-Pass:"+rs.getString(2)+
-						"-nombre:"+rs.getString(3)+"-tipo"+rs.getString(4));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Error al imprimir administradores");
-			e.printStackTrace();
-		}
-	}		
 }
 /*--------------------------------------------------------------------------------------------------------*/	
