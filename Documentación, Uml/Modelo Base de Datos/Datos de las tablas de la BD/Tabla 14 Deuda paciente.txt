@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS `Deuda paciente` (
 )
 
 INSERT INTO 'Deuda paciente' VALUE 
-
-	('1','0','36000'),
-	('2','2','21000')
+	('16975564','0','36000'),
+	('18775148','2','21000')
 ;
