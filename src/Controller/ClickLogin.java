@@ -60,7 +60,7 @@ public class ClickLogin implements ActionListener{
 		try {
 			con.connect();
 			s = con.con.createStatement();
-			rs = s.executeQuery ("select * from Usuario where id = '"+id+"' AND pass = '"+pass+"'");
+			rs = s.executeQuery ("select * from Usuarios where ID = '"+id+"' AND CONTRASENA = '"+pass+"'");
 			//MOVER, ORDENAR FUNCIÓN
 			if (rs.next()){
 				tipoResultado=rs.getString(4);	JFrame in;

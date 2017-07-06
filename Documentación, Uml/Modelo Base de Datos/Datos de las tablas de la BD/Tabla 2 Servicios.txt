@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `Servicios` (
 	`IDS` VARCHAR(45) NULL,
 	`PRECIO_TOTAL` VARCHAR(45) NULL,
 	PRIMARY KEY (`ID_SERVICIO`)
-)
+);
 
 INSERT INTO Servicios VALUE 
 	('0','General','Higiene Oral','0-1-2-3-4','36000'),
@@ -26,5 +26,5 @@ INSERT INTO Servicios VALUE
 	('13','Ortodoncia','tratamiento de brackets','0-23','21000 '),
 	('14','Peridoncia','Tratamiento gengivitis por sesion','0-19','26000'),
 	('15','Peridoncia','Tratamiento hipersensibilidad dentinaria','0-20','26000'),
-	('6','Peridoncia','Tratamiento de absceso periodontal','0-21','19000')
+	('16','Peridoncia','Tratamiento de absceso periodontal','0-21','19000')
 ;

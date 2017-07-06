@@ -3,13 +3,13 @@
 CREATE TABLE IF NOT EXISTS `Historial de ingresos` (
 	`ANO` VARCHAR(45) NOT NULL,
 	`MES` VARCHAR(45) NOT NULL,
-	`DÍA` VARCHAR(45) NOT NULL,
+	`DIA` VARCHAR(45) NOT NULL,
 	`NUMERO DIA` VARCHAR(45) NULL,
 	`INGRESO` INT NULL,
-	PRIMARY KEY (`ANO`,`MES`,`DIA`)
-)
+	PRIMARY KEY (`ANO`,`MES`,`NUMERO DIA`)
+);
 
-INSERT INTO 'Historial de ingresos' VALUE 
+INSERT INTO `Historial de ingresos` VALUE 
 
 	('2017','Junio','Lunes','12','120000'),
 	('2017','Junio','Martes','13','130000'),

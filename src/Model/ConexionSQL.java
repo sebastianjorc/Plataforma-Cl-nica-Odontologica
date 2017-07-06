@@ -16,9 +16,9 @@ public class ConexionSQL {
 		 try
 		    {
 		    String myDriver	= "org.gjt.mm.mysql.Driver";
-		    String myUrl	= "jdbc:mysql://sql10.freesqldatabase.com:3306/sql10171990";
-		    String user		= "sql10171990";
-		    String psswd	= "mETVBAWrV4";
+		    String myUrl	= "jdbc:mysql://sql10.freemysqlhosting.net:3306/sql10183690";
+		    String user		= "sql10183690";
+		    String psswd	= "t5M2ftrU4b";
 
 		    Class.forName(myDriver);
 		    con = DriverManager.getConnection(myUrl, user, psswd);

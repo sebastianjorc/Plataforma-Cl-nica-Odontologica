@@ -5,9 +5,9 @@ CREATE TABLE IF NOT EXISTS `Encuesta Practicantes` (
 	`ID` VARCHAR(45) NOT NULL,
 	`ID RESPUESTAS` VARCHAR(45) NULL,
 	PRIMARY KEY (`ID`)
-)
+);
 
-INSERT INTO 'Encuesta Practicantes' VALUE 
+INSERT INTO `Encuesta Practicantes` VALUE 
 	('16151748','1-2-1-2-3-1-2-1-2-1-2-1-2'),
 	('18103219','1-2-1-2-3-1-2-1-2-1-2-1-2')
 ;

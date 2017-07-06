@@ -7,9 +7,9 @@ CREATE TABLE IF NOT EXISTS `Practicantes` (
 	`NIVEL` VARCHAR(45) NULL,
 	`SERVICIOS POSIBLES` VARCHAR(45) NULL,
 	PRIMARY KEY (`ID`)
-)
+);
 
-INSERT INTO 'Practicantes' VALUE 
+INSERT INTO Practicantes VALUE 
 	('16151748','Maria Soto','7','0-1'),
 	('18103219','Fernanda Acuña','8','2-3-4'),
 	('18875761','Nicolas Veliz','9','5-6-9'),

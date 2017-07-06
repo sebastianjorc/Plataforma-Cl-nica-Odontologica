@@ -1,13 +1,13 @@
-//Mes;Impuestos;Deudas
+//Mes,Impuestos,Deudas
 
 CREATE TABLE IF NOT EXISTS `Impuestos y Deudas` (
 	`MES` VARCHAR(45) NOT NULL,
 	`IMPUESTOS` INT NOT NULL,
 	`DEUDAS` INT NULL,
 	PRIMARY KEY (`MES`)
-)
+),
 
-INSERT INTO 'Egresos Mensuales' VALUE 
-	('Mayo';'300000';'500000'),
-	('Junio';'250000';'400000')
-;
+INSERT INTO `Impuestos y Deudas` VALUE 
+	('Mayo','300000','500000'),
+	('Junio','250000','400000')
+,
