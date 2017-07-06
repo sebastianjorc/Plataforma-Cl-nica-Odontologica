@@ -11,6 +11,6 @@ CREATE TABLE IF NOT EXISTS `Reserva de hora` (
 
 INSERT INTO 'Reserva de hora' VALUE 
 
-	('1','10','12:00','0'),
-	('2','11','16:00','2')
+	('16975564','16151748','12:00','0'),
+	('18775148','18103219','16:00','2')
 ;
