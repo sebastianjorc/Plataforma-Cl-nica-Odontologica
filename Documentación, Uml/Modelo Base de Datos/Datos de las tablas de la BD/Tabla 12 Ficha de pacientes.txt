@@ -1,0 +1,16 @@
+//ID','NOMBRE','PATERNO','SERVICIO','PRACTICANTE','DESCRIPCION
+
+CREATE TABLE IF NOT EXISTS `Ficha paciente` (
+	`ID` VARCHAR(45) NOT NULL,
+	`NOMBRE` VARCHAR(45) NOT NULL,
+	`PATERNO` VARCHAR(45) NOT NULL,
+	`SERVICIOS` VARCHAR(45) NOT NULL,
+	`PRACTICANTES` VARCHAR(45) NOT NULL,
+  `DESCRIPCION` VARCHAR(120) NOT NULL,
+	PRIMARY KEY (`ID`)
+);
+
+INSERT INTO `Egresos Mensuales` VALUE 
+	('16975564','Camila','Torres','0','16151748','Limpieza bucal sin complicaciones'),
+  ('18775148','Fernanda','Demarchi','2','18103219','Extraccion dental con encia excesivamente inflamada ')
+;
