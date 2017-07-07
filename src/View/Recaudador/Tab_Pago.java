@@ -3,18 +3,25 @@ package View.Recaudador;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridLayout;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
+import com.mxrck.autocompleter.TextAutoCompleter;
+
 import Controller.ClickPagar;
+import Model.ConexionSQL;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
 /**
@@ -36,6 +43,7 @@ public class Tab_Pago extends PanelBase {
 				pagarDeuda	= new JButton ("Pagar");
 	
 	JTable 		table 		= new JTable();
+	TextAutoCompleter 	autoCompleter  = new TextAutoCompleter(idUser);
 /*--------------------------------------------------------------------------------------------------------*/	
 	/**
 	 * 
@@ -68,6 +76,7 @@ public class Tab_Pago extends PanelBase {
 	 * 
 	 */
 	private void panel_deuda() {
+		consulta_autocompletado();
 		this.setLayout(new BorderLayout());
 		PanelBase pb = new PanelBase();
 		pb.setLayout(new BoxLayout(pb,BoxLayout.X_AXIS));
@@ -107,5 +116,27 @@ public class Tab_Pago extends PanelBase {
 		this.setBorder(BorderFactory.createTitledBorder(linea, "Pago de deudas"));
 		
 	}
+	public void consulta_autocompletado(){
+		ResultSet rs= null;
+		Statement s	= null;
+		ConexionSQL con = new ConexionSQL();
+		
+		try {
+			autoCompleter.removeAllItems();
+			con.connect();
+			s = con.con.createStatement();
+			rs = s.executeQuery ("select *from Usuarios where TIPO='Paciente'");
+			while (rs.next())
+				autoCompleter.addItem(rs.getString(1));
+			con.con.close();
+			
+		} catch (SQLException e) {
+		    JOptionPane.showMessageDialog(null, "Error. No se encuentra el tipo de usuario\n "
+		    		+ "en la base de datos\nError: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);	
+			e.printStackTrace();
+		}
+		
+	}
+	
 }
 /*--------------------------------------------------------------------------------------------------------*/	

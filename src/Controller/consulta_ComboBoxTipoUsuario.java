@@ -76,5 +76,6 @@ public class consulta_ComboBoxTipoUsuario implements ActionListener{
 			e.printStackTrace();
 		}
 	}
+	
 }
 /*--------------------------------------------------------------------------------------------------------*/	
