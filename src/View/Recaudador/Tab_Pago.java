@@ -3,6 +3,8 @@ package View.Recaudador;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
+import javax.swing.table.DefaultTableModel;
 
 import com.mxrck.autocompleter.TextAutoCompleter;
 
@@ -40,9 +43,10 @@ public class Tab_Pago extends PanelBase {
 				idUser		= new JTextField();	
 	
 	JButton		pagarVale 	= new JButton ("Pagar"),
-				pagarDeuda	= new JButton ("Pagar");
-	
-	JTable 		table 		= new JTable();
+				pagarDeuda	= new JButton ("Pagar"),
+				btnBuscar	= new JButton ("Buscar");
+	JTable table;
+	DefaultTableModel modelo;
 	TextAutoCompleter 	autoCompleter  = new TextAutoCompleter(idUser);
 /*--------------------------------------------------------------------------------------------------------*/	
 	/**
@@ -50,6 +54,17 @@ public class Tab_Pago extends PanelBase {
 	 */
 	public Tab_Pago(){ 
 		super("../img/backgroundjtp.png");
+		modelo = new DefaultTableModel() {
+			   @Override
+			   public boolean isCellEditable(int fila, int columna) {
+			       return false; //Con esto conseguimos que la tabla no se pueda editar
+			   }
+			};
+		table = new JTable(modelo);
+		modelo.addColumn("Id");
+		modelo.addColumn("Servicio");
+		modelo.addColumn("Monto");
+		
 		pagarVale.addActionListener(new ClickPagar());
 		pagarDeuda.addActionListener(new ClickPagar());
 		panel_deuda();
@@ -81,7 +96,9 @@ public class Tab_Pago extends PanelBase {
 		PanelBase pb = new PanelBase();
 		pb.setLayout(new BoxLayout(pb,BoxLayout.X_AXIS));
 		pb.add(new JLabel("Buscar usuario:    "));	pb.add(idUser);	
-		pb.add(new JLabel("      ")); 				pb.add(new JLabel("   Id usuario:            "));
+		pb.add(new JLabel("      ")); 				pb.add(btnBuscar);
+		
+		btnBuscar.addActionListener(new ClickBuscar());
 		this.add(pb,BorderLayout.NORTH);
 		
 		pDeuda = new PanelBase();			pDeuda.setLayout(new GridLayout(0,2,0,15));
@@ -90,11 +107,7 @@ public class Tab_Pago extends PanelBase {
 		pDeuda.add(new JLabel());			pDeuda.add(new JLabel());
 		
 		String[] columnas = {"id","Servicio","Monto"};
-		Object[][] filas = {{"Alumno 1","Servicio 1","5425432"},
-							{"Alumno 2","Servicio 1","523"},
-							{"Alumno 3","Servicio 1","4234"}};
 		
-		table = new JTable(filas,columnas);
 		table.setFillsViewportHeight(true);
 		table.setBackground(blanco);
 		table.setOpaque(false);
@@ -125,7 +138,7 @@ public class Tab_Pago extends PanelBase {
 			autoCompleter.removeAllItems();
 			con.connect();
 			s = con.con.createStatement();
-			rs = s.executeQuery ("select *from Usuarios where TIPO='Paciente'");
+			rs = s.executeQuery ("SELECT * from `Deuda paciente`");
 			while (rs.next())
 				autoCompleter.addItem(rs.getString(1));
 			con.con.close();
@@ -137,6 +150,51 @@ public class Tab_Pago extends PanelBase {
 		}
 		
 	}
+	class ClickBuscar implements ActionListener{
+
+		public void actionPerformed(ActionEvent arg0) {
+			
+			rellenarTabla(idUser.getText());
+			
+		}
+		
+		public void rellenarTabla(String ID) {
+			Statement s	= null;
+			ResultSet rs= null;
+			ConexionSQL con = new ConexionSQL();
+			String query = ("SELECT * FROM 'Deuda paciente' WHERE ID_PACIENTE='"+ID+"'");
+			
+			
+			try {
+				con.connect();
+				s = con.con.createStatement();				
+	            rs = s.executeQuery (query);  
+	            
+	            while(rs.next()){
+	                Object[] fila = new Object[3]; 	                                              
+	                fila[0] = rs.getString("ID_PACIENTE");
+	                fila[1] = rs.getDouble("ID_SERVICIO");
+	                fila[1] = rs.getDouble("PRECIO");
+	                modelo.addRow(fila);
+	            }	 
+	            table.updateUI();
+	           con.con.close();
+	 
+	        } catch (SQLException e) {
+	            System.out.println(e+"    ");
+	            e.printStackTrace();
+	            
+	        }
+	 
+	    }
+		
+	    void vaciarTabla(){
+	        while (modelo.getRowCount() > 0) modelo.removeRow(0);
+	    }
+			
+	}
+		
+	
 	
 }
 /*--------------------------------------------------------------------------------------------------------*/	
