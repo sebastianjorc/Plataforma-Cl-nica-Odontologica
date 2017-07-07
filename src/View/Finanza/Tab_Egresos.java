@@ -2,22 +2,29 @@ package View.Finanza;
 
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.DecimalFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
+import Model.ConexionSQL;
 import View.PanelBase;
 
 public class Tab_Egresos extends PanelBase {
 	private static final long serialVersionUID = 1L;
 		
 	Border 		linea 		= BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
+	
+	ConexionSQL con;
+	ResultSet rs = null;	Statement s = null;
 	
 	PanelBase panel_gastos,panel_egresos,impuestos_deudas,impuestos,deudas,mezcla_gasto_egresos;
 	
@@ -26,10 +33,8 @@ public class Tab_Egresos extends PanelBase {
 	JTextField Deuda_1 = new JTextField();
 	JTextField Deuda_2 = new JTextField();
 	
-	JLabel Impues_1 = new JLabel("Impuesto 1:");
-	JLabel Impues_2= new JLabel("Impuesto 2:");
-	JLabel Deud_1 = new JLabel("Deuda 1:");
-	JLabel Deud_2 = new JLabel("Deuda 2:");
+	JLabel Impues_1 = new JLabel("Impuesto Total: ");
+	JLabel Deud_1 = new JLabel("Deuda Total: ");
 			
 	JTable table,table_2;
 	
@@ -55,13 +60,36 @@ public class Tab_Egresos extends PanelBase {
 
 		DecimalFormat f = new DecimalFormat("###,###.##");
 		
-		int ii=1000,it=2000,iem=3000;
-		int te=(ii+it+iem);
-		
 		String[] columnas = {"Fecha","Inversion en infraestructura","Inversion tecnologica","Inversion equipo medico","Total Egreso"};
-		Object[][] filas = {{"Mayo"     ,f.format(ii),f.format(it),f.format(iem),f.format(te)},
-							{"Abril"    ,f.format(ii),f.format(it),f.format(iem),f.format(te)},
-							{"Marzo"    ,f.format(ii),f.format(it),f.format(iem),f.format(te)},};
+		Object[][] filas = new Object[200][5];
+		int fila=0;
+		String fecha;
+		
+		try{
+			con = new ConexionSQL();
+			con.connect();
+			s = con.con.createStatement();
+			rs = s.executeQuery("SELECT * FROM `Egresos Mensuales` ORDER BY ANO DESC,`Numero Mes`ASC");
+			while(rs.next()){
+				fecha=rs.getString(1)+" "+rs.getString(2);
+				int II,IT,IE,TE=0;
+				II=rs.getInt(4);
+				IE=rs.getInt(5);
+				IT=rs.getInt(6);
+				TE=(TE+(II+IE+IT));
+		
+				filas[fila][0]=fecha;
+				filas[fila][1]=f.format(II);
+				filas[fila][2]=f.format(IT);
+				filas[fila][3]=f.format(IE);
+				
+				filas[fila][4]=f.format(TE);
+				fila++;
+			}
+			
+		}catch(Exception e){
+			JOptionPane.showMessageDialog(null, e);
+		}
 				
 		table_2 = new JTable(filas,columnas);
 		table_2.setFillsViewportHeight(true);
@@ -87,15 +115,38 @@ public class Tab_Egresos extends PanelBase {
 		panel_gastos.setLayout(null);
 		panel_gastos.setBorder(BorderFactory.createTitledBorder(linea, "Gastos"));
 		DecimalFormat f = new DecimalFormat("###,###.##");
+
+		String[] columnas = {"Fecha","Gastos Generales","Gastos de inventario","Gastos excepcionales","Total Gastos"};
+		Object[][] filas = new Object[200][5];
+		int fila=0;
+		String fecha;
 		
-		int gh=1000,gg=2000,gi=3000,ge=404040;
-		int totalg=(gh+gg+gi+ge);
+		try{
+			con = new ConexionSQL();
+			con.connect();
+			s = con.con.createStatement();
+			rs = s.executeQuery("SELECT * FROM `Gastos Mensuales` ORDER BY ANO DESC,`Numero Mes`ASC");
+			while(rs.next()){
+				fecha=rs.getString(1)+" "+rs.getString(2);
+				int GG,GI,GE,TG=0;
+				GG=rs.getInt(4);
+				GI=rs.getInt(5);
+				GE=rs.getInt(6);
+				TG=(TG+(GG+GI+GE));
 		
-		String[] columnas = {"Fecha","Gastos por recurso humano","Gastos Generales","Gastos de inventario","Gastos excepcionales","Total Gastos"};
-		Object[][] filas = {{"Mayo"     ,f.format(gh),f.format(gg),f.format(gi),f.format(ge),f.format(totalg)},
-							{"Abril"    ,f.format(gh),f.format(gg),f.format(gi),f.format(ge),f.format(totalg)},
-							{"Marzo"    ,f.format(gh),f.format(gg),f.format(gi),f.format(ge),f.format(totalg)},};
+				filas[fila][0]=fecha;
+				filas[fila][1]=f.format(GG);
+				filas[fila][2]=f.format(GI);
+				filas[fila][3]=f.format(GE);
 				
+				filas[fila][4]=f.format(TG);
+				fila++;
+			}
+			
+		}catch(Exception e){
+			JOptionPane.showMessageDialog(null, e);
+		}
+						
 		table = new JTable(filas,columnas);
 		table.setFillsViewportHeight(true);
 		table.setBackground(blanco);
@@ -104,11 +155,6 @@ public class Tab_Egresos extends PanelBase {
 		table.getTableHeader().setBackground(navyblue);
 		table.setFont(new Font("Book Antiqua", Font.BOLD, 14));
 		table.getTableHeader().setForeground(blanco);
-		table.getColumnModel().getColumn(0).setPreferredWidth(10);
-		table.getColumnModel().getColumn(2).setPreferredWidth(18);
-		table.getColumnModel().getColumn(3).setPreferredWidth(20);
-		table.getColumnModel().getColumn(4).setPreferredWidth(20);
-		table.getColumnModel().getColumn(5).setPreferredWidth(20);
 	
 		scrollPane = new JScrollPane();
 		scrollPane.setViewportView(table);
@@ -129,37 +175,48 @@ public class Tab_Egresos extends PanelBase {
 		impuestos= new PanelBase();
 		impuestos.setLayout(null);
 		impuestos.setBorder(BorderFactory.createTitledBorder(linea, "Impuestos"));
+		DecimalFormat f = new DecimalFormat("###,###.##");
+		int impuesto=0,deuda=0,impuestototal=0,deudatotal=0;
+		try{
+			con = new ConexionSQL();
+			con.connect();
+			s = con.con.createStatement();
+			rs = s.executeQuery("SELECT * FROM `Impuestos y Deudas`");
+			while(rs.next()){
+				impuesto=rs.getInt(2);//impuestos
+				deuda=rs.getInt(3);//deudas
+				
+				impuestototal=impuestototal+impuesto;
+				deudatotal=deudatotal+deuda;
+			}
+			impuesto_1.setText(f.format(impuestototal));
+			Deuda_1.setText(f.format(deudatotal));
+		}catch(Exception e){
+			JOptionPane.showMessageDialog(null, e);
+		}
 		
-		Impues_1.setBounds(10,10, 80, 60);
-		Impues_2.setBounds(10,60, 80, 60);
+		Impues_1.setBounds(10,10, 120, 60);
+	
 		impuesto_1.setEditable(false);
-		impuesto_1.setBounds(100,33,120,20);
-		impuesto_2.setEditable(false);
-		impuesto_2.setBounds(100,81,120,20);
+		impuesto_1.setBounds(120,33,120,20);
 		
 		impuestos.add(Impues_1);
-		impuestos.add(Impues_2);
 		impuestos.add(impuesto_1);
-		impuestos.add(impuesto_2);
 	
 		impuestos_deudas.add(impuestos);
 		
 		deudas = new PanelBase();
 		deudas.setLayout(null);
 		deudas.setBorder(BorderFactory.createTitledBorder(linea, "Deudas"));
-		
-		
-		Deud_1.setBounds(10, 10, 60, 60);
-		Deud_2.setBounds(10, 60, 60, 60);
-		Deuda_1.setBounds(80,30,120,20);
+
+		Deud_1.setBounds(10, 10, 120, 60);
+		Deuda_1.setBounds(120,30,120,20);
 		Deuda_1.setEditable(false);
-		Deuda_2.setBounds(80,81,120,20);
-		Deuda_2.setEditable(false);
+
 		
 		deudas.add(Deud_1);
-		deudas.add(Deud_2);
 		deudas.add(Deuda_1);
-		deudas.add(Deuda_2);
+	
 		
 		impuestos_deudas.add(deudas);
 		
