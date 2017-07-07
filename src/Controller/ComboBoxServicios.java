@@ -12,6 +12,10 @@ import javax.swing.JOptionPane;
 
 import Model.ConexionSQL;
 
+/**
+ * @author
+ *
+ */
 public class ComboBoxServicios implements ItemListener{
 	
 	JLabel ResE1,ResE2,tipoM,idM,nameM,precioM;
@@ -19,6 +23,14 @@ public class ComboBoxServicios implements ItemListener{
 	String service,hacer;
 	private ConexionSQL con;
 
+	/**
+	 * @param comboServiciosM
+	 * @param rTipoM
+	 * @param rIdM
+	 * @param rNameM
+	 * @param rPrecioM
+	 * @param Hacer
+	 */
 	public ComboBoxServicios(JComboBox<String> comboServiciosM, JLabel rTipoM, JLabel rIdM, JLabel rNameM,
 			JLabel rPrecioM, String Hacer){
 		precioM		=rPrecioM;
@@ -29,6 +41,12 @@ public class ComboBoxServicios implements ItemListener{
 		hacer=Hacer;
 	}
 
+	/**
+	 * @param comboServiciosE
+	 * @param resultadoE1
+	 * @param resultadoE2
+	 * @param Hacer
+	 */
 	public ComboBoxServicios(JComboBox<String> comboServiciosE, JLabel resultadoE1, JLabel resultadoE2, String Hacer) {
 		cbService 	= comboServiciosE;
 		ResE1 		= resultadoE1;
@@ -36,6 +54,9 @@ public class ComboBoxServicios implements ItemListener{
 		hacer		= Hacer;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ItemListener#itemStateChanged(java.awt.event.ItemEvent)
+	 */
 	public void itemStateChanged(ItemEvent e) {
 		if ( e.getStateChange() == ItemEvent.SELECTED ){
 			service = (String) cbService.getSelectedItem();
@@ -44,6 +65,9 @@ public class ComboBoxServicios implements ItemListener{
 	}
 
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param tipo
+	 */
 	public void consulta(String tipo){
 		ResultSet rs= null;
 		Statement s	= null;

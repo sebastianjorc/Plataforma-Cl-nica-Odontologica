@@ -16,6 +16,10 @@ import Controller.ClickEnCalendario;
 import View.PanelBase;
 import View.ReservasEnCalendario;
 
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Calendario extends PanelBase {
 	private static final long serialVersionUID = 1L;
 	Border 		linea 		= BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
@@ -36,6 +40,9 @@ public class Tab_Calendario extends PanelBase {
 	public static JTextField dd = new JTextField();
 	public static JTextField ee= new JTextField();
 
+	/**
+	 * 
+	 */
 	public Tab_Calendario(){
 		super("../img/backgroundjtp.png");	
 		setLayout(null);

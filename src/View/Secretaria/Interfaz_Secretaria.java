@@ -16,6 +16,10 @@ import View.PanelBase;
 import View.ScrollPaneBase;
 import View.Toma_de_hora;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author
+ *
+ */
 @SuppressWarnings("serial")
 public class Interfaz_Secretaria extends Interfaz {
 	PanelBase 	pb0,pb1,pb2;
@@ -32,6 +36,9 @@ public class Interfaz_Secretaria extends Interfaz {
 	JComboBox<String> 	cbTipo		= new JComboBox<String>(tiposUsuarios),
  						cbUsuarios	= new JComboBox<String>(Usuarios);
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param user
+	 */
 	public Interfaz_Secretaria(User user){ 
 		super("Secretaria",user.getId(),user.getName());
 		this.user = user;	
@@ -40,11 +47,17 @@ public class Interfaz_Secretaria extends Interfaz {
 		inicializar_pb2();
 	}
 /*--------------------------------------------------------------------------------------------------------*/		
+	/**
+	 * 
+	 */
 	private void inicializar_pb1() { 
 		pb1.setLayout(null);
 		tdh.setBounds(140,40,600,440);
 		pb1.add(tdh);
 	}
+	/**
+	 * 
+	 */
 	private void inicializar_pb2() { 
 		PanelBase pb = new PanelBase();
 		pb2.setLayout(new BorderLayout());
@@ -71,6 +84,9 @@ public class Interfaz_Secretaria extends Interfaz {
 		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/* (non-Javadoc)
+	 * @see View.Interfaz#Paneles()
+	 */
 	public JTabbedPane Paneles() { 
 		 
 		 pb0 = new PanelBase("img/backgroundjtp.png");

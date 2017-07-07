@@ -13,6 +13,9 @@ import View.Login.Login;
 /*--------------------------------------------------------------------------------------------------------*/	
 public class controller implements Colores {
 		
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		new look();
 		SkipList sl = new SkipList(100000000); 
@@ -21,6 +24,9 @@ public class controller implements Colores {
 		JFrame login = new Login(sl);
 		login.setVisible(true);
 	}
+	/**
+	 * @param sl
+	 */
 	private static void consulta(SkipList sl) {
 		ResultSet rs = null;	Statement s = null;
 		User user;

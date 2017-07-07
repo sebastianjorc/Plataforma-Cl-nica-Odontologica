@@ -17,6 +17,10 @@ import Controller.ComboBoxServicios;
 import Controller.ComboBoxTipoServicioE;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Servicios  extends PanelBase{
 	private static final long serialVersionUID = 1L;	
 	PanelBase conIzq,pM,pE,pA;
@@ -51,18 +55,27 @@ public class Tab_Servicios  extends PanelBase{
 						comboTiposE 	= new JComboBox<String>(tiposServicios);	
 
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * 
+	 */
 	public Tab_Servicios(){		
 		super("../img/backgroundjtp.png");
 		this.setLayout(new GridLayout(1,0));		
 		this.add(getConIzq());	this.add(getpM());		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @return
+	 */
 	protected PanelBase getConIzq() {
 		conIzq = new PanelBase();	conIzq.setLayout(new GridLayout(0,1));
 		conIzq.add(getpA());		conIzq.add(getpE());
 		return conIzq;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase getpM() {
 		pM = new PanelBase();		PanelBase pb = new PanelBase();
 		GridLayout g = new GridLayout(0,2);
@@ -87,6 +100,9 @@ public class Tab_Servicios  extends PanelBase{
 		return pb;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase getpE() {
 		pE = new PanelBase();
 		PanelBase pb = new PanelBase();	GridLayout g = new GridLayout(0,2);
@@ -109,6 +125,9 @@ public class Tab_Servicios  extends PanelBase{
 		return pb;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase getpA() {
 		pA = new PanelBase();
 		PanelBase pb = new PanelBase();			pb.setLayout(null);		

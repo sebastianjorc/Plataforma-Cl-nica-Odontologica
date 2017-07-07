@@ -13,12 +13,19 @@ import Model.User;
 import View.Interfaz;
 import View.Login.Login;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author
+ *
+ */
 public class ClickSalir implements ActionListener {
 	Interfaz in; JFrame login;
 	public ClickSalir(Interfaz interfaz){
 		in = interfaz; 
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		in.dispose();
@@ -29,6 +36,9 @@ public class ClickSalir implements ActionListener {
 		login.setVisible(true);
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @param sl
+ */
 private static void consulta(SkipList sl) {
 	ResultSet rs = null;	Statement s = null;
 	User user;

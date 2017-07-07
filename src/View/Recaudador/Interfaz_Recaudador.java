@@ -7,11 +7,18 @@ import Model.User;
 import View.Interfaz;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author
+ *
+ */
 @SuppressWarnings("serial")
 public class Interfaz_Recaudador extends Interfaz {
 	PanelBase	pb0, pb1;
 	User	user;
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param user
+	 */
 	public Interfaz_Recaudador(User user){
 		super("Recaudador",user.getId(),user.getName());
 		this.user = user;
@@ -22,6 +29,9 @@ public class Interfaz_Recaudador extends Interfaz {
 	void inicializar_pb1() {
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/* (non-Javadoc)
+	 * @see View.Interfaz#Paneles()
+	 */
 	@Override
 	public JTabbedPane Paneles() {
 

@@ -6,8 +6,14 @@ import java.util.Calendar;
 
 import View.Paciente.Tab_Calendario;
 
+/**
+ * @author
+ */
 public class ClickEnCalendario implements PropertyChangeListener {
 
+	/* (non-Javadoc)
+	 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+	 */
 	public void propertyChange(PropertyChangeEvent evt) {
 		final Calendar c = (Calendar) evt.getNewValue();   
 			String dia,mes;

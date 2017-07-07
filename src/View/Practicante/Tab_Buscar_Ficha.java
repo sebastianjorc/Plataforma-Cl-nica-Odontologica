@@ -12,6 +12,10 @@ import javax.swing.border.EtchedBorder;
 
 import View.PanelBase;
 
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Buscar_Ficha extends PanelBase {
 private static final long serialVersionUID = 1L;
 	
@@ -24,6 +28,9 @@ private static final long serialVersionUID = 1L;
 	JButton buscar = new JButton ("Buscar ficha");
 	
 	PanelBase panelbusqueda,panelresultado,panelmezcla;
+	/**
+	 * 
+	 */
 	public Tab_Buscar_Ficha(){
 		super("../img/backgroundjtp.png");	
 		setLayout(null);

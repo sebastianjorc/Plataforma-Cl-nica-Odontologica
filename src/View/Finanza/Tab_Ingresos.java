@@ -19,6 +19,10 @@ import java.text.DecimalFormat;
 
 import View.PanelBase;
 /*---------------------------------------------------------------------------------------------------------*/
+/**
+ * @author 
+ *
+ */
 public class Tab_Ingresos extends PanelBase{
 	private static final long serialVersionUID = 1L;
 	
@@ -32,6 +36,9 @@ public class Tab_Ingresos extends PanelBase{
 	
 	JScrollPane scrollPane,scrollPane_2;
 /*---------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * 
+	 */
 	public Tab_Ingresos(){
 		super("../img/backgroundjtp.png");
 		ResultSet rs = null;	Statement s = null;

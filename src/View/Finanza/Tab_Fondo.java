@@ -15,6 +15,10 @@ import javax.swing.border.EtchedBorder;
 import Model.ConexionSQL;
 import View.PanelBase;
 
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Fondo extends PanelBase{
 	private static final long serialVersionUID = 1L;
 
@@ -36,6 +40,9 @@ public class Tab_Fondo extends PanelBase{
 	JLabel fondoi=new JLabel("Egreso total:");
 	JLabel fondop=new JLabel("Fondo con descuento:");
 	
+	/**
+	 * 
+	 */
 	public Tab_Fondo(){	
 		super("../img/backgroundjtp.png");	
 		setLayout(null);
@@ -105,11 +112,3 @@ public class Tab_Fondo extends PanelBase{
 
 	}
 }
-	/*
-	Fondo
-	//Fondo Total
-	//Fondo para inversion
-	Fondo para gastos
-	Fondo preventivo
-	*/
-

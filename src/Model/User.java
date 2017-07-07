@@ -6,6 +6,12 @@ public class User {
 	private String	pass;
 	private String	tipoUsuario;
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param id
+	 * @param pass
+	 * @param name
+	 * @param tipo
+	 */
 	public User (int id, String pass, String name, String tipo){
 		this.id=id;
 		this.pass=pass;

@@ -20,6 +20,10 @@ import Controller.ClickModificarUsuario;
 import Controller.consulta_ComboBoxTipoUsuario;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Usuarios extends PanelBase{
 	
 	private static final long serialVersionUID = 1L;	
@@ -69,6 +73,9 @@ public class Tab_Usuarios extends PanelBase{
 	TextAutoCompleter 	AutoCompleterIdE  = new TextAutoCompleter(usuarioE),
 						AutoCompleterIdM  = new TextAutoCompleter(usuarioM);
 /*--------------------------------------------------------------------------------------------------------*/		
+	/**
+	 * 
+	 */
 	public Tab_Usuarios() {
 		super("../img/backgroundjtp.png");		
 		this.setLayout(new GridLayout(1,0));
@@ -83,6 +90,9 @@ public class Tab_Usuarios extends PanelBase{
 		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @return
+	 */
 	protected PanelBase getConIzq() {
 		conIzq = new PanelBase();
 		conIzq.setLayout(new GridLayout(0,1));
@@ -91,6 +101,9 @@ public class Tab_Usuarios extends PanelBase{
 		return conIzq;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase getpM() {
 		pM = new PanelBase();
 		PanelBase pb = new PanelBase();			GridLayout g = new GridLayout(0,2);
@@ -126,6 +139,9 @@ public class Tab_Usuarios extends PanelBase{
 		return pb;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase getpE() {
 		pE = new PanelBase();
 		PanelBase pb = new PanelBase();			GridLayout g = new GridLayout(0,2);
@@ -149,6 +165,10 @@ public class Tab_Usuarios extends PanelBase{
 		pE.setBounds(70,40,300,170);			pb.add(pE);		
 		return pb;
 	}
+	
+	/**
+	 * @return
+	 */
 	
 	protected PanelBase getpA() {
 		pA = new PanelBase();

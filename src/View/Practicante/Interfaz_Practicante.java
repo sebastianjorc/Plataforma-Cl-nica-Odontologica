@@ -12,6 +12,10 @@ import Model.User;
 import View.Interfaz;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author
+ *
+ */
 @SuppressWarnings("serial")
 public class Interfaz_Practicante extends Interfaz {
 /*--------------------------------------------------------------------------------------------------------*/	
@@ -24,6 +28,9 @@ public class Interfaz_Practicante extends Interfaz {
 	
 	JLabel a,b,c;
 
+	/**
+	 * @param user
+	 */
 	public Interfaz_Practicante(User user){
 		super("Practicante",user.getId(),user.getName());
 		usuario=user;
@@ -31,6 +38,9 @@ public class Interfaz_Practicante extends Interfaz {
 		//inicializar_panel_base1();
 	}
 	
+	/**
+	 * 
+	 */
 	void inicializar_panel_base1(){	
 		
 		String ID = String.valueOf(usuario.getId());
@@ -50,6 +60,9 @@ public class Interfaz_Practicante extends Interfaz {
 		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/* (non-Javadoc)
+	 * @see View.Interfaz#Paneles()
+	 */
 	@Override
 	public JTabbedPane Paneles() {
 		 

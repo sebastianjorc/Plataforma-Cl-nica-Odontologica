@@ -13,6 +13,10 @@ import javax.swing.border.EtchedBorder;
 
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Inventario  extends PanelBase{
 	
 	private static final long serialVersionUID = 1L;	
@@ -55,6 +59,9 @@ public class Tab_Inventario  extends PanelBase{
 						comboTiposMN= new JComboBox<String>(tipoInsumo),
 						comboTiposE = new JComboBox<String>(tipoInsumo);
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * 
+	 */
 	public Tab_Inventario() {
 		super("../img/backgroundjtp.png");		
 		this.setLayout(new GridLayout(1,0));		
@@ -62,6 +69,9 @@ public class Tab_Inventario  extends PanelBase{
 		this.add(getpM());
 	}
 /*--------------------------------------------------------------------------------------------------------*/		
+	/**
+	 * @return
+	 */
 	protected PanelBase getConIzq() {
 		conIzq = new PanelBase();
 		conIzq.setLayout(new GridLayout(0,1));
@@ -70,6 +80,9 @@ public class Tab_Inventario  extends PanelBase{
 		return conIzq;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase getpM() {
 		pM = new PanelBase();
 		PanelBase pb = new PanelBase();			GridLayout g = new GridLayout(0,2);
@@ -92,6 +105,9 @@ public class Tab_Inventario  extends PanelBase{
 		return pb;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase getpE() {
 		pE = new PanelBase();
 		PanelBase pb = new PanelBase();			GridLayout g = new GridLayout(0,2);
@@ -109,6 +125,9 @@ public class Tab_Inventario  extends PanelBase{
 		return pb;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase getpA() {
 		pA = new PanelBase();
 		PanelBase pb = new PanelBase();			pb.setLayout(null);		

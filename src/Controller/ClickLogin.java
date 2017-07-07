@@ -31,6 +31,10 @@ import View.Recaudador.Interfaz_Recaudador;
 import View.Secretaria.Interfaz_Secretaria;
 import View.Tutor.Interfaz_Tutor;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author
+ *
+ */
 public class ClickLogin implements ActionListener{
 	private JTextField id;
 	JPasswordField pass;
@@ -39,6 +43,13 @@ public class ClickLogin implements ActionListener{
 	JFrame login;
 	SkipList skiplist;
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param id
+	 * @param usuario_1
+	 * @param botonIniciar
+	 * @param login
+	 * @param sl
+	 */
 	public ClickLogin(JTextField id, JPasswordField usuario_1, JButton botonIniciar, Login login, SkipList sl){
 		this.id=id;
 		this.pass=usuario_1;
@@ -48,6 +59,9 @@ public class ClickLogin implements ActionListener{
 		User usr;
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -57,6 +71,10 @@ public class ClickLogin implements ActionListener{
 		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param id
+	 * @param pass
+	 */
 	public void consultaLogin(String id, String pass){
 		String tipoResultado; User usr = null;
 		int ID = Integer.parseInt(id);

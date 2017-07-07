@@ -8,15 +8,25 @@ import javax.swing.JTextField;
 
 import Model.ConexionSQL;
 
+/**
+ * @author
+ *
+ */
 public class ClickEliminarUsuario implements ActionListener {
 	JTextField idUser;
 	private ConexionSQL con;
 	private java.sql.PreparedStatement psEliminar;
 
+	/**
+	 * @param usuarioE
+	 */
 	public ClickEliminarUsuario(JTextField usuarioE) {
 		idUser=usuarioE;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 		con = new ConexionSQL();
 		con.connect();

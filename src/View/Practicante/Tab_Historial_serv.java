@@ -13,6 +13,10 @@ import javax.swing.border.EtchedBorder;
 
 import View.PanelBase;
 
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Historial_serv extends PanelBase {
 	private static final long serialVersionUID = 1L;
 	Border 		linea 		= BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
@@ -33,6 +37,9 @@ public class Tab_Historial_serv extends PanelBase {
 	
 	JScrollPane scrollPane,scrollPane_2;
 
+	/**
+	 * 
+	 */
 	public Tab_Historial_serv(){	
 		super("../img/backgroundjtp.png");	
 		setLayout(null);

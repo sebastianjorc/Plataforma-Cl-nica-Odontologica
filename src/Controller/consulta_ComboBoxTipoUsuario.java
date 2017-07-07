@@ -16,6 +16,10 @@ import com.mxrck.autocompleter.TextAutoCompleter;
 
 import Model.ConexionSQL;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author
+ *
+ */
 public class consulta_ComboBoxTipoUsuario implements ActionListener{
 	JComboBox<?>cbTipo;
 	String		tipo;
@@ -24,6 +28,12 @@ public class consulta_ComboBoxTipoUsuario implements ActionListener{
 	ConexionSQL con;
 	JButton btn;
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param cbtipo
+	 * @param autoCompleterIdM
+	 * @param usuarioM
+	 * @param buscar
+	 */
 	public consulta_ComboBoxTipoUsuario(JComboBox<String> cbtipo, TextAutoCompleter autoCompleterIdM, JTextField usuarioM, JButton buscar){		
 		cbTipo		=cbtipo;
 		tField		=autoCompleterIdM;
@@ -31,6 +41,9 @@ public class consulta_ComboBoxTipoUsuario implements ActionListener{
 		btn			=buscar;
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 		cbTipo	= (JComboBox<?>)e.getSource();
         tipo	= (String)cbTipo.getSelectedItem();
@@ -39,6 +52,9 @@ public class consulta_ComboBoxTipoUsuario implements ActionListener{
         btn.setEnabled(true);
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param tipo
+	 */
 	public void consulta(String tipo){
 		ResultSet rs= null;
 		Statement s	= null;

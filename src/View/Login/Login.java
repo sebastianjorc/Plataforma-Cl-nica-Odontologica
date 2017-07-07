@@ -16,6 +16,10 @@ import Controller.ClickLogin;
 import Controller.SkipList;
 import View.Interfaz;
 /*--------------------------------------------------------------------------------------------------------*/
+/**
+ * @author
+ *
+ */
 @SuppressWarnings("serial")
 public class Login extends Interfaz  {
 	
@@ -34,6 +38,9 @@ public class Login extends Interfaz  {
 	JButton BotonIniciar = new JButton();
 	SkipList skiplist;
 /*--------------------------------------------------------------------------------------------------------*/
+	/**
+	 * @param sl
+	 */
 	public Login(SkipList sl){
 		skiplist = sl;
 		

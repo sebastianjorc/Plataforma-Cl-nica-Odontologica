@@ -10,12 +10,22 @@ import javax.swing.JTextField;
 
 import Model.ConexionSQL;
 
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class ClickAgregarServicio implements ActionListener {
 	JComboBox<String> ccomboTiposA;
 	JTextField nnIdA,nnPrecioA,nnNameA,nnNivel;
 	ConexionSQL con;
 	private PreparedStatement psInsertar;
 
+	/**
+	 * @param comboTiposA
+	 * @param nIdA
+	 * @param nPrecioA
+	 * @param nNameA
+	 */
 	public ClickAgregarServicio(JComboBox<String> comboTiposA, JTextField nIdA, JTextField nPrecioA,
 			JTextField nNameA) {
 		this.ccomboTiposA = comboTiposA;
@@ -24,6 +34,9 @@ public class ClickAgregarServicio implements ActionListener {
 		this.nnNameA = nNameA;
 		
 	}
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String stringdelbox = (String) ccomboTiposA.getSelectedItem();

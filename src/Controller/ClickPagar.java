@@ -23,16 +23,26 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import View.Colores;
 
+/**
+ * @author
+ *
+ */
 public class ClickPagar implements ActionListener, Colores{
 
 	public ClickPagar(){
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 		crear_pdf();
 	}
 	
+	/**
+	 * 
+	 */
 	void crear_pdf(){
 		//DOC DE LA API: http://itextsupport.com/apidocs/itext5/latest/overview-summary.html
 				

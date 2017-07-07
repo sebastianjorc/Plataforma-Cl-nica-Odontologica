@@ -17,6 +17,10 @@ import javax.swing.border.EtchedBorder;
 import Controller.ClickPagar;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Pago extends PanelBase {
 	private static final long serialVersionUID = 1L;
 	PanelBase	pVale, 
@@ -33,6 +37,9 @@ public class Tab_Pago extends PanelBase {
 	
 	JTable 		table 		= new JTable();
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * 
+	 */
 	public Tab_Pago(){ 
 		super("../img/backgroundjtp.png");
 		pagarVale.addActionListener(new ClickPagar());
@@ -41,6 +48,9 @@ public class Tab_Pago extends PanelBase {
 		//this.add(panel_vale(),BorderLayout.NORTH);		
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @return
+	 */
 	@SuppressWarnings("unused")
 	private Component panel_vale() {
 		PanelBase pb = new PanelBase();	
@@ -54,6 +64,9 @@ public class Tab_Pago extends PanelBase {
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Pago por vale"));
 		return pb;
 	}
+	/**
+	 * 
+	 */
 	private void panel_deuda() {
 		this.setLayout(new BorderLayout());
 		PanelBase pb = new PanelBase();

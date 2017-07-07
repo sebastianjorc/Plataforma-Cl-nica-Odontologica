@@ -18,6 +18,10 @@ import javax.swing.border.EtchedBorder;
 import Model.ConexionSQL;
 import View.PanelBase;
 
+/**
+ * @author 
+ *
+ */
 public class Tab_Egresos extends PanelBase {
 	private static final long serialVersionUID = 1L;
 		
@@ -40,6 +44,9 @@ public class Tab_Egresos extends PanelBase {
 	
 	JScrollPane scrollPane,scrollPane_2;
 
+	/**
+	 * 
+	 */
 	public Tab_Egresos(){	
 		super("../img/backgroundjtp.png");	
 		setLayout(null);
@@ -53,6 +60,9 @@ public class Tab_Egresos extends PanelBase {
 		add(panelPagos());
 	}
 /*--------------------------------------------------------------------------------------------------------*/		
+	/**
+	 * @return
+	 */
 	protected PanelBase panelegresos(){
 		panel_egresos = new PanelBase();
 		panel_egresos.setLayout(null);
@@ -110,6 +120,9 @@ public class Tab_Egresos extends PanelBase {
 		return (panel_egresos);
 	}
 
+	/**
+	 * @return
+	 */
 	protected PanelBase panelgastos() {
 		panel_gastos = new PanelBase();
 		panel_gastos.setLayout(null);
@@ -166,6 +179,9 @@ public class Tab_Egresos extends PanelBase {
 		return panel_gastos;
 	}
 	
+	/**
+	 * @return
+	 */
 	protected PanelBase panelPagos(){
 		impuestos_deudas= new PanelBase();
 		impuestos_deudas.setLayout(new GridLayout(0,2,0,0));

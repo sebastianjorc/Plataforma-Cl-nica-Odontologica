@@ -6,10 +6,17 @@ import javax.swing.JOptionPane;
 /*--------------------------------------------------------------------------------------------------------*/	
 /**Clase encargada de realizar la conexión con el servidor.
  */
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class ConexionSQL {
 	public Connection con;
 	
 	/**Realiza conexión con el servidor.
+	 */
+	/**
+	 * 
 	 */
 	public void connect(){
 

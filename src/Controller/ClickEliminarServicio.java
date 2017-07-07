@@ -8,15 +8,25 @@ import javax.swing.JOptionPane;
 
 import Model.ConexionSQL;
 
+/**
+ * @author
+ *
+ */
 public class ClickEliminarServicio implements ActionListener {
 	JComboBox<String> idService;
 	private ConexionSQL con;
 	private java.sql.PreparedStatement psEliminar;
 
+	/**
+	 * @param comboServiciosE
+	 */
 	public ClickEliminarServicio(JComboBox<String> comboServiciosE) {
 		idService=comboServiciosE;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 		con = new ConexionSQL();
 		con.connect();

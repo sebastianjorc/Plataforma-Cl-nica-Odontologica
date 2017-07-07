@@ -12,6 +12,10 @@ import Model.User;
 import View.Interfaz;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * 
+ *
+ */
 public class Interfaz_Finanza extends Interfaz{
 	private static final long serialVersionUID = 1L;
 	Border 		linea 		= BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
@@ -22,6 +26,9 @@ public class Interfaz_Finanza extends Interfaz{
 	
 	PanelBase	panel_base_1, panel_base_2,panel_base_3,panel_base_4,panel_base_5;
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param user
+	 */
 	public Interfaz_Finanza(User user){
 		super("Administrador Financiero",user.getId(),user.getName());
 		usuario=user;
@@ -29,6 +36,9 @@ public class Interfaz_Finanza extends Interfaz{
 		//inicializar_panel_base1();
 	}
 /*--------------------------------------------------------------------------------------------------------*/
+/* (non-Javadoc)
+ * @see View.Interfaz#Paneles()
+ */
 public JTabbedPane Paneles() {
 		panel_base_1 = new PanelBase("img/backgroundjtp.png");
 		panel_base_3 = new Tab_Ingresos();

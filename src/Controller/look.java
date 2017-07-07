@@ -4,7 +4,14 @@ import javax.swing.UIManager;
 
 import View.Colores;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author
+ *
+ */
 public class look implements Colores{
+	/**
+	 * 
+	 */
 	public look(){
 		UIManager.put("TabbedPane.borderHightlightColor", navyblue);
 		UIManager.put("TabbedPane.selected", blanco);

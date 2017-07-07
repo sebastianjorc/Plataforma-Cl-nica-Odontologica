@@ -11,6 +11,10 @@ import javax.swing.JTextField;
 
 import Model.ConexionSQL;
 
+/**
+ * @author
+ *
+ */
 public class ClickModificarUsuario implements ActionListener{
 	JComboBox<String> ccomboTiposA;
 	JTextField nnIdA,nnPassA,nnNameA,nnNivel;
@@ -18,6 +22,17 @@ public class ClickModificarUsuario implements ActionListener{
 	JLabel user,tipo,id,pass,name;
 	private PreparedStatement psInsertar;
 
+	/**
+	 * @param comboTiposA
+	 * @param nIdA
+	 * @param nPassA
+	 * @param nNameA
+	 * @param nNivel
+	 * @param rTipoM
+	 * @param rIdM
+	 * @param rPassM
+	 * @param rNameM
+	 */
 	public ClickModificarUsuario(JComboBox<String> comboTiposA, JTextField nIdA, JTextField nPassA, JTextField nNameA,
 			JTextField nNivel, JLabel rTipoM, JLabel rIdM, JLabel rPassM, JLabel rNameM) {
 		this.ccomboTiposA = comboTiposA;
@@ -31,6 +46,9 @@ public class ClickModificarUsuario implements ActionListener{
 		name=rNameM;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		con = new ConexionSQL();

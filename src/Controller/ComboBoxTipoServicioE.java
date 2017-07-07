@@ -11,16 +11,27 @@ import javax.swing.JOptionPane;
 
 import Model.ConexionSQL;
 
+/**
+ * @author
+ *
+ */
 public class ComboBoxTipoServicioE implements ItemListener {
 	JComboBox<String> jcbtipo,jcbservice;
 	String tipo;
 	ConexionSQL con;
 	
+	/**
+	 * @param comboTiposE
+	 * @param comboServiciosE
+	 */
 	public ComboBoxTipoServicioE(JComboBox<String> comboTiposE, JComboBox<String> comboServiciosE) {
 		jcbtipo = comboTiposE;
 		jcbservice=comboServiciosE;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ItemListener#itemStateChanged(java.awt.event.ItemEvent)
+	 */
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		if ( e.getStateChange() == ItemEvent.SELECTED ){
@@ -30,6 +41,9 @@ public class ComboBoxTipoServicioE implements ItemListener {
 	}
 
 /*--------------------------------------------------------------------------------------------------------*/	
+	/**
+	 * @param tipo
+	 */
 	public void consulta(String tipo){
 		ResultSet rs= null;
 		Statement s	= null;

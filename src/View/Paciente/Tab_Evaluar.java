@@ -12,6 +12,10 @@ import javax.swing.border.EtchedBorder;
 
 import View.PanelBase;
 
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Tab_Evaluar extends PanelBase{
 	private static final long serialVersionUID = 1L;
 	
@@ -62,6 +66,9 @@ public class Tab_Evaluar extends PanelBase{
 				
 	JButton Boton = new JButton("Enviar");
 	
+	/**
+	 * 
+	 */
 	public Tab_Evaluar (){
 		super("../img/backgroundjtp.png");	
 		setLayout(new GridLayout(0,2,0,13));

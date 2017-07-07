@@ -2,6 +2,10 @@ package Controller;
 
 import Model.User;
 
+/**
+ * @author
+ *
+ */
 public class SkipList {
 	/* Class SkipNode */
 	class SkipNode        
@@ -43,6 +47,10 @@ public class SkipList {
 	        header = new SkipNode(infinity, tail, bottom, null);
 	    }
 	    /* Function to insert pk */
+	    /**
+	     * @param x
+	     * @param user
+	     */
 	    public void insert(int x, User user)
 	    {
 	    	SkipNode current = header;
@@ -68,23 +76,11 @@ public class SkipList {
 	            current = current.down;
 	       current.datos = user;
 	    }
-	    /* Function to clear list */
-	    public void makeEmpty()
-	    {
-	        header.right = tail;
-	        header.down = bottom;
-	    }
-	    /* Function to check if empty */
-	    public boolean isEmpty()
-	    {
-	        return header.right == tail && header.down == bottom;
-	    }
-	    /* Function to get node at a position */
-	    private int pkAt(SkipNode t)
-	    {
-	        return t == bottom ? 0 : t.pk;
-	    }
-	    
+		/**
+		 * @param pk
+		 * @param pass
+		 * @return
+		 */
 		public User search (int pk, String pass) {	
 	    	SkipNode current = header;
 	        bottom.pk = pk;

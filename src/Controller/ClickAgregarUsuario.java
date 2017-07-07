@@ -10,12 +10,23 @@ import javax.swing.JTextField;
 
 import Model.ConexionSQL;
 
+/**
+ * @author
+ *
+ */
 public class ClickAgregarUsuario implements ActionListener {
 	JComboBox<String> ccomboTiposA;
 	JTextField nnIdA,nnPassA,nnNameA,nnNivel;
 	ConexionSQL con;
 	private PreparedStatement psInsertar;
 	
+	/**
+	 * @param comboTiposA
+	 * @param nIdA
+	 * @param nPassA
+	 * @param nNameA
+	 * @param nNivel
+	 */
 	public ClickAgregarUsuario(JComboBox<String> comboTiposA,JTextField nIdA,JTextField nPassA,JTextField nNameA, JTextField nNivel){
 		this.ccomboTiposA = comboTiposA;
 		this.nnIdA = nIdA;
@@ -23,6 +34,9 @@ public class ClickAgregarUsuario implements ActionListener {
 		this.nnNameA = nNameA;
 		this.nnNivel = nNivel;
 	}
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String imagen = "foto"+nnIdA.getText()+".jpg";

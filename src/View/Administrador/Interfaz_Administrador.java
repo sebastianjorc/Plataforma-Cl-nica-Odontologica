@@ -6,17 +6,28 @@ import Model.User;
 import View.Interfaz;
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/
+
+/**
+ * @author Sebastian Joshua
+ *
+ */
 public class Interfaz_Administrador extends Interfaz {
 	private static final long serialVersionUID = 1L;
 	PanelBase	pb0, pb1,pb2,pb3;
 	User	user;
 /*--------------------------------------------------------------------------------------------------------*/
+	/**
+	 * @param user
+	 */
 	public Interfaz_Administrador(User user){
 		super("Administrador",user.getId(),user.getName());
 		this.user = user;
 		inicializar_pb0(pb0,user);
 	}
 /*--------------------------------------------------------------------------------------------------------*/
+	/* (non-Javadoc)
+	 * @see View.Interfaz#Paneles()
+	 */
 	@Override
 	public JTabbedPane Paneles() {
 		pb0 = new PanelBase("img/backgroundjtp.png");

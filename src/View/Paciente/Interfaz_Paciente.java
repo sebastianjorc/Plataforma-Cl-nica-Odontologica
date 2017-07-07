@@ -14,6 +14,10 @@ import View.Interfaz;
 import View.PanelBase;
 import View.Toma_de_hora;
 /*--------------------------------------------------------------------------------------------------------*/	
+/**
+ * @author Sebastian Joshua
+ *
+ */
 @SuppressWarnings("serial")
 public class Interfaz_Paciente extends Interfaz {
 /*--------------------------------------------------------------------------------------------------------*/	
@@ -27,6 +31,9 @@ public class Interfaz_Paciente extends Interfaz {
 	
 	PanelBase panel_base_1, panel_base_2,panel_base_3,panel_base_4,panel_base_5;
 	
+	/**
+	 * @param user
+	 */
 	public Interfaz_Paciente(User user){
 		super("Paciente",user.getId(),user.getName());
 		usuario=user;
@@ -35,6 +42,9 @@ public class Interfaz_Paciente extends Interfaz {
 		inicializar_panel_base2();
 	}
 	
+	/**
+	 * 
+	 */
 	void inicializar_panel_base1(){		
 		String ID = String.valueOf(usuario.getId());
 		
@@ -53,6 +63,9 @@ public class Interfaz_Paciente extends Interfaz {
 		
 	}
 	
+	/**
+	 * 
+	 */
 	private void inicializar_panel_base2() { 
 		panel_base_2.setLayout(null);
 		toma_de_hora.setBounds(140,40,600,440);
@@ -61,6 +74,9 @@ public class Interfaz_Paciente extends Interfaz {
 	}
 	
 /*--------------------------------------------------------------------------------------------------------*/	
+	/* (non-Javadoc)
+	 * @see View.Interfaz#Paneles()
+	 */
 	@Override
 	public JTabbedPane Paneles() {
 		panel_base_1 = new PanelBase("img/backgroundjtp.png");
