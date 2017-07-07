@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -36,12 +37,15 @@ public class ClickLogin implements ActionListener{
 	ConexionSQL con;
 	JButton btn;
 	JFrame login;
+	SkipList skiplist;
 /*--------------------------------------------------------------------------------------------------------*/	
-	public ClickLogin(JTextField id, JPasswordField usuario_1, JButton botonIniciar, Login login){
+	public ClickLogin(JTextField id, JPasswordField usuario_1, JButton botonIniciar, Login login, SkipList sl){
 		this.id=id;
 		this.pass=usuario_1;
 		btn = botonIniciar;
 		this.login=login;
+		skiplist = sl;
+		User usr;
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
 	@SuppressWarnings("deprecation")
@@ -54,58 +58,51 @@ public class ClickLogin implements ActionListener{
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
 	public void consultaLogin(String id, String pass){
+		String tipoResultado; User usr = null;
+		int ID = Integer.parseInt(id);
+		System.out.println("ENTRO A IF 1 ");
+		usr = skiplist.search(ID, pass);
+		if (usr!=null){
+			System.out.println(usr.getTipoUsuario());
+			tipoResultado = usr.getTipoUsuario();	
+			JFrame in;
+			User user;
 
-		ResultSet rs = null;	Statement s = null; String tipoResultado;
+			System.out.println("RESULTADO : "+tipoResultado);
+			if (tipoResultado.equals("Administrador")){
+				user = usr;
+				in = new Interfaz_Administrador(user);
+			}
+			else if (tipoResultado.equals("Secretaria")){
+				user = usr;
+				in = new Interfaz_Secretaria(user);
+			}
+			else if (tipoResultado.equals("Paciente")){
+				user = usr;
+				in = new Interfaz_Paciente(user);
+			}
+			else if (tipoResultado.equals("Tutor")){
+				user = usr;
+				in = new Interfaz_Tutor(user);
+			}
+			else if (tipoResultado.equals("Practicante")){
+				user = usr;
+				in = new Interfaz_Practicante(user);
+			}
+			else if (tipoResultado.equals("Recaudador")){
+				user = usr;
+				in = new Interfaz_Recaudador(user);
+			}
+			else if (tipoResultado.equals("AdmFinanza")){
+				user = usr;
+				in = new Interfaz_Finanza(user);
+			}else{in=null; user=null;}
+
+			in.setVisible(true);
+			login.dispose();
+
+		}else JOptionPane.showMessageDialog(null, "Error. Ingrese un usuario valido \n", "Error Login", JOptionPane.ERROR_MESSAGE);			
 		
-		try {
-			con.connect();
-			s = con.con.createStatement();
-			rs = s.executeQuery ("select * from Usuarios where ID = '"+id+"' AND CONTRASENA = '"+pass+"'");
-			//MOVER, ORDENAR FUNCIÓN
-			if (rs.next()){
-				tipoResultado=rs.getString(4);	JFrame in;
-				User user;
-				
-				if (tipoResultado.equals("Administrador")){
-					user = new Administrador(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
-					in = new Interfaz_Administrador(user);
-				}
-				else if (tipoResultado.equals("Secretaria")){
-					user = new Secretaria(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
-					in = new Interfaz_Secretaria(user);
-				}
-				else if (tipoResultado.equals("Paciente")){
-					user = new Paciente(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
-					in = new Interfaz_Paciente(user);
-				}
-				else if (tipoResultado.equals("Tutor")){
-					user = new Tutor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
-					in = new Interfaz_Tutor(user);
-				}
-				else if (tipoResultado.equals("Practicante")){
-					user = new Paciente(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
-					in = new Interfaz_Practicante(user);
-				}
-				else if (tipoResultado.equals("Recaudador")){
-					user = new Recaudador(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
-					in = new Interfaz_Recaudador(user);
-				}
-				else if (tipoResultado.equals("AdmFinanza")){
-					user = new AdministradorFinanza(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
-					in = new Interfaz_Finanza(user);
-				}else{in=null; user=null;}
-				
-				in.setVisible(true);
-				login.dispose();
-
-			}else JOptionPane.showMessageDialog(null, "Error. Ingrese un usuario valido \n", "Error Login", JOptionPane.ERROR_MESSAGE);			
-			con.con.close();
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Error al buscar el usuario en la base de datos");
-			e.printStackTrace();
-		}	
 	}
 }
 /*--------------------------------------------------------------------------------------------------------*/	

@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Controller.ClickLogin;
+import Controller.SkipList;
 import View.Interfaz;
 /*--------------------------------------------------------------------------------------------------------*/
 @SuppressWarnings("serial")
@@ -31,8 +32,10 @@ public class Login extends Interfaz  {
 	ImageIcon g=new ImageIcon(getClass().getResource("../img/LogoUls.png"));
 	
 	JButton BotonIniciar = new JButton();
+	SkipList skiplist;
 /*--------------------------------------------------------------------------------------------------------*/
-	public Login(){
+	public Login(SkipList sl){
+		skiplist = sl;
 		
 		PanelContenedor.setBorder(new EmptyBorder(5, 5, 5, 5));		
 		PanelContenedor.setLayout(null);
@@ -88,9 +91,42 @@ public class Login extends Interfaz  {
 		LoginIzquierda.setBounds(0, 0, 306, 571);
 		PanelContenedor.add(LoginIzquierda);
 		
-		BotonIniciar.addActionListener(new ClickLogin(Usuario, Usuario_1,BotonIniciar,this));
+		BotonIniciar.addActionListener(new ClickLogin(Usuario, Usuario_1,BotonIniciar,this,sl));
 	}
-/*--------------------------------------------------------------------------------------------------------*/
+public JTextField getUsuario() {
+		return Usuario;
+	}
+	public JPasswordField getUsuario_1() {
+		return Usuario_1;
+	}
+	public JLabel getIniciarSesion() {
+		return IniciarSesion;
+	}
+	public JLabel getRutUsuario() {
+		return RutUsuario;
+	}
+	public JLabel getLogoUls() {
+		return LogoUls;
+	}
+	public JLabel getLoginDerecha() {
+		return LoginDerecha;
+	}
+	public JLabel getLoginIzquierda() {
+		return LoginIzquierda;
+	}
+	public ImageIcon getE() {
+		return e;
+	}
+	public ImageIcon getG() {
+		return g;
+	}
+	public JButton getBotonIniciar() {
+		return BotonIniciar;
+	}
+	public SkipList getSkiplist() {
+		return skiplist;
+	}
+	/*--------------------------------------------------------------------------------------------------------*/
 	@Override
 	public JTabbedPane Paneles() {
 		// TODO Auto-generated method stub

@@ -1,119 +1,120 @@
 package Controller;
 
-import java.util.Random;
+import Model.User;
 
-public class SkipList<T extends Comparable<T>, U> {
-	
-  private class Node {
-    public T key;
-    public U value;
-    public long level;
-    public Node next;
-    public Node down;
-    
-    public Node (T key, U value, long level, Node next, Node down) {
-      this.key = key;
-      this.value = value;
-      this.level = level;
-      this.next = next;
-      this.down = down;
-    }
-  }
-  
-  private Node _head;
-  private Random _random;
-  private long _size;
-  private double _p;
-  
-  private long _level() {
-    long level = 0;
-    while (level <= _size && _random.nextDouble() < _p) {
-      level++;
-    }
-    
-    return level;
-  }
-  
-  public SkipList() {
-    _head = new Node(null, null, 0, null, null);
-    _random = new Random();
-    _size = 0;
-    _p = 0.5;
-  }
-  
-  public void add(T key, U value) {
-    long level = _level();
-    if (level > _head.level) {
-      _head = new Node(null, null, level, null, _head);
-    }
-    
-    Node cur = _head;
-    Node last = null;
-    
-    while (cur != null) {
-      if (cur.next == null || cur.next.key.compareTo(key) > 0) {
-        if (level >= cur.level) {
-          Node n = new Node(key, value, cur.level, cur.next, null);
-          if (last != null) {
-            last.down = n;
-          }
-          
-          cur.next = n;
-          last = n;
-        }
-        
-        cur = cur.down;
-        continue;
-      } else if (cur.next.key.equals(key)) {
-        cur.next.value = value;
-        return;
-      }
-      
-      cur = cur.next;
-    }
-    
-    _size++;
-  }
-  
-  public boolean containsKey(T key) {
-    return get(key) != null;
-  }
-  
-  public U remove(T key) {
-    U value = null;
-    
-    Node cur = _head;
-    while (cur != null) {
-      if (cur.next == null || cur.next.key.compareTo(key) >= 0) {
-        if (cur.next != null && cur.next.key.equals(key)) {
-          value = cur.next.value;
-          cur.next = cur.next.next;
-        }
-        
-        cur = cur.down;
-        continue;
-      }
-      
-      cur = cur.next;
-    }
-    
-    _size--;
-    return value;
-  }
-  
-  public U get(T key) {
-    Node cur = _head;
-    while (cur != null) {
-      if (cur.next == null || cur.next.key.compareTo(key) > 0) {
-        cur = cur.down;
-        continue;
-      } else if (cur.next.key.equals(key)) {
-        return cur.next.value;
-      }
-      
-      cur = cur.next;
-    }
-    
-    return null;
-  }
-}
+public class SkipList {
+	/* Class SkipNode */
+	class SkipNode        
+	{
+	    int pk;
+	    User datos;
+	    SkipNode right;
+	    SkipNode down;
+	 
+	    /* Constructor */
+	    public SkipNode(int x)
+	    {
+	        this(x, null, null, null);
+	    }
+	    /* Constructor */
+	    public SkipNode(int x, SkipNode rt, SkipNode dt, User user)
+	    {
+	        pk = x;
+	        right = rt;
+	        down = dt;
+	        datos=user;
+	    }
+	}
+	 
+	/* Class SkipList */
+	    private SkipNode header;
+	    private int infinity;
+	    private SkipNode bottom = null;
+	    private SkipNode tail = null;
+	 
+	    /* Constructor */
+	    public SkipList(int inf)
+	    {
+	        infinity = inf;
+	        bottom = new SkipNode(0);
+	        bottom.right = bottom.down = bottom;
+	        tail = new SkipNode(infinity);
+	        tail.right = tail;
+	        header = new SkipNode(infinity, tail, bottom, null);
+	    }
+	    /* Function to insert pk */
+	    public void insert(int x, User user)
+	    {
+	    	SkipNode current = header;
+	        bottom.pk = x;
+	        while (current != bottom)
+	        {
+	            while (current.pk < x)
+	            	current = current.right;
+	            if (current.down.right.right.pk < current.pk){
+	            	
+	                current.right = new SkipNode(current.pk, current.right, current.down.right.right, current.datos);
+	                
+	                current.pk = current.down.right.pk;
+	                current.datos = user;
+	                
+	            }
+	            else	current = current.down;
+	        }
+	        if (header.right != tail)
+	            header = new SkipNode(infinity, tail, header, user);
+
+	        while( current.down != bottom )
+	            current = current.down;
+	       current.datos = user;
+	    }
+	    /* Function to clear list */
+	    public void makeEmpty()
+	    {
+	        header.right = tail;
+	        header.down = bottom;
+	    }
+	    /* Function to check if empty */
+	    public boolean isEmpty()
+	    {
+	        return header.right == tail && header.down == bottom;
+	    }
+	    /* Function to get node at a position */
+	    private int pkAt(SkipNode t)
+	    {
+	        return t == bottom ? 0 : t.pk;
+	    }
+	    
+		public User search (int pk, String pass) {	
+	    	SkipNode current = header;
+	        bottom.pk = pk;
+	        while (current != bottom)
+	        {
+	        	while (current.pk < pk)
+	        		current = current.right;	        	
+	        	if (current.pk==pk){
+	        		if (current.datos.getPassword().equals(pass)){
+		        		//System.out.println(current.datos.getPassword()+"=="+pass);
+	        			//usr = new User(current.datos.getId(),current.datos.getPassword(),current.datos.getName(),current.datos.getTipoUsuario());
+	        			//current.datos;
+	        			return current.datos;
+	        		}   	
+	        	}
+	        	else	current = current.down;		            
+	        }	        
+			return null;	
+		} 
+	    public void printList()
+	    {
+	        SkipNode current = header;
+	        while( current.down != bottom )
+	            current = current.down;
+	        while (current.right.right != tail )
+	        {
+	            current = current.right;
+	            System.out.print(current.pk+" - ");
+	        }
+	    }
+	}
+
+
