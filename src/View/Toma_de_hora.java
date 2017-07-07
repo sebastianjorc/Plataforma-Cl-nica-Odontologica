@@ -7,11 +7,13 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import Controller.CambioenBoxReserva;
 /*--------------------------------------------------------------------------------------------------------*/	
 @SuppressWarnings("serial")
 public class Toma_de_hora extends PanelBase{
 	
-	String [] tiposServicios= {	"General","Estetica","Especialidad"	};
+	String [] tiposServicios= {"General","Estetica","Especialidad"	};
 	String [] Servicios		= {null};
 	String [] Practicantes	= {null};
 	String [] bloques		= {null};
@@ -43,15 +45,18 @@ public class Toma_de_hora extends PanelBase{
 		Profesional.setFont(new Font("Book Antiqua", Font.HANGING_BASELINE | Font.BOLD, 18));
 		Fecha.setFont(new Font("Book Antiqua", Font.HANGING_BASELINE | Font.BOLD, 18));
 		
+		cbTipoServicio.addItemListener(new CambioenBoxReserva(cbTipoServicio,cbServicios,cbPracticantes, cbHorarios));
+
 		this.add(Identificacor);				this.add(jtaId);
 		this.add(Tipo_servicio);				this.add(cbTipoServicio);		
 		this.add(Servicio);						this.add(cbServicios);
 		this.add(Profesional);					this.add(cbPracticantes);
 		this.add(Fecha);						this.add(cbHorarios);	
-		this.add(new JLabel());						this.add(new JLabel());	
-		this.add(new JLabel());						this.add(btnGenVale);
-		this.add(new JLabel());						this.add(new JLabel());	
-		this.add(new JLabel());						this.add(jlPrecio);
+		this.add(new JLabel());					this.add(new JLabel());	
+		this.add(new JLabel());					this.add(btnGenVale);
+		this.add(new JLabel());					this.add(new JLabel());	
+		this.add(new JLabel());					this.add(jlPrecio);
+		
 		
 	}
 }
