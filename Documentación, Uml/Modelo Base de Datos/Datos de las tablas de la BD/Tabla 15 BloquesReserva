@@ -1,12 +1,12 @@
 //Hora;bloque
 
-CREATE TABLE IF NOT EXISTS `Reserva de hora` (
+CREATE TABLE IF NOT EXISTS `BloquesReserva` (
 	`HORA` VARCHAR(45) NOT NULL,
 	`BLOQUE` INT NULL,
 	PRIMARY KEY (`BLOQUE`)
 );
 
-INSERT INTO `Reserva de hora` VALUE 
+INSERT INTO `BloquesReserva` VALUE 
   ('8:00','1'),
   ('8:30','2'),
   ('9:00','3'),
