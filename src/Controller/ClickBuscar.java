@@ -72,7 +72,7 @@ public class ClickBuscar implements ActionListener{
 		try {
 			con.connect();
 			s = con.con.createStatement();
-			rs = s.executeQuery ("select * from Usuario where id = '"+ID+"'");
+			rs = s.executeQuery ("select * from Usuarios where id = '"+ID+"'");
 			rs.next();
 			String Pass = rs.getString(2), Name = rs.getString(3);
 			if (pass!=null){		

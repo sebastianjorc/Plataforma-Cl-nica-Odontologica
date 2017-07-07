@@ -48,9 +48,10 @@ public class consulta_ComboBoxTipoUsuario implements ActionListener{
 			tField.removeAllItems();
 			con.connect();
 			s = con.con.createStatement();
-			rs = s.executeQuery ("select * from "+tipo);
+			rs = s.executeQuery ("select *from Usuarios where TIPO='"+tipo+"'");
+			System.out.println(tipo);
 			while (rs.next())
-				tField.addItem(rs.getInt(1));
+				tField.addItem(rs.getString(1));
 			con.con.close();
 			
 		} catch (SQLException e) {

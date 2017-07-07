@@ -15,8 +15,9 @@ import com.mxrck.autocompleter.TextAutoCompleter;
 import Controller.CambioenBoxAdministrador;
 import Controller.ClickAgregarUsuario;
 import Controller.ClickBuscar;
+import Controller.ClickEliminarUsuario;
+import Controller.ClickModificarUsuario;
 import Controller.consulta_ComboBoxTipoUsuario;
-
 import View.PanelBase;
 /*--------------------------------------------------------------------------------------------------------*/	
 public class Tab_Usuarios extends PanelBase{
@@ -44,8 +45,8 @@ public class Tab_Usuarios extends PanelBase{
 				nPassA	= new JTextField(),
 				nNivel  = new JTextField(),
 				usuarioM= new JTextField(),
-				usuarioA = new JTextField(),
-				usuarioE = new JTextField();
+				usuarioE = new JTextField(),
+				usuarioA = new JTextField();
 	
 	JLabel		rTipoM 		= new JLabel("Tipo actual:"),
 				rIdM		= new JLabel("Id actual:"),
@@ -73,9 +74,10 @@ public class Tab_Usuarios extends PanelBase{
 		this.setLayout(new GridLayout(1,0));
 		this.add(getConIzq());
 		this.add(getpM());
-//		comboTiposM.addActionListener(new consulta_ComboBoxTipoUsuario(comboTiposM, AutoCompleterIdM,usuarioM,buscarM));
-//		comboTiposE.addActionListener(new consulta_ComboBoxTipoUsuario(comboTiposE, AutoCompleterIdE,usuarioE,buscarE));
 		
+		comboTiposM.addActionListener(new consulta_ComboBoxTipoUsuario(comboTiposM, AutoCompleterIdM,usuarioM,buscarM));
+		comboTiposE.addActionListener(new consulta_ComboBoxTipoUsuario(comboTiposE, AutoCompleterIdE,usuarioE,buscarE));
+		 
 		buscarM.addActionListener(new ClickBuscar(pM,usuarioM,comboTiposM,rTipoM,rIdM,rNameM,rPassM,Modificar,comboTiposMN,nIdM,nNameM,nPassM));
 		buscarE.addActionListener(new ClickBuscar(pE,usuarioE,comboTiposE,ResultadoE1,ResultadoE2,Eliminar));
 		
@@ -88,6 +90,7 @@ public class Tab_Usuarios extends PanelBase{
 		conIzq.add(getpE());
 		return conIzq;
 	}
+	
 	protected PanelBase getpM() {
 		pM = new PanelBase();
 		PanelBase pb = new PanelBase();			GridLayout g = new GridLayout(0,2);
@@ -115,7 +118,9 @@ public class Tab_Usuarios extends PanelBase{
 		pM.add(rNameM);							pM.add(nNameM);
 		pM.add(rPassM);							pM.add(nPassM);
 		pM.add(new JLabel());					pM.add(Modificar);
+		
 
+		Modificar.addActionListener(new ClickModificarUsuario(comboTiposMN,nIdM,nPassM,nNameM,nNivel,rTipoM,rIdM,rPassM,rNameM));
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Modificar usuario"));
 		pM.setBounds(100,60,300,330);			pb.add(pM);
 		return pb;
@@ -138,9 +143,7 @@ public class Tab_Usuarios extends PanelBase{
 		pE.add(ResultadoE1);					pE.add(ResultadoE2);
 		pE.add(new JLabel());					pE.add(Eliminar);
 		
-		//implementar action
-	//	buscarE.addActionListener(new ClickBuscarUsuario(comboTiposA,nIdA,nPassA,nNameA,nNivel));
-	//	Eliminar.addActionListener(new ClickEliminarUsuario(comboTiposA,nIdA,nPassA,nNameA,nNivel));
+		Eliminar.addActionListener(new ClickEliminarUsuario(usuarioE));
 		
 		pb.setBorder(BorderFactory.createTitledBorder(linea, "Eliminar usuario"));
 		pE.setBounds(70,40,300,170);			pb.add(pE);		

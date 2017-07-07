@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 public class CambioenBoxAdministrador implements ItemListener {
 	JTextField nnNivel;
 	JComboBox<String> ccomboTiposA;
+	
 
 	public CambioenBoxAdministrador(JTextField nNivel, JComboBox<String> comboTiposA) {
 		nnNivel = nNivel;
