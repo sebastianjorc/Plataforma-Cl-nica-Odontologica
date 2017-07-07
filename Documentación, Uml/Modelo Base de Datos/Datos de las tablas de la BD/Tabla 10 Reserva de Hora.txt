@@ -1,16 +1,16 @@
-//ID Paciente','ID Profesional','Hora','ID Servicio','
+//ID Paciente','ID Profesional','Bloque Hora','ID Servicio','
 
 
 CREATE TABLE IF NOT EXISTS `Reserva de hora` (
 	`ID_PACIENTE` VARCHAR(45) NOT NULL,
 	`ID_PROFESIONAL` VARCHAR(45) NULL,
-	`HORA` VARCHAR(45) NULL,
+	`BLOQUE HORA` INT NULL,
 	`ID_SERVICIO` VARCHAR(45) NULL,
 	PRIMARY KEY (`ID_PACIENTE`)
 );
 
 INSERT INTO `Reserva de hora` VALUE 
 
-	('16975564','16151748','12:00','0'),
-	('18775148','18103219','16:00','2')
+	('16975564','16151748',1,'0'),
+	('18775148','18103219',2,'2')
 ;
