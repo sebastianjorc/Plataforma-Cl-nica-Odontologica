@@ -16,7 +16,7 @@ import View.Login.Login;
 public class ClickSalir implements ActionListener {
 	Interfaz in; JFrame login;
 	public ClickSalir(Interfaz interfaz){
-		in = interfaz;
+		in = interfaz; 
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
 	@Override

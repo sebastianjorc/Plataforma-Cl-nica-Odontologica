@@ -1,29 +1,16 @@
 //Año','Mes','Inversion en infraestructura','Inversion tecnologica','Inversion en equipo medico
 
-CREATE TABLE IF NOT EXISTS `Egresos Mensuales` (
-	`ANO` VARCHAR(45) NOT NULL,
-	`MES` VARCHAR(45) NOT NULL,
-	`INVERSION INFRAESTRUCTURA` INT NULL,
-	`INVERSION TECNOLOGICA` INT NULL,
-	`INVERSION EN EQUIPO MEDICO` INT NULL,
-	PRIMARY KEY (`ANO`,`MES`)
+CREATE TABLE IF NOT EXISTS `Egresos Mensuales` ( 
+	`ANO` VARCHAR(45) NOT NULL, 
+	`MES` VARCHAR(45) NOT NULL, 
+	`NUMERO MES` INT NOT NULL, 
+	`INVERSION INFRAESTRUCTURA` INT NULL, 
+	`INVERSION TECNOLOGICA` INT NULL, 
+	`INVERSION EN EQUIPO MEDICO` INT NULL, 
+	PRIMARY KEY (`ANO`,`MES`,`NUMERO MES`) 
 );
 
-INSERT INTO `Egresos Mensuales` VALUE 
 
-	('2016','Mayo','200000','210000','220000'),
-	('2016','Junio','210000','220000','230000'),
-	('2016','Julio','220000','230000','240000'),
-	('2016','Agosto','230000','240000','250000'),
-	('2016','Septiembre','240000','250000','260000'),
-	('2016','Octubre','250000','260000','270000'),
-	('2016','Noviembre','260000','270000','280000'),
-	('2016','Diciembre','270000','280000','290000'),
-	('2017','Enero','280000','290000','300000'),
-	('2017','Febrero','290000','300000','310000'),
-	('2017','Marzo','310000','310000','320000'),
-	('2017','Abril','320000','320000','330000'),
-	('2017','Mayo','330000','330000','340000'),
-	('2017','Junio','340000','340000','350000'),
-	('2017','Julio','350000','350000','360000')
+INSERT INTO `Egresos Mensuales` VALUE
+	('2016','Mayo','5','200000','210000','220000'), ('2016','Junio','6','210000','220000','230000'), ('2016','Julio','7','220000','230000','240000'), ('2016','Agosto','8','230000','240000','250000'), ('2016','Septiembre','9','240000','250000','260000'), ('2016','Octubre','10','250000','260000','270000'), ('2016','Noviembre','11','260000','270000','280000'), ('2016','Diciembre','12','270000','280000','290000'), ('2017','Enero','1','280000','290000','300000'), ('2017','Febrero','2','290000','300000','310000'), ('2017','Marzo','3','310000','310000','320000'), ('2017','Abril','4','320000','320000','330000'), ('2017','Mayo','5','330000','330000','340000'), ('2017','Junio','6','340000','340000','350000'), ('2017','Julio','7','350000','350000','360000')
 ;
