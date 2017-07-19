@@ -24,8 +24,8 @@ import com.itextpdf.text.pdf.PdfWriter;
 import View.Colores;
 
 /**
- * @author
- *
+ * @author Norton -Sebastian
+ * Listener relacionados a la paga
  */
 public class ClickPagar implements ActionListener, Colores{
 

@@ -11,8 +11,8 @@ import javax.swing.JTextField;
 import Model.ConexionSQL;
 
 /**
- * @author
- *
+ * @author Sebastian,Norton
+ *Agrega usuario a la base de datos
  */
 public class ClickAgregarUsuario implements ActionListener {
 	JComboBox<String> ccomboTiposA;

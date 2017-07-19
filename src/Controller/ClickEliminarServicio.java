@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
 import Model.ConexionSQL;
 
 /**
- * @author
- *
+ * @author Norton Sebastian
+ *Elimina un servicio
  */
 public class ClickEliminarServicio implements ActionListener {
 	JComboBox<String> idService;

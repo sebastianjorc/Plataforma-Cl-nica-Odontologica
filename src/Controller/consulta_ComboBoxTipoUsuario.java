@@ -17,8 +17,8 @@ import com.mxrck.autocompleter.TextAutoCompleter;
 import Model.ConexionSQL;
 /*--------------------------------------------------------------------------------------------------------*/	
 /**
- * @author
- *
+ * @author Sebastian - Norton
+ *Consulta al combo box 
  */
 public class consulta_ComboBoxTipoUsuario implements ActionListener{
 	JComboBox<?>cbTipo;

@@ -5,8 +5,8 @@ import javax.swing.UIManager;
 import View.Colores;
 /*--------------------------------------------------------------------------------------------------------*/	
 /**
- * @author
- *
+ * @author Sebastian Joshua - Norton Irarrazabal
+ *Paleta de colores metodo look
  */
 public class look implements Colores{
 	/**

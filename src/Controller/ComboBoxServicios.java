@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
 import Model.ConexionSQL;
 
 /**
- * @author
- *
+ * @author Sebastian Norton
+ *Combo box de los servicios
  */
 public class ComboBoxServicios implements ItemListener{
 	

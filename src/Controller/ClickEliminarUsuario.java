@@ -9,8 +9,8 @@ import javax.swing.JTextField;
 import Model.ConexionSQL;
 
 /**
- * @author
- *
+ * @author Sebastian - Norton
+ *elimina un usuario
  */
 public class ClickEliminarUsuario implements ActionListener {
 	JTextField idUser;

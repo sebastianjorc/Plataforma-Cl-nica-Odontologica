@@ -11,7 +11,8 @@ import javax.swing.JTextField;
 import Model.ConexionSQL;
 
 /**
- * @author Sebastian Joshua
+ * Clase para agregar servicio del boton agregar
+ * @author Sebastian Joshua,Norton Irarrazabal
  *
  */
 public class ClickAgregarServicio implements ActionListener {

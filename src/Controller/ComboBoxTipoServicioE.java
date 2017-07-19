@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
 import Model.ConexionSQL;
 
 /**
- * @author
- *
+ * @author Sebastian -Norton
+ *Combo box del servicio
  */
 public class ComboBoxTipoServicioE implements ItemListener {
 	JComboBox<String> jcbtipo,jcbservice;

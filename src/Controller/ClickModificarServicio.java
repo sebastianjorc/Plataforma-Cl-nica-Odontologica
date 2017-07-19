@@ -12,8 +12,8 @@ import javax.swing.JTextField;
 import Model.ConexionSQL;
 
 /**
- * @author
- *
+ * @author Sebastian - Norton
+ * Permite modificar los servicios
  */
 public class ClickModificarServicio  implements ActionListener{
 	JComboBox<String> ccomboTiposA;

@@ -3,8 +3,8 @@ package Controller;
 import Model.User;
 
 /**
- * @author
- *
+ * @author Norton Irarrázabal - Sebastian Joshua
+ *Skiplist del programa estructura de dato
  */
 public class SkipList {
 	/* Class SkipNode */

@@ -14,8 +14,8 @@ import View.Interfaz;
 import View.Login.Login;
 /*--------------------------------------------------------------------------------------------------------*/	
 /**
- * @author
- *
+ * @author Norton Irarrazabal - Sebastian Rojas
+ * Devuelve al login cuando sales de una interfaz
  */
 public class ClickSalir implements ActionListener {
 	Interfaz in; JFrame login;

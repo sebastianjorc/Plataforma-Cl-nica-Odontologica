@@ -32,7 +32,8 @@ import View.Secretaria.Interfaz_Secretaria;
 import View.Tutor.Interfaz_Tutor;
 /*--------------------------------------------------------------------------------------------------------*/	
 /**
- * @author
+ * Escuchador del boton logearse
+ * @author Sebastian, Norton
  *
  */
 public class ClickLogin implements ActionListener{
@@ -72,8 +73,8 @@ public class ClickLogin implements ActionListener{
 	}
 /*--------------------------------------------------------------------------------------------------------*/	
 	/**
-	 * @param id
-	 * @param pass
+	 * @param id  rut para logear
+	 * @param pass contraseña del usuario
 	 */
 	public void consultaLogin(String id, String pass){
 		String tipoResultado; User usr = null;

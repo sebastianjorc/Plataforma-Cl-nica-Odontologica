@@ -38,13 +38,13 @@ public class CambioenBoxReserva implements ItemListener{
 					rs = s.executeQuery ("select * from Servicios where TIPO_SERVICIO = 'Estetica'");
 					cbServicioss.removeAllItems();
 					while(rs.next()){
-						String id = rs.getString(1);
+						String id = rs.getString(3);
 						cbServicioss.addItem(id); 
 					}
 					con.con.close();
 				}catch(Exception f){
 					JOptionPane.showMessageDialog(null, f);
-				}	
+				}
 				cbServicioss.addItemListener(new CambioBoxReservaS(cbServicioss,cbPracticantess));
 				try{
 					con = new ConexionSQL();
@@ -70,7 +70,7 @@ public class CambioenBoxReserva implements ItemListener{
 "select * from Servicios where TIPO_SERVICIO = 'Endodoncia' or TIPO_SERVICIO = 'Ortodoncia' or TIPO_SERVICIO =  'Peridoncia'");
 					cbServicioss.removeAllItems();
 					while(rs.next()){
-						String id = rs.getString(1);
+						String id = rs.getString(3);
 						cbServicioss.addItem(id); 
 					}
 					con.con.close();
@@ -100,7 +100,7 @@ public class CambioenBoxReserva implements ItemListener{
 					rs = s.executeQuery("select * from Servicios where TIPO_SERVICIO = 'General'");
 					cbServicioss.removeAllItems();
 					while(rs.next()){
-						String id = rs.getString(1);
+						String id = rs.getString(3);
 						cbServicioss.addItem(id); 
 					}
 					con.con.close();
@@ -124,44 +124,6 @@ public class CambioenBoxReserva implements ItemListener{
 			}
 		}
 	}
-	class CambioBoxReservaS implements ItemListener{
-		JComboBox<String> servicios;
-		JComboBox<String> practicantes;
-		String lvl = null;
-
-		public CambioBoxReservaS(JComboBox<String> cbServicioss, JComboBox<String> cbPracticantess) {
-			servicios=cbServicioss;
-			practicantes=cbPracticantess;
-		}
-
-		public void itemStateChanged(ItemEvent h) {
-			if ( h.getStateChange() == ItemEvent.SELECTED ){
-				String stringdelbox = (String) cbServicioss.getSelectedItem();
-								
-				try{
-					con = new ConexionSQL();
-					con.connect();
-					s = con.con.createStatement();
-					rs = s.executeQuery("SELECT NIVEL FROM `Servicios` where NOMBRE_SERVICIO='"+Integer.parseInt(stringdelbox)+"'");
-				
-					rs.next();	lvl=rs.getString(6);
-					
-					rs = s.executeQuery("SELECT * FROM `Practicantes` where NIVEL ='"+lvl+"'");
-					practicantes.removeAllItems();
-					while(rs.next()){
-						String prac = rs.getString(3);
-						practicantes.addItem(prac); ;
-					}
-					con.con.close();
-				}catch(Exception f){
-					JOptionPane.showMessageDialog(null, f);
-				} 
-			}
-			
-		}
-		
-	}
-
 }
 
 	

@@ -13,8 +13,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import View.PanelBase;
 
 /**
- * @author
- *
+ * @author Norton Sebastian
+ *Permite cambiar la imagen de perfil
  */
 public class ClickCambiarImagen implements ActionListener{
 	PanelBase panel;

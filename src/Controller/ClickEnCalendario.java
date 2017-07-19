@@ -6,8 +6,8 @@ import java.util.Calendar;
 
 import View.Paciente.Tab_Calendario;
 
-/**
- * @author
+/**Clase que muestra los datos del calendario
+ * @author Norton -Sebastian
  */
 public class ClickEnCalendario implements PropertyChangeListener {
 

@@ -17,8 +17,8 @@ import javax.swing.JTextField;
 import Model.ConexionSQL;
 /*--------------------------------------------------------------------------------------------------------*/
 /**
- * @author Sebastian Joshua
- *
+ * @author Sebastian Joshua,Norton Irarrazabal
+ *Permite la busqueda de un usuario
  */
 public class ClickBuscar implements ActionListener{
 	JComboBox<String> string_tipo, nTipo;

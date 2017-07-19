@@ -7,6 +7,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /**
+ * escuchador de los box con actualizador automatico segun valor box
  * @author
  *
  */

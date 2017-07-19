@@ -13,7 +13,7 @@ import View.Login.Login;
 /*--------------------------------------------------------------------------------------------------------*/	
 public class controller implements Colores {
 		
-	/**
+	/**Clase principal del programa
 	 * @param args
 	 */
 	public static void main(String[] args) {
